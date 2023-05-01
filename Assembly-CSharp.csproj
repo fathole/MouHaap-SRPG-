@@ -57,26 +57,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\ODEPrimaryButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\CanvasBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODESecondaryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODESentenceButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartController.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\DraggableObjectBase.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PageManager\HomePageManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEMusicButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEOutline.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\SmallPopup.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\MiddlePopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\LanguageOptionData.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEName.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\CameraScreenSafeAreaBase.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SceneOptionData.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\PageManager\LogoPageManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\LogoPage.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller\GameManagerView.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\CanvasSetupData.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextManager.cs" />
@@ -88,6 +95,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODESecondaryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\MiddlePopup.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\LargePopup.cs" />
@@ -97,6 +105,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\FixedDataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeController.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartView.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDEContent.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEIntroButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\UDEHeader.cs" />
@@ -104,17 +113,21 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeView.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\FixedDataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\ScreenData.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\FontOptionData.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\SmallPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SettingData.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\USEBackground.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\ClickableObjectBase.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\HomePage.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGalleryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -8,11 +8,9 @@ namespace HomeScene.UIMain.HomePage
     {
         #region Declaration
 
-        public ODEGalleryButton oDEGalleryButton;
-        public ODEIntroButton oDEIntroButton;
-        public ODEMusicButton oDEMusicButton;
-        public ODESentenceButton oDESentenceButton;
-        public UDEHeader uDEHeader;
+        public ODEStartGameButton oDEStartGameButton;
+        public ODEContinueGameButton oDEContinueGame;
+        public ODEQuitGameButton oDEQuitGameButton;
         public USEBackground uSEBackground;
 
         #endregion

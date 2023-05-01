@@ -48,44 +48,31 @@ namespace HomeScene
 
         public void InitElements()
         {
-            homePage.oDEGalleryButton.InitElement();
-            homePage.oDEIntroButton.InitElement();
-            homePage.oDEMusicButton.InitElement();
-            homePage.oDESentenceButton.InitElement();
-            homePage.uDEHeader.InitElement();
+            homePage.oDEStartGameButton.InitElement();
             homePage.uSEBackground.InitElement();
         }
 
         /* ----- Setup Element ----- */
 
-        public void SetupODEGalleryButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEGalleryButton textContent, Action onPointerClickCallback)
-        {
-            homePage.oDEGalleryButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
-        }
-
-        public void SetupODEIntroButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEIntroButton textContent, Action onPointerClickCallback)
-        {
-            homePage.oDEIntroButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
-        }
-
-        public void SetupODEMusicButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEMusicButton textContent, Action onPointerClickCallback)
-        {
-            homePage.oDEMusicButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
-        }
-
-        public void SetupODESentenceButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODESentenceButton textContent, Action onPointerClickCallback)
-        {
-            homePage.oDESentenceButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
-        }
-
-        public void SetupUDEHeader(TMP_FontAsset fontAsset, TextContentBase.HomePage.UDEHeader textContent)
-        {
-            homePage.uDEHeader.SetupElement(fontAsset, textContent);
-        }
 
         public void SetupUSEBackground()
         {
             homePage.uSEBackground.SetupElement();
+        }
+
+        public void SetupODEStartGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEStartGameButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEStartGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEContinueGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEContinueGameButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEContinueGame.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEQuitGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEQuitGameButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEQuitGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
         }
 
         /* ----- Timeline ----- */

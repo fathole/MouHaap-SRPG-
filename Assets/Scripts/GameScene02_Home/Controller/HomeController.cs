@@ -77,7 +77,6 @@ namespace HomeScene
         // Won't Use, Get From GameManager.cs Update Variable
         private HomeSceneOperationValue operationValue = null;
 
-
         #endregion
 
         #endregion
@@ -314,11 +313,9 @@ namespace HomeScene
 
         private void HomePageEnterProcessSetupElements()
         {
-            view.homePageManager.SetupODEGalleryButton(fontAsset, textContent.homePage.oDEGalleryButton, HomePageODEGalleryButtonPointerClickCallback);
-            view.homePageManager.SetupODEIntroButton(fontAsset, textContent.homePage.oDEIntroButton, HomePageODEIntroButtonPointerClickCallback);
-            view.homePageManager.SetupODEMusicButton(fontAsset, textContent.homePage.oDEMusicButton, HomePageODEMusicButtonPointerClickCallback);
-            view.homePageManager.SetupODESentenceButton(fontAsset, textContent.homePage.oDESentenceButton, HomePageODESentenceButtonPointerClickCallback);
-            view.homePageManager.SetupUDEHeader(fontAsset, textContent.homePage.uDEHeader);
+            view.homePageManager.SetupODEStartGameButton(fontAsset, textContent.homePage.oDEStartGameButton, HomePageODEStartGameButtonPointerClickCallback);
+            view.homePageManager.SetupODEContinueGameButton(fontAsset, textContent.homePage.oDEContinueGameButton, HomePageODEContinueGameButtonPointerClickCallback);
+            view.homePageManager.SetupODEQuitGameButton(fontAsset, textContent.homePage.oDEQuitGameButton, HomePageODEQuitGameButtonPointerClickCallback);
             view.homePageManager.SetupUSEBackground();
         }
 
@@ -359,51 +356,54 @@ namespace HomeScene
 
         /* ----- Home Page: User Input Process (Page Callback Function)----- */
 
-        private void HomePageODEGalleryButtonPointerClickCallback()
+        private void HomePageODEStartGameButtonPointerClickCallback()
         {
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                gameManager.OpenSmallPopup("ComingSoonPopup", fontAsset, textContent.comingSoonPopup, HomePageComingSoonPopupPrimaryButtonPointerClickCallback, null, null);
+                // Comment: Later
             }
         }
 
-        private void HomePageODEMusicButtonPointerClickCallback()
+        private void HomePageODEContinueGameButtonPointerClickCallback()
         {
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                gameManager.OpenSmallPopup("ComingSoonPopup", fontAsset, textContent.comingSoonPopup, HomePageComingSoonPopupPrimaryButtonPointerClickCallback, null, null);
+                // Comment: Later
             }
         }
 
-        private void HomePageODESentenceButtonPointerClickCallback()
+        private void HomePageODEQuitGameButtonPointerClickCallback()
         {
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                gameManager.OpenSmallPopup("ComingSoonPopup", fontAsset, textContent.comingSoonPopup, HomePageComingSoonPopupPrimaryButtonPointerClickCallback, null, null);
-            }
-        }
-
-        private void HomePageODEIntroButtonPointerClickCallback()
-        {
-            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
-
-            if (homePageValue.isUserInputProcessFinished != true)
-            {
-                gameManager.OpenSmallPopup("ComingSoonPopup", fontAsset,  textContent.comingSoonPopup, HomePageComingSoonPopupPrimaryButtonPointerClickCallback, null, null);
+                gameManager.OpenSmallPopup("QuitGamePopup", fontAsset, textContent.quitGamePopup, HomePageQuitGamePopupPrimaryButtonPointerClickCallback, HomePageQuitGamePopupSecondaryButtonPointerClickCallback, null);
             }
         }
 
         /* ----- Home Page: User Input Process (Popup Callback Function)----- */
 
-        private void HomePageComingSoonPopupPrimaryButtonPointerClickCallback()
+        private void HomePageQuitGamePopupPrimaryButtonPointerClickCallback()
         {
-            gameManager.CloseSmallPopup("ComingSoonPopup", null);
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+        }
+
+        private void HomePageQuitGamePopupSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseSmallPopup("QuitGamePopup", null);
         }
 
         #endregion
@@ -439,6 +439,6 @@ namespace HomeScene
             Main();
         }
         
-        #endregion
+#endregion
     }
 }

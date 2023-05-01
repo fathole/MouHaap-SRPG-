@@ -28,6 +28,15 @@ namespace GameManager
 
         #region Declaration - Class
 
+        private class StartSceneValue
+        {
+            public StartScene.StartController controller = null;
+
+            public bool isEnterSceneModeFinished = false;
+            public bool isSceneModeFinished = false;
+            public bool isExitSceneModeFinished = false;
+        }
+
         private class HomeSceneValue
         {
             public HomeScene.HomeController controller = null;
@@ -63,6 +72,7 @@ namespace GameManager
         private TextContentBase textContent;
 
         [Header("Scene Value")]
+        private StartSceneValue startSceneValue;
         private HomeSceneValue homeSceneValue;
 
         private GameManagerModeOption gameManagerModeOption = GameManagerModeOption.None;
@@ -130,7 +140,7 @@ namespace GameManager
 
         #endregion
 
-         #region Main Function        
+        #region Main Function        
 
         #region Main
 
@@ -250,6 +260,9 @@ namespace GameManager
 
             switch (currentScene)
             {
+                case SceneOption.GameScene01_Start:
+                    yield return EnterStartSceneProcess();
+                    break;
                 case SceneOption.GameScene02_Home:
                     yield return EnterHomeSceneProcess();
                     break;
@@ -295,7 +308,7 @@ namespace GameManager
             // Return Next Scene
             if (nextScene == SceneOption.None)
             {
-                return SceneOption.GameScene02_Home;
+                return SceneOption.GameScene01_Start;
             }
             else
             {
@@ -321,6 +334,50 @@ namespace GameManager
         }
 
         /* ----- Start Scene ----- */
+
+        private IEnumerator EnterStartSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Enter Scene Mode: Enter Start Scene -----");
+
+            // Init Scene Value
+            startSceneValue = new StartSceneValue();
+
+            // Load Scene
+            yield return LoadScene(currentScene);
+
+            // Get Scene Controller
+            startSceneValue.controller = StartScene.StartController.instance;
+
+            // Generate Scene Operation Value
+            StartSceneOperationValue startSceneOperationValue = EnterStartSceneProcessGenerateStartSceneOperationValue();
+
+            // Setup Scene
+            startSceneValue.controller.RunEnterSceneMode(startSceneOperationValue);
+            yield return new WaitUntil(() => startSceneValue.isEnterSceneModeFinished == true);
+
+            // Release Ram
+            GC.Collect();
+        }
+
+        private StartSceneOperationValue EnterStartSceneProcessGenerateStartSceneOperationValue()
+        {
+            // Init operation value
+            StartSceneOperationValue operationValue = new StartSceneOperationValue();
+
+            // Setup Operation Calue
+            operationValue.gameManager = this;
+            operationValue.mainCamera = mainCamera;
+            operationValue.screenPropertiesData = screenPropertiesData;
+            operationValue.fontAsset = fontAsset;
+            operationValue.onEnterSceneModeFinishedCallback = () => { startSceneValue.isEnterSceneModeFinished = true; };
+            operationValue.onRunSceneModeFinishedCallback = () => { startSceneValue.isSceneModeFinished = true; };
+            operationValue.onExitSceneModeFinishedCallback = (nextSceneOption) => { nextScene = nextSceneOption; startSceneValue.isExitSceneModeFinished = true; };
+
+            // Return Operation Value
+            return operationValue;
+        }
+
+        /* ----- Home Scene ----- */
 
         private IEnumerator EnterHomeSceneProcess()
         {
@@ -374,6 +431,9 @@ namespace GameManager
 
             switch (currentScene)
             {
+                case SceneOption.GameScene01_Start:
+                    yield return RunStartSceneProcess();
+                    break;
                 case SceneOption.GameScene02_Home:
                     yield return RunHomeSceneProcess();
                     break;
@@ -394,6 +454,17 @@ namespace GameManager
 
         /* ----- Start Scene ----- */
 
+        private IEnumerator RunStartSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Scene Mode: Run Start Scene -----");
+
+            // Wait Scene Finished
+            startSceneValue.controller.RunRunSceneMode();
+            yield return new WaitUntil(() => startSceneValue.isSceneModeFinished == true);
+        }
+
+        /* ----- Home Scene ----- */
+
         private IEnumerator RunHomeSceneProcess()
         {
             Debug.Log("----- Game Manager: Scene Mode: Run Start Scene -----");
@@ -413,6 +484,9 @@ namespace GameManager
 
             switch (currentScene)
             {
+                case SceneOption.GameScene01_Start:
+                    yield return ExitStartSceneProcess();
+                    break;
                 case SceneOption.GameScene02_Home:
                     yield return ExitHomeSceneProcess();
                     break;
@@ -467,6 +541,23 @@ namespace GameManager
         }
 
         /* ----- Start Scene ----- */
+
+        private IEnumerator ExitStartSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Exit Scene Mode: Exit Start Scene -----");
+
+            // Open Loading
+            yield return ExitSceneProcessOpenLoading();
+
+            // Wait Scene Exit Finished
+            startSceneValue.controller.RunExitSceneMode();
+            yield return new WaitUntil(() => startSceneValue.isExitSceneModeFinished == true);
+
+            // Unload Scene
+            yield return UnloadScene(currentScene);
+        }
+
+        /* ----- Home Scene ----- */
 
         private IEnumerator ExitHomeSceneProcess()
         {

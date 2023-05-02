@@ -2,6 +2,7 @@
 {
     None = 0,
     GameScene01_Start = 1,
-    GameScene02_Home = 2,    
+    GameScene02_Home = 2,
+    GameScene03_World = 3,
     // ToDo: update Scene List
 }

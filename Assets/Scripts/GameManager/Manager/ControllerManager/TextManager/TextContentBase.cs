@@ -96,11 +96,23 @@ namespace GameManager
 			public ODESecondaryButton oDESecondaryButton;
 		}
 
-		#endregion
+        #endregion
 
-		public LargePopup testingLargePopup;		
-		public MiddlePopup testingMiddlePopup;		
-		public SmallPopup testingSmallPopup;
+        #region Loading Popup
+
+		public struct LoadingPopup
+        {
+			public struct UDETitle
+            {
+				public string text001;
+            }
+
+			public UDETitle uDETitle;
+		}
+
+        #endregion
+
+		public LoadingPopup loadingPopup;
 
 		#endregion
 	}

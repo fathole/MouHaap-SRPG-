@@ -94,7 +94,9 @@ namespace GameManager
 			// Camera
 			cameraSetting.renderType = CameraRenderType.Base;
 			// Projection
-			cameraSetting.orthographic = true;
+			cameraSetting.orthographic = false;
+			cameraSetting.fieldOfView = 60;
+			//cameraSetting.orthographic = true;
 			cameraSetting.orthographicSize = 10.8f;
 			cameraSetting.nearClipPlane = 0.3f;
 			cameraSetting.farClipPlane = 1000;
@@ -111,7 +113,7 @@ namespace GameManager
 			cameraSetting.cullingMask = -1; //Everything
 			cameraSetting.useOcclusionCulling = true;
 			// Envirnment
-			cameraSetting.clearFlags = CameraClearFlags.SolidColor; //Background Type
+			cameraSetting.clearFlags = CameraClearFlags.Skybox; //Background Type
 			cameraSetting.backgroundColor = Color.black;//Color.black;
 			cameraSetting.volumeLayerMask = LayerMask.GetMask("Default");
 			cameraSetting.volumeTrigger = null;
@@ -270,11 +272,12 @@ namespace GameManager
 		private Camera GetCamera(CameraProperties cameraSetting)
 		{
 			// Transform
-			mainCamera.transform.position = cameraSetting.position;
-			mainCamera.transform.rotation = cameraSetting.rotation;
-			mainCamera.transform.localScale = cameraSetting.scale;
-			// Camera
-			universalAdditionalCameraData.renderType = cameraSetting.renderType;
+			Debug.Log(cameraSetting.position + "!!!!!");
+            mainCamera.transform.position = cameraSetting.position;
+            mainCamera.transform.rotation = cameraSetting.rotation;
+            mainCamera.transform.localScale = cameraSetting.scale;
+            // Camera
+            universalAdditionalCameraData.renderType = cameraSetting.renderType;
 			// Projection
 			mainCamera.orthographic = cameraSetting.orthographic;
 			mainCamera.orthographicSize = cameraSetting.orthographicSize;

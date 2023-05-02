@@ -14,7 +14,10 @@ namespace GameManager.UIPopup
         private RectTransform cameraScreenSafeArea;
 
         private static PlayableDirector playableDirector;
-        private static Action onTimelineFinishCallback;        
+        private static Action onTimelineFinishCallback;
+
+        [Header("Popup")]
+        public LoadingPopup.LoadingPopup loadingPopup;
 
         [Header("Popup Prefab")]
         public LargePopup.LargePopup largePopupPrefab;

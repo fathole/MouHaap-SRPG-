@@ -66,7 +66,9 @@ namespace HomeScene
         [Header("Game Manager Callback Function")]
         public Action gameManagerOnEnterSceneModeFinishedCallback = null;
         public Action gameManagerOnRunSceneModeFinishedCallback = null;
-        public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;        
+        public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
+
+        private SceneOption nextScene = SceneOption.None;
 
         private ControllerModeOption currentMode = ControllerModeOption.None;
         private PageOption currentPage = PageOption.None;
@@ -255,7 +257,7 @@ namespace HomeScene
 
         private void ExitSceneModeFinishCallback()
         {
-            gameManagerOnExitSceneModeFinishedCallback?.Invoke(SceneOption.None);
+            gameManagerOnExitSceneModeFinishedCallback?.Invoke(nextScene);
         }
 
         #endregion
@@ -438,7 +440,17 @@ namespace HomeScene
             currentMode = ControllerModeOption.RunSceneMode;
             Main();
         }
-        
-#endregion
+
+        #endregion
+
+        #region DEV Function
+
+        public void DEVWorldSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene03_World;
+            isSceneFinished = true;
+        }
+
+        #endregion
     }
 }

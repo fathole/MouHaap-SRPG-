@@ -46,6 +46,15 @@ namespace GameManager
             public bool isExitSceneModeFinished = false;
         }
 
+        private class WorldSceneValue
+        {
+            public WorldScene.WorldController controller = null;
+
+            public bool isEnterSceneModeFinished = false;
+            public bool isSceneModeFinished = false;
+            public bool isExitSceneModeFinished = false;
+        }
+
         #endregion
 
         #region Declaration - Variable
@@ -74,6 +83,7 @@ namespace GameManager
         [Header("Scene Value")]
         private StartSceneValue startSceneValue;
         private HomeSceneValue homeSceneValue;
+        private WorldSceneValue worldSceneValue;
 
         private GameManagerModeOption gameManagerModeOption = GameManagerModeOption.None;
         private SceneOption currentScene = SceneOption.None;
@@ -266,6 +276,9 @@ namespace GameManager
                 case SceneOption.GameScene02_Home:
                     yield return EnterHomeSceneProcess();
                     break;
+                case SceneOption.GameScene03_World:
+                    yield return EnterWorldSceneProcess();
+                    break;
                 default:
                     Debug.LogError("<color=red>----- Scene: " + currentScene + ", Not Found -----</color>");
                     yield return null;
@@ -320,11 +333,9 @@ namespace GameManager
 
         private IEnumerator EnterSceneProcessCloseLoading()
         {
-            if (isLoadingOpened != true)
+            if (isLoadingClosed != true)
             {
-                // ToDo: Loading Popup
-                // CloseLoadingPopup(() => { isLoadingClosed = true; });
-                isLoadingClosed = true;
+                CloseLoadingPopup(() => { isLoadingClosed = true; });
                 yield return new WaitUntil(() => isLoadingClosed == true);
             }
             else
@@ -381,7 +392,7 @@ namespace GameManager
 
         private IEnumerator EnterHomeSceneProcess()
         {
-            Debug.Log("----- Game Manager: Enter Scene Mode: Enter Start Scene -----");
+            Debug.Log("----- Game Manager: Enter Scene Mode: Enter Home Scene -----");
 
             // Init Scene Value
             homeSceneValue = new HomeSceneValue();
@@ -401,6 +412,9 @@ namespace GameManager
 
             // Release Ram
             GC.Collect();
+
+            // Close Loading
+            yield return EnterSceneProcessCloseLoading();
         }
 
         private HomeSceneOperationValue EnterHomeSceneProcessGenerateHomeSceneOperationValue()
@@ -421,6 +435,53 @@ namespace GameManager
             return operationValue;
         }
 
+        /* ----- World Scene ----- */
+
+        private IEnumerator EnterWorldSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Enter Scene Mode: Enter World Scene -----");
+
+            // Init Scene Value
+            worldSceneValue = new WorldSceneValue();
+
+            // Load Scene
+            yield return LoadScene(currentScene);
+
+            // Get Scene Controller
+            worldSceneValue.controller = WorldScene.WorldController.instance;
+
+            // Generate Scene Operation Value
+            WorldSceneOperationValue worldSceneOperationValue = EnterWorldSceneProcessGenerateWorldSceneOperationValue();
+
+            // Setup Scene
+            worldSceneValue.controller.RunEnterSceneMode(worldSceneOperationValue);
+            yield return new WaitUntil(() => worldSceneValue.isEnterSceneModeFinished == true);
+
+            // Release Ram
+            GC.Collect();
+
+            // Close Loading
+            yield return EnterSceneProcessCloseLoading();
+        }
+
+        private WorldSceneOperationValue EnterWorldSceneProcessGenerateWorldSceneOperationValue()
+        {
+            // Init operation value
+            WorldSceneOperationValue operationValue = new WorldSceneOperationValue();
+
+            // Setup Operation Calue
+            operationValue.gameManager = this;
+            operationValue.mainCamera = mainCamera;
+            operationValue.screenPropertiesData = screenPropertiesData;
+            operationValue.fontAsset = fontAsset;
+            operationValue.onEnterSceneModeFinishedCallback = () => { worldSceneValue.isEnterSceneModeFinished = true; };
+            operationValue.onRunSceneModeFinishedCallback = () => { worldSceneValue.isSceneModeFinished = true; };
+            operationValue.onExitSceneModeFinishedCallback = (nextSceneOption) => { nextScene = nextSceneOption; worldSceneValue.isExitSceneModeFinished = true; };
+
+            // Return Operation Value
+            return operationValue;
+        }
+
         #endregion
 
         #region Main - Scene Mode
@@ -436,6 +497,9 @@ namespace GameManager
                     break;
                 case SceneOption.GameScene02_Home:
                     yield return RunHomeSceneProcess();
+                    break;
+                case SceneOption.GameScene03_World:
+                    yield return RunWorldSceneProcess();
                     break;
                 default:
                     Debug.LogError("<color=red>----- Scene: " + currentScene + ", Not Found -----</color>");
@@ -467,11 +531,22 @@ namespace GameManager
 
         private IEnumerator RunHomeSceneProcess()
         {
-            Debug.Log("----- Game Manager: Scene Mode: Run Start Scene -----");
+            Debug.Log("----- Game Manager: Scene Mode: Run Home Scene -----");
 
             // Wait Scene Finished
             homeSceneValue.controller.RunRunSceneMode();
             yield return new WaitUntil(() => homeSceneValue.isSceneModeFinished == true);
+        }
+
+        /* ----- World Scene ----- */
+
+        private IEnumerator RunWorldSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Scene Mode: Run World Scene -----");
+
+            // Wait Scene Finished
+            worldSceneValue.controller.RunRunSceneMode();
+            yield return new WaitUntil(() => worldSceneValue.isSceneModeFinished == true);
         }
 
         #endregion
@@ -528,10 +603,8 @@ namespace GameManager
         private IEnumerator ExitSceneProcessOpenLoading()
         {
             if (isLoadingOpened != true)
-            {
-                // ToDo: Loading Popup
-                // OpenLoadingPopup(() => { isLoadingOpened = true; });
-                isLoadingOpened = true;
+            {                
+                OpenLoadingPopup(() => { isLoadingOpened = true; });                
                 yield return new WaitUntil(() => isLoadingOpened == true);
             }
             else
@@ -561,7 +634,7 @@ namespace GameManager
 
         private IEnumerator ExitHomeSceneProcess()
         {
-            Debug.Log("----- Game Manager: Exit Scene Mode: Exit Start Scene -----");
+            Debug.Log("----- Game Manager: Exit Scene Mode: Exit Home Scene -----");
 
             // Open Loading
             yield return ExitSceneProcessOpenLoading();
@@ -569,6 +642,23 @@ namespace GameManager
             // Wait Scene Exit Finished
             homeSceneValue.controller.RunExitSceneMode();
             yield return new WaitUntil(() => homeSceneValue.isExitSceneModeFinished == true);
+
+            // Unload Scene
+            yield return UnloadScene(currentScene);
+        }
+
+        /* ----- World Scene ----- */
+
+        private IEnumerator ExitWorldSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Exit Scene Mode: Exit World Scene -----");
+
+            // Open Loading
+            yield return ExitSceneProcessOpenLoading();
+
+            // Wait Scene Exit Finished
+            worldSceneValue.controller.RunExitSceneMode();
+            yield return new WaitUntil(() => worldSceneValue.isExitSceneModeFinished == true);
 
             // Unload Scene
             yield return UnloadScene(currentScene);
@@ -605,6 +695,24 @@ namespace GameManager
         }
 
         /* ----- Popup Function ----- */
+
+        public void OpenLoadingPopup(Action onAnimationFinishCallback)
+        {
+            // Init Element
+            view.loadingPopupManager.InitElements();
+
+            // Setup Element
+            view.loadingPopupManager.SetupUDETitle(fontAsset, textContent.loadingPopup.uDETitle);
+            view.loadingPopupManager.SetupUSEBackground();
+
+            // Move In Popup
+            view.loadingPopupManager.PlayLoadingPopupMoveInTimeline(onAnimationFinishCallback);
+        }
+
+        public void CloseLoadingPopup(Action onAnimationFinishCallback)
+        {
+            view.loadingPopupManager.PlayLoadingPopupMoveOutTimeline(onAnimationFinishCallback);
+        }
 
         public void OpenLargePopup(string popupName, TMP_FontAsset fontAsset, TextContentBase.LargePopup textContent, Action onPrimaryButtonPointerClickCallback, Action onSecondaryButtonPointerClickCallback, Action onAnimationFinishCallback)
         {

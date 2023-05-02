@@ -88,7 +88,7 @@ namespace GameManager
 			CameraProperties cameraSetting = new CameraProperties();
 
 			// Transform
-			cameraSetting.position = new Vector3(0, 0, -100);
+			cameraSetting.position = new Vector3(0, 0, -10);
 			cameraSetting.rotation = new Quaternion(0, 0, 0, 0);
 			cameraSetting.scale = Vector3.one;
 			// Camera

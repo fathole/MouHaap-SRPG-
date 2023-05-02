@@ -1,0 +1,74 @@
+{
+    "name": "CommonUI",
+    "maps": [
+        {
+            "name": "Button",
+            "id": "cdd7df40-9fd9-45b8-b26e-1610146dd06b",
+            "actions": [
+                {
+                    "name": "PointerDown",
+                    "type": "Button",
+                    "id": "3f81524d-5cea-467f-981c-2cf03630913b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerUp",
+                    "type": "Button",
+                    "id": "ded54c5a-7c78-45f2-aab2-0015ab700198",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerClick",
+                    "type": "Button",
+                    "id": "bc5d2be6-ebbc-4dd3-9cd5-07b876c3c910",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d5dd5ae7-4515-4f3f-a20e-904937e494f6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "14b8b633-5235-4885-b9a5-03ee8741cbdb",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06f3a29b-a137-4ee8-90f1-d38a68ef9a85",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

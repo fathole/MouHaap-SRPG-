@@ -23,7 +23,7 @@ namespace HomeScene.UIMain.HomePage
             contentText001.text = "";
 
             // Init action
-            onPointerClickCallback = null; 
+            onPointerClickCallback = null;
         }
 
         #endregion

@@ -333,15 +333,9 @@ namespace GameManager
 
         private IEnumerator EnterSceneProcessCloseLoading()
         {
-            if (isLoadingClosed != true)
-            {
-                CloseLoadingPopup(() => { isLoadingClosed = true; });
-                yield return new WaitUntil(() => isLoadingClosed == true);
-            }
-            else
-            {
-                yield return null;
-            }
+            isLoadingClosed = false;
+            CloseLoadingPopup(() => { isLoadingClosed = true; });
+            yield return new WaitUntil(() => isLoadingClosed == true);
         }
 
         /* ----- Start Scene ----- */
@@ -602,15 +596,9 @@ namespace GameManager
 
         private IEnumerator ExitSceneProcessOpenLoading()
         {
-            if (isLoadingOpened != true)
-            {                
-                OpenLoadingPopup(() => { isLoadingOpened = true; });                
+            isLoadingOpened = false;
+            OpenLoadingPopup(() => { isLoadingOpened = true; });                
                 yield return new WaitUntil(() => isLoadingOpened == true);
-            }
-            else
-            {
-                yield return null;
-            }
         }
 
         /* ----- Start Scene ----- */

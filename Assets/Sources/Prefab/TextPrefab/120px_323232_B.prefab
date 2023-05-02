@@ -69,8 +69,7 @@ MonoBehaviour:
   m_text: "\u6587\u5B57"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e83e2ab169b7276409e9798737b72d59, type: 2}
-  m_sharedMaterial: {fileID: 5891722753781136388, guid: e83e2ab169b7276409e9798737b72d59,
-    type: 2}
+  m_sharedMaterial: {fileID: 5891722753781136388, guid: e83e2ab169b7276409e9798737b72d59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

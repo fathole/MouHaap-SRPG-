@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WorldScene.UIMain;
 using WorldScene.UIPopup;
+using Cinemachine;
 
 namespace WorldScene
 {
@@ -13,6 +14,9 @@ namespace WorldScene
         [Header("Sorting Layer Manager")]
         public UIMainManager uIMainManager;
         public UIPopupManager uIPopupManager;
+
+        [Header("Player")]
+        public Transform playerTransform;
 
         #endregion
 

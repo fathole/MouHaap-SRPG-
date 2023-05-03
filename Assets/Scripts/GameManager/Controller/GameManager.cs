@@ -322,6 +322,7 @@ namespace GameManager
             if (nextScene == SceneOption.None)
             {
                 return SceneOption.GameScene01_Start;
+                // return SceneOption.GameScene03_World;
             }
             else
             {
@@ -676,6 +677,8 @@ namespace GameManager
         #endregion
 
         #region Scene Support Function
+
+        /* ----- Setting Function ----- */
 
         public DisplayLanguageOption GetDisplayLanguageOption()
         {

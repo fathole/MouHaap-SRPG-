@@ -58,46 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODESecondaryButton.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEOutline.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\SmallPopup.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\MiddlePopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEContinueGameButton.cs" />
-    <Compile Include="Assets\Scripts\GameManager\DataClass\LanguageOptionData.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentBase.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\UDETitle.cs" />
-    <Compile Include="Assets\Scripts\GameManager\BaseClass\CameraScreenSafeAreaBase.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\DataClass\SceneOptionData.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\PageManager\LogoPageManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\LogoPage.cs" />
-    <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldView.cs" />
-    <Compile Include="Assets\Scripts\GameManager\DataClass\SortingLayerOptionData.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\USEBackground.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextContentBase.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\UDETitle.cs" />
-    <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\MiddlePopup.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\LargePopup.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\USEBackground.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LargePopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\FixedDataClass\StartSceneOperationValue.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartView.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEQuitGameButton.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDEContent.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\SettingManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\USEBackground.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager\DataClass\FontOptionData.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\CanvasBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentBase.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODESecondaryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartController.cs" />
@@ -106,23 +69,57 @@
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\FixedDataClass\WorldSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PageManager\HomePageManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEOutline.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\SmallPopup.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\MiddlePopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEContinueGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DataClass\LanguageOptionData.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentBase.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEName.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\ThirdPersonController.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameManager\BaseClass\CameraScreenSafeAreaBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODEPrimaryButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DataClass\SceneOptionData.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\PageManager\LogoPageManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\LogoPage.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldView.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller\GameManagerView.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\CanvasSetupData.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\UDEContent.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DataClass\SortingLayerOptionData.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\ODESecondaryButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\USEBackground.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextContentBase.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEBackground.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODESecondaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\MiddlePopup.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\LargePopup.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\FontManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LargePopupManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\FixedDataClass\StartSceneOperationValue.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeController.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartView.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEQuitGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDEContent.cs" />
+    <Compile Include="Assets\MidPointCameraManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\SettingManager.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldController.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LoadingPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeView.cs" />
@@ -130,6 +127,9 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\ScreenData.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DataClass\FontOptionData.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\SmallPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\LoadingPopup.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SettingData.cs" />
@@ -138,6 +138,8 @@
     <Compile Include="Assets\Scripts\GameManager\BaseClass\ClickableObjectBase.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\HomePage.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEStartGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -388,9 +390,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets\Plugins\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\UnityEditor\2021.3.24f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -791,9 +790,6 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
@@ -802,9 +798,6 @@
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -842,9 +835,6 @@
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
     </Reference>
@@ -865,9 +855,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -890,20 +877,17 @@
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools">
+      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
@@ -914,8 +898,8 @@
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.TerrainTools.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -940,15 +924,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools">
-      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

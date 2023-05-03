@@ -2,24 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using Cinemachine;
 
 namespace GameManager
 {
 	public class CameraManager : MonoBehaviour
 	{
-        #region Declaration
+		#region Declaration
 
-        #region Declaration - Variable
+		#region Declaration - Variable
 
-        private UniversalAdditionalCameraData universalAdditionalCameraData;
+		private UniversalAdditionalCameraData universalAdditionalCameraData;
 		private Camera mainCamera;
 
-        #endregion
+		#endregion
 
-        #region Declaration - Struct
+		#region Declaration - Struct
 
-        public struct CameraProperties
+		public struct CameraProperties
 		{
 			// Transform
 			public Vector3 position;
@@ -67,13 +69,13 @@ namespace GameManager
 		private CameraProperties cameraDefaultSetting;
 		public CameraProperties cameraSetting { get; private set; }
 
-        #endregion
+		#endregion
 
-        #endregion
+		#endregion
 
-        #region Init Stage
+		#region Init Stage
 
-        public void InitManager()
+		public void InitManager()
 		{
 			Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
@@ -88,16 +90,17 @@ namespace GameManager
 			CameraProperties cameraSetting = new CameraProperties();
 
 			// Transform
-			cameraSetting.position = new Vector3(0, 0, -10);
-			cameraSetting.rotation = new Quaternion(0, 0, 0, 0);
+			cameraSetting.position = new Vector3(0, 10, -10);
+			//cameraSetting.rotation = new Quaternion(0, 0, 0, 0);
+			cameraSetting.rotation = Quaternion.Euler(0, 0, 0);
 			cameraSetting.scale = Vector3.one;
 			// Camera
 			cameraSetting.renderType = CameraRenderType.Base;
-			// Projection
-			cameraSetting.orthographic = false;
-			cameraSetting.fieldOfView = 60;
-			//cameraSetting.orthographic = true;
-			cameraSetting.orthographicSize = 10.8f;
+            // Projection
+            cameraSetting.orthographic = false;
+            cameraSetting.fieldOfView = 60;
+   //         cameraSetting.orthographic = true;
+			//cameraSetting.orthographicSize = 10.8f;
 			cameraSetting.nearClipPlane = 0.3f;
 			cameraSetting.farClipPlane = 1000;
 			// Renderer
@@ -144,13 +147,13 @@ namespace GameManager
 			// Comment: Nothing setup
 		}
 
-        #endregion
+		#endregion
 
-        #region Main Function
+		#region Main Function
 
-        #region Main
+		#region Main
 
-        public Camera AdjustCameraSetting(ScreenProperties cameraScreen, ScreenProperties targetScreen, ScreenProperties deviceScreen)
+		public Camera AdjustCameraSetting(ScreenProperties cameraScreen, ScreenProperties targetScreen, ScreenProperties deviceScreen)
 		{
 			Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
@@ -161,14 +164,14 @@ namespace GameManager
 			cameraSetting = GetCameraSetting(cameraScreen, targetScreen, deviceScreen, cameraDefaultSetting);
 			mainCamera = GetCamera(cameraSetting);
 
-            return mainCamera;
+			return mainCamera;
 		}
 
-        #endregion
+		#endregion
 
-        #region Unit Function
+		#region Unit Function
 
-        private ScreenProperties GetDeviceScreen()
+		private ScreenProperties GetDeviceScreen()
 		{
 			ScreenProperties deviceScreen = new ScreenProperties();
 			deviceScreen.width = Screen.width;
@@ -272,12 +275,11 @@ namespace GameManager
 		private Camera GetCamera(CameraProperties cameraSetting)
 		{
 			// Transform
-			Debug.Log(cameraSetting.position + "!!!!!");
-            mainCamera.transform.position = cameraSetting.position;
-            mainCamera.transform.rotation = cameraSetting.rotation;
-            mainCamera.transform.localScale = cameraSetting.scale;
-            // Camera
-            universalAdditionalCameraData.renderType = cameraSetting.renderType;
+			mainCamera.transform.position = cameraSetting.position;
+			mainCamera.transform.rotation = cameraSetting.rotation;
+			mainCamera.transform.localScale = cameraSetting.scale;
+			// Camera
+			universalAdditionalCameraData.renderType = cameraSetting.renderType;
 			// Projection
 			mainCamera.orthographic = cameraSetting.orthographic;
 			mainCamera.orthographicSize = cameraSetting.orthographicSize;
@@ -424,5 +426,5 @@ namespace GameManager
 		#endregion
 
 		#endregion
-	}
+    }
 }

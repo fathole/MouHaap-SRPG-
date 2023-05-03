@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 namespace WorldScene
 {
@@ -40,13 +41,14 @@ namespace WorldScene
 
         #region Declaration - Variable
 
-        [Header("MVC")]       
+        [Header("MVC")]
         public static WorldController instance;
         private GameManager.GameManager gameManager = null;
         [SerializeField] private WorldView view;
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
+        [SerializeField] private MidPointCameraManager midPointCameraManager;
 
         [Header("Font and Text")]
         private TMP_FontAsset fontAsset = null;
@@ -74,6 +76,16 @@ namespace WorldScene
 
         // Won't Use, Get From GameManager.cs Update Variable
         private WorldSceneOperationValue operationValue = null;
+
+        private bool isEnableUserInput = false;// May Remove This Variable
+
+        // Camera Input
+        [SerializeField] private bool isCameraFollowPlayer;
+        private float horizontalInput;
+        private float verticalInput;
+        private Vector3 dragCameraPreviousPosition;
+        private float dragCameraThresholder = 200f;
+        private bool isCameraDrag;
 
 
         #endregion
@@ -106,6 +118,7 @@ namespace WorldScene
         private void InitControllerManager()
         {
             textManager.InitManager();
+            midPointCameraManager.InitManager();
         }
 
         #endregion
@@ -144,6 +157,7 @@ namespace WorldScene
         private void SetupControllerManager()
         {
             textManager.SetupManager();
+            midPointCameraManager.SetupManager();
         }
 
         #endregion
@@ -158,7 +172,7 @@ namespace WorldScene
             }
             else if (currentMode == ControllerModeOption.RunSceneMode)
             {
-                StartCoroutine( RunSceneMode(RunSceneModeFinishCallback));
+                StartCoroutine(RunSceneMode(RunSceneModeFinishCallback));
             }
             else if (currentMode == ControllerModeOption.ExitSceneMode)
             {
@@ -202,7 +216,11 @@ namespace WorldScene
         {
             Debug.Log("----- Home Controller: Run Scene Mode -----");
 
+            isEnableUserInput = true;
+
             yield return new WaitUntil(() => isSceneFinished == true);
+
+            isEnableUserInput = false;
 
             finishCallback?.Invoke();
         }
@@ -231,6 +249,102 @@ namespace WorldScene
         }
 
         #endregion
+
+        private void Update()
+        {
+            if (isEnableUserInput)
+            {
+                CameraHandle();
+            }
+        }
+
+        private void CameraHandle()
+        {
+            CameraMoveHandle();
+
+            CameraRotateHandle();
+
+            CameraZoomHandle();
+        }
+
+        private void CameraMoveHandle()
+        {
+            // If Press Axis, Set isCameraFollowPlayer To False
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                isCameraFollowPlayer = false;
+            }
+
+            // If Axis Clicked, Move The Camera
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // Update Input Axis
+                verticalInput = Input.GetAxis("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
+
+            // If Camre Follow Player, Move Camera According To Player Position
+            if (isCameraFollowPlayer == true)
+            {
+                midPointCameraManager.MoveMidPoint(view.playerTransform.position);
+            }
+        }
+
+        private void CameraRotateHandle()
+        {
+            // Get Previous Position Of Drag
+            if (Input.GetMouseButtonDown(2))
+            {
+                dragCameraPreviousPosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
+            }
+
+            if (Input.GetMouseButton(2))
+            {
+                if (isCameraDrag != true)
+                {
+                    float differenceX = (Input.mousePosition - dragCameraPreviousPosition).x;
+
+                    if (Math.Abs(differenceX) > dragCameraThresholder)
+                    {
+                        isCameraDrag = true;
+                        dragCameraPreviousPosition = Input.mousePosition;
+                    }
+                }
+                else
+                {
+                    Vector3 currentPosition = Input.mousePosition;
+
+                    float differenceXPosition = (dragCameraPreviousPosition - currentPosition).x;
+
+                    midPointCameraManager.RotateMidPoint(differenceXPosition);
+
+                    dragCameraPreviousPosition = currentPosition;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(2))
+            {
+                isCameraDrag = false;
+            }
+
+        }
+
+        private void CameraZoomHandle()
+        {
+            if (isCameraDrag != true)
+            {
+                if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                {
+                    midPointCameraManager.ZoomInMidPoint();
+                }
+                else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                {
+                    midPointCameraManager.ZoomOutMidPoint();
+                }
+            }
+        }
 
         #endregion
 

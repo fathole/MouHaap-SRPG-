@@ -56,54 +56,29 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Hovl Studio\Resources\Scripts\HS_ParticleCollisionInstance.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Scripts\ARPGFXRotation.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
-    <Compile Include="Assets\Plugins\Hovl Studio\Resources\Scripts\HS_EffectSound.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Demo\Scripts\ARPGFXLoopScript.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Scripts\ARPGFXLightFade.cs" />
-    <Compile Include="Assets\Plugins\Hovl Studio\Resources\Scripts\For demo scenes\HS_CameraHolder.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Demo\Scripts\ARPGSceneSelect.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Demo\Scripts\ARPGFXCycler.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Scripts\ARPGFXLightFlicker.cs" />
-    <Compile Include="Assets\Plugins\ARPG Effects\Scripts\ARPGFXPortalScript.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
+    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
-    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\Plugins\UnityTechnologies\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Plugins\Hovl Studio\AOE Magic spells Vol.1\Demo AOE skills\Readme.txt" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\Lit_CenterGlow.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Plugins\ARPG Effects\Readme.txt" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Plugins\JsonDotNet\link.xml" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\Distortion.shader" />
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.XML" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\Blend_CenterGlow.shader" />
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.XML" />
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll" />
-    <None Include="Assets\Plugins\Hovl Studio\AOE Magic spells Vol.1\Prefabs\Readme.txt" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\LightGlow.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Plugins\UnityTechnologies\StarterAssets\license.txt" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
@@ -113,15 +88,11 @@
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.dll" />
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.XML" />
     <None Include="Assets\Plugins\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\AddTrail.shader" />
     <None Include="Assets\Plugins\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.dll" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Plugins\Hovl Studio\Resources\Shaders\Add_CenterGlow.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Plugins\UnityTechnologies\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Plugins\Hovl Studio\AOE Magic spells Vol.1\Demo AOE skills\HDRP and URP(LWRP).txt" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
@@ -374,9 +345,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets\Plugins\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\UnityEditor\2021.3.24f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -777,9 +745,6 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
@@ -788,9 +753,6 @@
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -828,9 +790,6 @@
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
     </Reference>
@@ -851,9 +810,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -876,20 +832,17 @@
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools">
+      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
@@ -900,8 +853,8 @@
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.TerrainTools.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -926,15 +879,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools">
-      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

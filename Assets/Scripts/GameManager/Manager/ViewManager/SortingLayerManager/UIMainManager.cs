@@ -12,9 +12,6 @@ namespace GameManager.UIMain
 
         [SerializeField]
         private RectTransform cameraScreenSafeArea;
-
-        private Canvas canvas;
-
         private static PlayableDirector playableDirector;
         private static Action onTimelineFinishCallback;
 
@@ -41,7 +38,7 @@ namespace GameManager.UIMain
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             // Setup base
-            base.SetupCanvas(mainCamera, screenPropertiesData.cameraScreen, sortingLayerOption);
+            SetupCanvas(mainCamera, screenPropertiesData.cameraScreen, sortingLayerOption);
 
             // Setup Playable Director
             playableDirector = this.GetComponent<PlayableDirector>();
@@ -69,7 +66,6 @@ namespace GameManager.UIMain
         public static void OnTimelineFinishCallback()
         {
             onTimelineFinishCallback?.Invoke();
-
         }
 
         #endregion

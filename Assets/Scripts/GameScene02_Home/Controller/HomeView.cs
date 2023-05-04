@@ -17,6 +17,9 @@ namespace HomeScene
         [Header("Page Manager")]
         public HomePageManager homePageManager;
 
+        [Header("Popup Manager")]
+        public LoadGamePopupManager loadGamePopupManager;
+
         #endregion
 
         #region Init Stage
@@ -45,7 +48,7 @@ namespace HomeScene
 
         private void InitPopupManager()
         {
-
+            loadGamePopupManager.InitManager();
         }
 
         #endregion
@@ -76,7 +79,7 @@ namespace HomeScene
 
         private void SetupPopupManager()
         {
-
+            loadGamePopupManager.SetupManager(uIPopupManager.loadGamePopup);
         }
 
         #endregion

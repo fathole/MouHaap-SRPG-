@@ -19,8 +19,6 @@ namespace GameManager
             };
 
             #endregion
-
-
         }
     }
 }

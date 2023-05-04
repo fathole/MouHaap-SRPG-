@@ -49,11 +49,16 @@ namespace HomeScene
         public void InitElements()
         {
             homePage.oDEStartGameButton.InitElement();
+            homePage.oDEContinueGame.InitElement();
+            homePage.oDEGameSettingButton.InitElement();
+            homePage.oDEQuitGameButton.InitElement();
+            homePage.oDESoloGameButton.InitElement();
+            homePage.oDEMultiplayerGameButton.InitElement();
+            homePage.oDEGameModeBackButton.InitElement();
             homePage.uSEBackground.InitElement();
         }
 
         /* ----- Setup Element ----- */
-
 
         public void SetupUSEBackground()
         {
@@ -65,6 +70,11 @@ namespace HomeScene
             homePage.oDEStartGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
         }
 
+        public void SetupODEGameSettingButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEGameSettingButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEGameSettingButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
         public void SetupODEContinueGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEContinueGameButton textContent, Action onPointerClickCallback)
         {
             homePage.oDEContinueGame.SetupElement(fontAsset, textContent, onPointerClickCallback);
@@ -73,6 +83,29 @@ namespace HomeScene
         public void SetupODEQuitGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEQuitGameButton textContent, Action onPointerClickCallback)
         {
             homePage.oDEQuitGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODESoloGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODESoloGameButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDESoloGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEMultiplayerGameButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEMultiplayerGameButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEMultiplayerGameButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEGameModeBackButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEGameModeBackButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEGameModeBackButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        /* ----- Function ----- */
+
+        public void SetActiveButtons(HomePageButtonsOption option)
+        {
+            homePage.mainMenuButtons.SetActive(option == HomePageButtonsOption.MainMenuButtons);
+            homePage.gameModeButtons.SetActive(option == HomePageButtonsOption.GameModeButtons);
         }
 
         /* ----- Timeline ----- */

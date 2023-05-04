@@ -16,6 +16,9 @@ namespace HomeScene.UIPopup
         private static PlayableDirector playableDirector;
         private static Action onTimelineFinishCallback;
 
+        [Header("Popup")]
+        public LoadGamePopup.LoadGamePopup loadGamePopup;
+
         #endregion
 
         #region Init Stage

@@ -27,7 +27,7 @@ namespace HomeScene
             HomePage = 1,
             GalleryPage = 2,
             MusicPage = 3,
-            SentencePage =4,
+            SentencePage = 4,
             IntroPage = 5,
         }
 
@@ -38,13 +38,15 @@ namespace HomeScene
         private class HomePageValue
         {
             public bool isUserInputProcessFinished = false;
+
+            public HomePageButtonsOption activeButtons = HomePageButtonsOption.MainMenuButtons;
         }
 
         #endregion
 
         #region Declaration - Variable
 
-        [Header("MVC")]       
+        [Header("MVC")]
         public static HomeController instance;
         private GameManager.GameManager gameManager = null;
         [SerializeField] private HomeView view;
@@ -161,7 +163,7 @@ namespace HomeScene
             }
             else if (currentMode == ControllerModeOption.RunSceneMode)
             {
-                StartCoroutine( RunSceneMode(RunSceneModeFinishCallback));
+                StartCoroutine(RunSceneMode(RunSceneModeFinishCallback));
             }
             else if (currentMode == ControllerModeOption.ExitSceneMode)
             {
@@ -317,8 +319,14 @@ namespace HomeScene
         {
             view.homePageManager.SetupODEStartGameButton(fontAsset, textContent.homePage.oDEStartGameButton, HomePageODEStartGameButtonPointerClickCallback);
             view.homePageManager.SetupODEContinueGameButton(fontAsset, textContent.homePage.oDEContinueGameButton, HomePageODEContinueGameButtonPointerClickCallback);
+            view.homePageManager.SetupODEGameSettingButton(fontAsset, textContent.homePage.oDEGameSettingButton, HomePageODEGameSettingButtonPointerClickCallback);
             view.homePageManager.SetupODEQuitGameButton(fontAsset, textContent.homePage.oDEQuitGameButton, HomePageODEQuitGameButtonPointerClickCallback);
+            view.homePageManager.SetupODESoloGameButton(fontAsset, textContent.homePage.oDESoloGameButton, HomePageODESoloGameButtonPointerClickCallback);
+            view.homePageManager.SetupODEMultiplayerGameButton(fontAsset, textContent.homePage.oDEMultiplayerGameButton, HomePageODEMultiplayerGameButtonPointerClickCallback);
+            view.homePageManager.SetupODEGameModeBackButton(fontAsset, textContent.homePage.oDEGameModeBackButton, HomePageODEGameModeBackButtonPointerClickCallback);
             view.homePageManager.SetupUSEBackground();
+
+            view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
         }
 
         /* ----- Home Page: Move In Process ----- */
@@ -364,7 +372,8 @@ namespace HomeScene
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                // Comment: Later
+                homePageValue.activeButtons = HomePageButtonsOption.GameModeButtons;
+                view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
             }
         }
 
@@ -374,7 +383,17 @@ namespace HomeScene
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                // Comment: Later
+                Debug.Log("Load Game Popup");
+            }
+        }
+
+        private void HomePageODEGameSettingButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                Debug.Log("Game Setting Popup");
             }
         }
 
@@ -385,6 +404,37 @@ namespace HomeScene
             if (homePageValue.isUserInputProcessFinished != true)
             {
                 gameManager.OpenSmallPopup("QuitGamePopup", fontAsset, textContent.quitGamePopup, HomePageQuitGamePopupPrimaryButtonPointerClickCallback, HomePageQuitGamePopupSecondaryButtonPointerClickCallback, null);
+            }
+        }
+
+        private void HomePageODESoloGameButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                Debug.Log("Open Character Create Page Later");
+            }
+        }
+
+        private void HomePageODEMultiplayerGameButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                gameManager.OpenSmallPopup("ComingSoonPopup", fontAsset, textContent.comingSoonPopup, HomePageComingSoonPopupPrimaryButtonPointerClickCallback, null, null);
+            }
+        }
+
+        private void HomePageODEGameModeBackButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                homePageValue.activeButtons = HomePageButtonsOption.MainMenuButtons;
+                view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
             }
         }
 
@@ -406,6 +456,13 @@ namespace HomeScene
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             gameManager.CloseSmallPopup("QuitGamePopup", null);
+        }
+
+        private void HomePageComingSoonPopupPrimaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseSmallPopup("ComingSoonPopup", null);
         }
 
         #endregion

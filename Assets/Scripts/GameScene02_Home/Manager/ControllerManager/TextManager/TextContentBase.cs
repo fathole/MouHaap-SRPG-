@@ -20,21 +20,72 @@ namespace HomeScene
 			{
 				public string text001;
 			}
+			public struct ODEGameSettingButton
+			{
+				public string text001;
+			}
 			public struct ODEQuitGameButton
 			{
 				public string text001;
 			}
+			public struct ODESoloGameButton
+            {
+				public string text001;
+            }
+			public struct ODEMultiplayerGameButton
+            {
+				public string text001;
+			}
+			public struct ODEGameModeBackButton
+            {
+				public string text001;
+            }
 
 			public ODEStartGameButton oDEStartGameButton;
 			public ODEContinueGameButton oDEContinueGameButton;
+			public ODEGameSettingButton oDEGameSettingButton;
 			public ODEQuitGameButton oDEQuitGameButton;
+			public ODESoloGameButton oDESoloGameButton;
+			public ODEMultiplayerGameButton oDEMultiplayerGameButton;
+			public ODEGameModeBackButton oDEGameModeBackButton;
+		}
+
+		#endregion
+
+		/* ----- Scene Popup ----- */
+
+		#region Load Game Popup
+
+		public struct LoadGamePopup
+		{
+			public struct UDETitle
+			{
+				public string text001;
+			}
+
+			public struct ODESaveFileScrollViewSaveButton
+			{
+				public string saveNameText001;
+				public string gameTimeHeaderText001;
+				public string gameTimeContentText001;
+				public string saveDateHeaderText001;
+				public string saveDateContentText001;
+				public string gameVersionHeaderText001;
+				public string gameVersionContentText001;
+			}
+
+			public UDETitle uDETitle;
+			public ODESaveFileScrollViewSaveButton oDESaveFileScrollViewSaveButton;
 		}
 
 		#endregion
 
 		public HomePage homePage;
 
+		public LoadGamePopup loadGamePopup;
+
 		public GameManager.TextContentBase.SmallPopup quitGamePopup;
+		public GameManager.TextContentBase.SmallPopup comingSoonPopup;
 
 		#endregion
 	}

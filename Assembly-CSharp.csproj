@@ -67,7 +67,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\DraggableObjectBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextContentBase.cs" />
-    <Compile Include="Assets\Scripts\GameScene03_World\FixedDataClass\WorldSceneOperationValue.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\DataClass\WorldSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PageManager\HomePageManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEOutline.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\SmallPopup.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEName.cs" />
-    <Compile Include="Assets\Scripts\GameScene03_World\ThirdPersonController.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\Controller\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\CameraScreenSafeAreaBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextManager.cs" />
@@ -109,13 +109,13 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\FontManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LargePopupManager.cs" />
-    <Compile Include="Assets\Scripts\GameScene02_Home\FixedDataClass\StartSceneOperationValue.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\DataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeController.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartView.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEQuitGameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDEContent.cs" />
-    <Compile Include="Assets\MidPointCameraManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\MidPointCameraManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\SettingManager.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldController.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
@@ -123,7 +123,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LoadingPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeView.cs" />
-    <Compile Include="Assets\Scripts\GameScene01_Start\FixedDataClass\StartSceneOperationValue.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\DataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\ScreenData.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
@@ -140,6 +140,20 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEStartGameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGameSettingButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODESoloGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEMultiplayerGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGameModeBackButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\DataClass\HomePageButtonsOption.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\LoadGamePopup.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\USEBackground.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\OSECrossButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\ODESaveFileScrollView.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DataClass\SaveButtonData.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\ODESaveFileScrollViewSaveButton.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadGamePopup\ODESaveFileScrollViewSaveButtonCrossButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PopupManager\LoadGamePopupManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -930,6 +944,14 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{A8140C4D-CF42-616D-7C6E-916F68466CA2}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{2B03A3C2-8443-1E92-2874-D950188D1D29}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{8989D6EF-5280-EDDC-DAF9-B553E0676EEC}</Project>
+      <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

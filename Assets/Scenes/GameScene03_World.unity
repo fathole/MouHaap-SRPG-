@@ -220,6 +220,8 @@ MonoBehaviour:
   textManager: {fileID: 640145758}
   midPointCameraManager: {fileID: 1257305842}
   isCameraFollowPlayer: 0
+  followOffsetMin: 10
+  followOffsetMax: 40
 --- !u!1 &442368298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1042,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257305839}
-  m_LocalRotation: {x: 0.33100694, y: -0.000000016236429, z: 0.0000000056954317, w: 0.9436283}
+  m_LocalRotation: {x: 0.33100694, y: 0.000000016236429, z: -0.0000000056954317, w: 0.9436283}
   m_LocalPosition: {x: 0, y: 9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1048,7 +1050,7 @@ Transform:
   - {fileID: 1342553298}
   m_Father: {fileID: 167043567}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.66, y: -0.03, z: 0}
 --- !u!114 &1257305842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1066,7 @@ MonoBehaviour:
   movementSpeed: 8
   rotationSpeed: 0.1
   midPointTransform: {fileID: 442368299}
+  zoomTime: 10
 --- !u!1 &1322548983
 GameObject:
   m_ObjectHideFlags: 0

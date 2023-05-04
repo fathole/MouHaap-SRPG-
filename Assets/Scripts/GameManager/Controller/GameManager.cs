@@ -321,8 +321,8 @@ namespace GameManager
             // Return Next Scene
             if (nextScene == SceneOption.None)
             {
-                return SceneOption.GameScene01_Start;
-                // return SceneOption.GameScene03_World;
+                // return SceneOption.GameScene01_Start;
+                 return SceneOption.GameScene03_World;
             }
             else
             {

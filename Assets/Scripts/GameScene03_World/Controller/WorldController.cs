@@ -22,29 +22,14 @@ namespace WorldScene
             ExitSceneMode = 3,
         }
 
-        private enum PageOption
-        {
-            None = 0,
-            LogoPage = 1,
-        }
-
-        #endregion
-
-        #region Declaration - Class
-
-        private class LogoPageValue
-        {
-            public bool isUserInputProcessFinished = false;
-        }
-
         #endregion
 
         #region Declaration - Variable
 
         [Header("MVC")]
-        public static WorldController instance;
-        private GameManager.GameManager gameManager = null;
         [SerializeField] private WorldView view;
+        public static WorldController instance;
+        private GameManager.GameManager gameManager = null;        
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
@@ -58,35 +43,31 @@ namespace WorldScene
         private Camera mainCamera = null;
         private ScreenPropertiesData screenPropertiesData = null;
 
-        [Header("Page Value")]
-        private LogoPageValue logoPageValue = null;
-
-        [Header("Game Manager Callback Function")]
+        [Header("Game Manager Callback Function, Variable")]
         public Action gameManagerOnEnterSceneModeFinishedCallback = null;
         public Action gameManagerOnRunSceneModeFinishedCallback = null;
         public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
 
-        private SceneOption nextScene = SceneOption.None;
-
-        private ControllerModeOption currentMode = ControllerModeOption.None;
-        private PageOption currentPage = PageOption.None;
-        private PageOption previousPage = PageOption.None;
-
-        private bool isSceneFinished = false;
-
-        // Won't Use, Get From GameManager.cs Update Variable
-        private WorldSceneOperationValue operationValue = null;
-
-        private bool isEnableUserInput = false;// May Remove This Variable
-
-        // Camera Input
+        [Header("Camera Control Variable")]
+        // Movement
         [SerializeField] private bool isCameraFollowPlayer;
         private float horizontalInput;
         private float verticalInput;
+        // Drag        
+        [SerializeField] private float dragCameraThresholder = 200f;
         private Vector3 dragCameraPreviousPosition;
-        private float dragCameraThresholder = 200f;
         private bool isCameraDrag;
 
+        [Header("Scene Mode")]
+        // Scene Mode
+        private ControllerModeOption currentMode = ControllerModeOption.None;
+        // Enter Scene Mode
+        private WorldSceneOperationValue operationValue = null;// Won't Use, Get From GameManager.cs Update Variable
+        // Run Scene Mode
+        private bool isEnableUserInput = false;
+        // Exit Scene Mode
+        private bool isSceneFinished = false;
+        private SceneOption nextScene = SceneOption.None;
 
         #endregion
 
@@ -158,6 +139,7 @@ namespace WorldScene
         {
             textManager.SetupManager();
             midPointCameraManager.SetupManager();
+
         }
 
         #endregion
@@ -258,6 +240,8 @@ namespace WorldScene
             }
         }
 
+        #region Update  - Camera Handling
+
         private void CameraHandle()
         {
             CameraMoveHandle();
@@ -268,7 +252,7 @@ namespace WorldScene
         }
 
         private void CameraMoveHandle()
-        {
+        {            
             // If Press Axis, Set isCameraFollowPlayer To False
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
             {
@@ -335,16 +319,33 @@ namespace WorldScene
         {
             if (isCameraDrag != true)
             {
-                if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                // Type A
+                //if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                //{
+                //    midPointCameraManager.ZoomInMidPoint();
+                //}
+                //else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                //{
+                //    midPointCameraManager.ZoomOutMidPoint();
+                //}
+
+                // Type B
+                Vector3 zoomDirection = midPointCameraManager.followOffset.normalized;
+
+                if (Input.mouseScrollDelta.y > 0)
                 {
-                    midPointCameraManager.ZoomInMidPoint();
+                    midPointCameraManager.followOffset -= zoomDirection;
                 }
-                else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                if(Input.mouseScrollDelta.y < 0)
                 {
-                    midPointCameraManager.ZoomOutMidPoint();
+                    midPointCameraManager.followOffset += zoomDirection;
                 }
+
+                midPointCameraManager.ZoomCamera(zoomDirection);
             }
         }
+
+        #endregion
 
         #endregion
 

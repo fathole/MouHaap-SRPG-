@@ -26,6 +26,8 @@ namespace HomeScene.UIPopup.LoadGamePopup
         [Header("Image")]
         [SerializeField] private Image previewImageImage001;
 
+        public SaveButtonData saveButtonData;
+
         #endregion
 
         #region Init Stage
@@ -57,6 +59,9 @@ namespace HomeScene.UIPopup.LoadGamePopup
 
         public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, SaveButtonData saveButtonData, Action onPointerClickCallback, Action onCrossButtonPointerClickCallback)
         {
+            // Setup File Name
+            this.saveButtonData = saveButtonData;
+
             // Setup Font Asset
             saveNameText001.font = fontAsset;
             gameTimeHeaderText001.font = fontAsset;
@@ -68,8 +73,9 @@ namespace HomeScene.UIPopup.LoadGamePopup
 
             // Update Text Content
             textContent.saveNameText001 = textContent.saveNameText001.Replace("{0}", saveButtonData.saveFileName);
-            textContent.gameTimeContentText001 = textContent.gameTimeContentText001.Replace("{0}", saveButtonData.playTime.ToString());
-            textContent.saveDateContentText001 = textContent.saveDateContentText001.Replace("{0}", saveButtonData.saveDate.ToString());
+            // ToDo: UIpdate To Time Later, Now Show Second
+            textContent.gameTimeContentText001 = textContent.gameTimeContentText001.Replace("{0}", saveButtonData.playTime.ToString() + "s");
+            textContent.saveDateContentText001 = textContent.saveDateContentText001.Replace("{0}", saveButtonData.saveDate.ToString("dd/MM/yyyy"));
             textContent.gameVersionContentText001 = textContent.gameVersionContentText001.Replace("{0}", saveButtonData.saveVersion);
 
             // Setup Text Content

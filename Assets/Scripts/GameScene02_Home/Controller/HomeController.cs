@@ -324,6 +324,10 @@ namespace HomeScene
             view.homePageManager.SetupODESoloGameButton(fontAsset, textContent.homePage.oDESoloGameButton, HomePageODESoloGameButtonPointerClickCallback);
             view.homePageManager.SetupODEMultiplayerGameButton(fontAsset, textContent.homePage.oDEMultiplayerGameButton, HomePageODEMultiplayerGameButtonPointerClickCallback);
             view.homePageManager.SetupODEGameModeBackButton(fontAsset, textContent.homePage.oDEGameModeBackButton, HomePageODEGameModeBackButtonPointerClickCallback);
+            view.homePageManager.SetupODENormalModeButton(fontAsset, textContent.homePage.oDENormalModeButton, HomePageODENormalModeButtonPointerClickCallback);
+            view.homePageManager.SetupODEHardModeButton(fontAsset, textContent.homePage.oDEHardModeButton, HomePageODEHardModeButtonPointerClickCallback);
+            view.homePageManager.SetupODELegendModeButton(fontAsset, textContent.homePage.oDELegendModeButton, HomePageODELegendModeButtonPointerClickCallback);
+            view.homePageManager.SetupODEDifficultyModeBackButton(fontAsset, textContent.homePage.oDEDifficultyModeBackButton, HomePageODEDifficultyModeBackButtonPointerClickCallback);
             view.homePageManager.SetupUSEBackground();
 
             view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
@@ -383,7 +387,7 @@ namespace HomeScene
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                Debug.Log("Load Game Popup");
+                HomePageMoveInLoadGamePopup();
             }
         }
 
@@ -413,7 +417,8 @@ namespace HomeScene
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                Debug.Log("Open Character Create Page Later");
+                homePageValue.activeButtons = HomePageButtonsOption.DifficultyModeButtons;
+                view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
             }
         }
 
@@ -434,6 +439,47 @@ namespace HomeScene
             if (homePageValue.isUserInputProcessFinished != true)
             {
                 homePageValue.activeButtons = HomePageButtonsOption.MainMenuButtons;
+                view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
+            }
+        }
+
+        private void HomePageODENormalModeButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                gameManager.OpenLargePopup("NormalModePopup", fontAsset, textContent.normalModePopup, HomePageNormalModePopupPrimaryButtonPointerClickCallback, HomePageNormalModePopupSecondaryButtonPointerClickCallback, null);
+            }
+        }
+
+        private void HomePageODEHardModeButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                gameManager.OpenLargePopup("HardModePopup", fontAsset, textContent.hardModePopup, HomePageHardModePopupPrimaryButtonPointerClickCallback, HomePageHardModePopupSecondaryButtonPointerClickCallback, null);
+            }
+        }
+
+        private void HomePageODELegendModeButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                gameManager.OpenLargePopup("LegendModePopup", fontAsset, textContent.legendModePopup, HomePageLegendModePopupPrimaryButtonPointerClickCallback, HomePageLegendModePopupSecondaryButtonPointerClickCallback, null);
+            }
+        }
+
+        private void HomePageODEDifficultyModeBackButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            if (homePageValue.isUserInputProcessFinished != true)
+            {
+                homePageValue.activeButtons = HomePageButtonsOption.GameModeButtons;
                 view.homePageManager.SetActiveButtons(homePageValue.activeButtons);
             }
         }
@@ -463,6 +509,107 @@ namespace HomeScene
             Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
 
             gameManager.CloseSmallPopup("ComingSoonPopup", null);
+        }
+
+        private void HomePageNormalModePopupPrimaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseLargePopup("NormalModePopup", null);
+        }
+
+        private void HomePageNormalModePopupSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+            
+            gameManager.CloseLargePopup("NormalModePopup", null);
+        }
+
+        private void HomePageHardModePopupPrimaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+            
+            gameManager.CloseLargePopup("HardModePopup", null);
+        }
+
+        private void HomePageHardModePopupSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseLargePopup("HardModePopup", null);
+        }
+
+        private void HomePageLegendModePopupPrimaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+          
+            gameManager.CloseLargePopup("LegendModePopup", null);
+        }
+
+        private void HomePageLegendModePopupSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+            
+            gameManager.CloseLargePopup("LegendModePopup", null);
+        }
+
+        private void HomePageLoadGamePopupCrossButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+            
+            // Move In Popup
+            view.loadGamePopupManager.PlayLoadGamePopupMoveOutTimeline(null);
+        }
+
+        private void HomePageLoadGamePopupSaveButtonPointerClickCallback(string fileName)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // ToDo: Load Game
+        }
+
+        private void HomePageLoadGamePopupSaveButtonCrossButtonPointerClickCallback(string fileName)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.OpenMiddlePopup("DeleteSavePopup", fontAsset, textContent.deleteSavePopup, ()=> { HomePageDeleteSavePopupPrimaryButtonPointerClickCallback(fileName); }, HomePageDeleteSavePopupSecondaryButtonPointerClickCallback, null);
+        }
+
+        private void HomePageDeleteSavePopupPrimaryButtonPointerClickCallback(string fileName)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseMiddlePopup("DeleteSavePopup", null);
+
+            // Delete File
+            gameManager.DeleteLocalFile(fileName, ".SaveFile");
+
+            // Update Scrol View
+            view.loadGamePopupManager.DeleteSaveButton(fileName);         
+        }
+
+        private void HomePageDeleteSavePopupSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            gameManager.CloseMiddlePopup("DeleteSavePopup", null);
+        }
+
+        /* ----- Home Page: User Input Process (Support Function)----- */
+
+        private void HomePageMoveInLoadGamePopup()
+        {
+            // Init Element
+            view.loadGamePopupManager.InitElements();
+
+            // Setup Element
+            view.loadGamePopupManager.SetupUDETitle(fontAsset, textContent.loadGamePopup.uDETitle);
+            view.loadGamePopupManager.SetupUSEBackground();
+            view.loadGamePopupManager.SetupODESaveFileScrollView(fontAsset, textContent.loadGamePopup.oDESaveFileScrollViewSaveButton, gameManager.GetSaveFileData(), HomePageLoadGamePopupSaveButtonPointerClickCallback, HomePageLoadGamePopupSaveButtonCrossButtonPointerClickCallback);
+            view.loadGamePopupManager.SetupOSECrossButton(HomePageLoadGamePopupCrossButtonPointerClickCallback);
+
+            // Move In Popup
+            view.loadGamePopupManager.PlayLoadGamePopupMoveInTimeline(null);
         }
 
         #endregion

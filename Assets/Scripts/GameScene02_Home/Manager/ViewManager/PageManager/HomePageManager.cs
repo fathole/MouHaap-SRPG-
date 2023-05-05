@@ -55,6 +55,10 @@ namespace HomeScene
             homePage.oDESoloGameButton.InitElement();
             homePage.oDEMultiplayerGameButton.InitElement();
             homePage.oDEGameModeBackButton.InitElement();
+            homePage.oDENormalModeButton.InitElement();
+            homePage.oDEHardModeButton.InitElement();
+            homePage.oDELegendModeButton.InitElement();
+            homePage.oDEDifficultyModeBackButton.InitElement();
             homePage.uSEBackground.InitElement();
         }
 
@@ -100,12 +104,33 @@ namespace HomeScene
             homePage.oDEGameModeBackButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
         }
 
+        public void SetupODENormalModeButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODENormalModeButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDENormalModeButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEHardModeButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEHardModeButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEHardModeButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODELegendModeButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODELegendModeButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDELegendModeButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
+        public void SetupODEDifficultyModeBackButton(TMP_FontAsset fontAsset, TextContentBase.HomePage.ODEDifficultyModeBackButton textContent, Action onPointerClickCallback)
+        {
+            homePage.oDEDifficultyModeBackButton.SetupElement(fontAsset, textContent, onPointerClickCallback);
+        }
+
         /* ----- Function ----- */
 
         public void SetActiveButtons(HomePageButtonsOption option)
         {
             homePage.mainMenuButtons.SetActive(option == HomePageButtonsOption.MainMenuButtons);
             homePage.gameModeButtons.SetActive(option == HomePageButtonsOption.GameModeButtons);
+            homePage.difficultyModeButtons.SetActive(option == HomePageButtonsOption.DifficultyModeButtons);
         }
 
         /* ----- Timeline ----- */

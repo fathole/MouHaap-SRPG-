@@ -203,13 +203,13 @@ namespace GameManager
         private IEnumerator ReadyGameManager()
         {
             // Load Game Setting
-            gameSettingData = localDataManager.LoadLocalData<GameSettingData>();
+            gameSettingData = localDataManager.LoadLocalData<GameSettingData>("GameSettingData", ".json");
 
             // If Game Setting File Not Exist, Load Default
             if (gameSettingData == null)
             {
                 gameSettingData = GameSettingData.DefaultSettingData();
-                localDataManager.SaveLocalData(gameSettingData);
+                localDataManager.SaveLocalData(gameSettingData, "GameSettingData", ".json");
             }
 
             // ToDo: Adjust Camera
@@ -258,6 +258,12 @@ namespace GameManager
             canvasSetupData.targetScreen = view.targetScreen;
 
             return canvasSetupData;
+        }
+
+        // ToDo: Get Actual Save Data And Not Tje SaveButtonData
+        public List<SaveButtonData> GetSaveFileData()
+        {
+           return  localDataManager.LoadLocalDataList<SaveButtonData>(".SaveFile");
         }
 
         #endregion
@@ -735,6 +741,28 @@ namespace GameManager
             view.smallPopupManager.ClosePopup(popupName, onAnimationFinishCallback);
         }
 
+        /* ----- Save Load Function ----- */
+
+        public void DeleteLocalFile(string fileName, string fileExtension)
+        {
+            localDataManager.DeleteLocalFile(fileName, fileExtension);
+        }
+
         #endregion
+
+        /// <summary>
+        /// Delete Later, Now Hardcode
+        /// </summary>
+
+        private void Update()
+        {
+            // HardCode Create Save File
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                PlayerPrefs.SetInt("SaveID", PlayerPrefs.GetInt("SaveID") + 1);
+                SaveButtonData fakeSaveFile = new SaveButtonData { fileName = "SaveFile_" + PlayerPrefs.GetInt("SaveID"), playTime = UnityEngine.Random.Range(1000, 5000), saveDate = DateTime.Now, saveFileName = "¶s¿…" + PlayerPrefs.GetInt("SaveID"), saveVersion = "1.0.0" };
+                localDataManager.SaveLocalData(fakeSaveFile, "SaveFile_" + PlayerPrefs.GetInt("SaveID"), ".SaveFile");
+            }
+        }
     }
 }

@@ -34,19 +34,35 @@ namespace HomeScene.UIPopup.LoadGamePopup
 
         #region Setup Stage
 
-        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<int> onSaveButtonPointerClickCallback, Action<int> onSaveButtonCrossButtonPointerClickCallback)
+        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
         {
-            foreach(SaveButtonData data in saveButtonDataList)
+            if (saveButtonDataList!=null && saveButtonDataList.Count > 0)
             {
-                ODESaveFileScrollViewSaveButton saveButton = Instantiate(saveButtonPrefab, saveButtonParent);
-                saveButton.InitElement();
-                saveButton.SetupElement(fontAsset, textContent, data, () => { onSaveButtonPointerClickCallback(data.iD); }, () => { onSaveButtonCrossButtonPointerClickCallback(data.iD); });
+                foreach (SaveButtonData data in saveButtonDataList)
+                {
+                    ODESaveFileScrollViewSaveButton saveButton = Instantiate(saveButtonPrefab, saveButtonParent);
+                    saveButton.InitElement();
+                    saveButton.SetupElement(fontAsset, textContent, data, () => { onSaveButtonPointerClickCallback(data.fileName); }, () => { onSaveButtonCrossButtonPointerClickCallback(data.fileName); });
+                }
+
+                GetComponent<ScrollRect>().normalizedPosition = new Vector2(0,1);
             }
         }
 
         #endregion
 
         #region Main Fuinction
+
+        public void DeleteSaveButton(string fileName)
+        {
+            foreach(Transform child in saveButtonParent)
+            {
+                if(child.GetComponent<ODESaveFileScrollViewSaveButton>().saveButtonData.fileName == fileName)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+        }
 
         // Comment: No Main Function
 

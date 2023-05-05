@@ -5,5 +5,6 @@ namespace HomeScene
         None = 0,
         MainMenuButtons = 1,
         GameModeButtons = 2,
+        DifficultyModeButtons = 3,
     }
 }

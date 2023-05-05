@@ -40,6 +40,22 @@ namespace HomeScene
             {
 				public string text001;
             }
+			public struct ODENormalModeButton
+            {
+				public string text001;
+            }
+			public struct ODEHardModeButton
+			{
+				public string text001;
+			}
+			public struct ODELegendModeButton
+			{
+				public string text001;
+			}
+			public struct ODEDifficultyModeBackButton
+            {
+				public string text001;
+            }
 
 			public ODEStartGameButton oDEStartGameButton;
 			public ODEContinueGameButton oDEContinueGameButton;
@@ -48,6 +64,10 @@ namespace HomeScene
 			public ODESoloGameButton oDESoloGameButton;
 			public ODEMultiplayerGameButton oDEMultiplayerGameButton;
 			public ODEGameModeBackButton oDEGameModeBackButton;
+			public ODENormalModeButton oDENormalModeButton;
+			public ODEHardModeButton oDEHardModeButton;
+			public ODELegendModeButton oDELegendModeButton;
+			public ODEDifficultyModeBackButton oDEDifficultyModeBackButton;
 		}
 
 		#endregion
@@ -83,6 +103,12 @@ namespace HomeScene
 		public HomePage homePage;
 
 		public LoadGamePopup loadGamePopup;
+
+		public GameManager.TextContentBase.LargePopup normalModePopup;
+		public GameManager.TextContentBase.LargePopup hardModePopup;
+		public GameManager.TextContentBase.LargePopup legendModePopup;
+
+		public GameManager.TextContentBase.MiddlePopup deleteSavePopup;
 
 		public GameManager.TextContentBase.SmallPopup quitGamePopup;
 		public GameManager.TextContentBase.SmallPopup comingSoonPopup;

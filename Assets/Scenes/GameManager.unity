@@ -160,6 +160,7 @@ MonoBehaviour:
   fontManager: {fileID: 1953730683}
   audioManager: {fileID: 1275999240}
   localDataManager: {fileID: 1664468305}
+  saveButtonDatas: []
 --- !u!4 &9889280
 Transform:
   m_ObjectHideFlags: 0
@@ -683,7 +684,7 @@ PlayableDirector:
   m_GameObject: {fileID: 371650772}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 2ce051248cad8b04abe2ef45d8117711, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: b12bf5a44910fe349893abcd24d68989, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1

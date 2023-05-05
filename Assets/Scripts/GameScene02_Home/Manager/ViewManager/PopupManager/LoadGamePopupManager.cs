@@ -66,7 +66,7 @@ namespace HomeScene
             loadGamePopup.uSEBackground.SetupElement();
         }
 
-        public void SetupODESaveFileScrollView(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<int> onSaveButtonPointerClickCallback, Action<int> onSaveButtonCrossButtonPointerClickCallback)
+        public void SetupODESaveFileScrollView(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
         {
             loadGamePopup.oDESaveFileScrollView.SetupElement(fontAsset, textContent, saveButtonDataList, onSaveButtonPointerClickCallback, onSaveButtonCrossButtonPointerClickCallback);
         }
@@ -74,6 +74,13 @@ namespace HomeScene
         public void SetupOSECrossButton(Action onPointerClickCallback)
         {
             loadGamePopup.oSECrossButton.SetupElement(onPointerClickCallback);
+        }
+
+        /* ----- Function ----- */
+
+        public void DeleteSaveButton(string fileName)
+        {
+            loadGamePopup.oDESaveFileScrollView.DeleteSaveButton(fileName);
         }
 
         /* ----- Timeline ----- */

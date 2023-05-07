@@ -209,14 +209,14 @@ namespace GameManager
             if (gameSettingData == null)
             {
                 gameSettingData = GameSettingData.DefaultSettingData();
-                localDataManager.SaveLocalData(gameSettingData, "GameSettingData", ".json");
+                SaveGameSettingData();
             }
 
             // ToDo: Adjust Camera
             mainCamera = cameraManager.AdjustCameraSetting(view.cameraScreen, view.targetScreen, view.deviceScreen);
 
             // Setup Volume
-            SetupGameVolume(gameSettingData.bGMVolume, gameSettingData.sFXVolume, gameSettingData.voiceOverVolume);
+            SetupGameVolume( gameSettingData.isEnableMusic, gameSettingData.isEnableSFX, gameSettingData.isEnableVoiceOver, gameSettingData.musicVolume, gameSettingData.sFXVolume, gameSettingData.voiceOverVolume);
 
             // Setup TextContent
             textContent = textManager.GetTextContent(gameSettingData.displayLanguageOption);
@@ -243,11 +243,11 @@ namespace GameManager
             Main();
         }
 
-        private void SetupGameVolume(float bGMVolume, float sFXVolume, float voiceOverVolume)
+        private void SetupGameVolume(bool isEnableMusic, bool isEnableSFX, bool isEnableVoiceOver, float musicVolume, float sFXVolume, float voiceOverVolume)
         {
-            audioManager.SetBGMVolume(bGMVolume);
-            audioManager.SetSFXVolume(sFXVolume);
-            audioManager.SetVoiceOverVolume(voiceOverVolume);
+            audioManager.SetMusicVolume(isEnableMusic, musicVolume);
+            audioManager.SetSFXVolume(isEnableSFX, sFXVolume);
+            audioManager.SetVoiceOverVolume(isEnableVoiceOver, voiceOverVolume);
         }
 
         private ScreenPropertiesData GetScreenPropertiesData()
@@ -682,7 +682,14 @@ namespace GameManager
 
         #endregion
 
-        #region Scene Support Function
+        #region Support Function
+
+        /* ----- Game Setting Function ----- */
+
+        private void SaveGameSettingData()
+        {
+            localDataManager.SaveLocalData(gameSettingData, "GameSettingData", ".json");
+        }
 
         /* ----- Setting Function ----- */
 
@@ -692,6 +699,175 @@ namespace GameManager
         }
 
         /* ----- Popup Function ----- */
+
+        public void OpenGameSettingPopup()
+        {
+            // Init Element
+            view.gameSettingPopupManager.InitElements();
+
+            // Setup Element
+            view.gameSettingPopupManager.SetupUDETitle(fontAsset, textContent.gameSettingPopup.uDETitle);
+            view.gameSettingPopupManager.SetupUSEBackground();
+            view.gameSettingPopupManager.SetupOSECrossButton(GameSettingPopupOSECrossButtonPointerClickCallback);
+            view.gameSettingPopupManager.SetupODEBasicSettingHeader(fontAsset, textContent.gameSettingPopup.oDEBasicSettingHeader, GameSettingPopupODEBasicSettingHeaderRestoreButtonPointerClickCallback);
+            view.gameSettingPopupManager.SetupODEIsFullScreen(fontAsset, textContent.gameSettingPopup.oDEIsFullScreen, gameSettingData.isFullScreen, GameSettingPopupODEIsFullScreenToggleButtonPointerClickCallback);
+            view.gameSettingPopupManager.SetupODEMusicVolume(fontAsset, textContent.gameSettingPopup.oDEMusicVolume, gameSettingData.isEnableMusic, gameSettingData.musicVolume, GameSettingPopupODEMusicVolumeToggleButtonPointerClickCallback, GameSettingPopupODEMusicVolumeVolumeSliderValueChangeCallback);
+            view.gameSettingPopupManager.SetupODESFXVolume(fontAsset, textContent.gameSettingPopup.oDESFXVolume, gameSettingData.isEnableSFX, gameSettingData.sFXVolume, GameSettingPopupODESFXVolumeToggleButtonPointerClickCallback, GameSettingPopupODESFXVolumeVolumeSliderValueChangeCallback);
+            view.gameSettingPopupManager.SetupODEWindowSize(fontAsset, textContent.gameSettingPopup.oDEWindowSize, textContent.indexToWindowSizeDictionary, gameSettingData.windowSizeIndex, GameSettingPopupODEWindowSizeWindowSizeDropdownValueChangeCallback);
+
+            // Move In Popup
+            view.gameSettingPopupManager.PlayGameSettingPopupMoveInTimeline(null);
+        }
+
+        private void CloseSettingPopup()
+        {
+            view.gameSettingPopupManager.PlayGameSettingPopupMoveOutTimeline(null);
+        }
+
+        #region Game Setting Popup Function
+
+        private void GameSettingPopupOSECrossButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            CloseSettingPopup();
+        }
+
+        private void GameSettingPopupODEBasicSettingHeaderRestoreButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+
+            OpenMiddlePopup("RestoreSettingPopup", fontAsset, textContent.restoreSettingPopup, GameSettingPopupConfirmRestoreSettingPrimaryButtonPointerClickCallback, GameSettingPopupConfirmRestoreSettingSecondaryButtonPointerClickCallback, null);
+        }
+
+        private void GameSettingPopupODEIsFullScreenToggleButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // Update Game Setting Data
+            gameSettingData.isFullScreen = !gameSettingData.isFullScreen;
+            SaveGameSettingData();
+
+            // Update Element
+            view.gameSettingPopupManager.SetFullScreenToggle(gameSettingData.isFullScreen);
+
+            Screen.fullScreen = gameSettingData.isFullScreen;
+        }
+
+        private void GameSettingPopupODEMusicVolumeToggleButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // Update Game Setting Data
+            gameSettingData.isEnableMusic = !gameSettingData.isEnableMusic;
+            SaveGameSettingData();
+
+            // Update Element
+            view.gameSettingPopupManager.SetMusicVolumeToggle(gameSettingData.isEnableMusic);
+
+            audioManager.SetMusicVolume(gameSettingData.isEnableMusic, gameSettingData.musicVolume);
+        }
+
+        private void GameSettingPopupODEMusicVolumeVolumeSliderValueChangeCallback(float volume)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // Update Game Setting Data
+            gameSettingData.isEnableMusic = true;
+            gameSettingData.musicVolume = volume / 10;
+            SaveGameSettingData();
+
+            // Update Element
+            view.gameSettingPopupManager.SetMusicVolumeSlider(textContent.gameSettingPopup.oDEMusicVolume, gameSettingData.musicVolume);
+
+            audioManager.SetMusicVolume(gameSettingData.isEnableMusic, gameSettingData.musicVolume);
+        }
+
+        private void GameSettingPopupODESFXVolumeToggleButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // Update Game Setting Data
+            gameSettingData.isEnableSFX = !gameSettingData.isEnableSFX;
+            SaveGameSettingData();
+
+            // Update Element
+            view.gameSettingPopupManager.SetSFXVolumeToggle(gameSettingData.isEnableSFX);
+
+            audioManager.SetSFXVolume(gameSettingData.isEnableSFX, gameSettingData.sFXVolume);
+        }
+
+        private void GameSettingPopupODESFXVolumeVolumeSliderValueChangeCallback(float volume)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            // Update Game Setting Data
+            gameSettingData.isEnableSFX = true;
+            gameSettingData.sFXVolume = volume / 10;
+            SaveGameSettingData();
+
+            // Update Element
+            view.gameSettingPopupManager.SetSFXVolumeSlider(textContent.gameSettingPopup.oDESFXVolume, gameSettingData.sFXVolume);
+
+            audioManager.SetMusicVolume(gameSettingData.isEnableMusic, gameSettingData.sFXVolume);
+        }
+
+        private void GameSettingPopupODEWindowSizeWindowSizeDropdownValueChangeCallback(int index)
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            switch (index)
+            {
+                case 0:
+                    Screen.SetResolution(2560, 1440, gameSettingData.isFullScreen);
+                    break;
+                case 1:
+                    Screen.SetResolution(1920, 1080, gameSettingData.isFullScreen);
+                    break;
+                case 2:
+                    Screen.SetResolution(1600, 900, gameSettingData.isFullScreen);
+                    break;
+                case 3:
+                    Screen.SetResolution(1360, 768, gameSettingData.isFullScreen);
+                    break;
+                case 4:
+                    Screen.SetResolution(1280, 720, gameSettingData.isFullScreen);
+                    break;
+            }
+        }
+
+        private void GameSettingPopupConfirmRestoreSettingPrimaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            CloseMiddlePopup("RestoreSettingPopup", () =>
+            {
+                // Reset Game Setting Data
+                gameSettingData = GameSettingData.DefaultSettingData();
+                SaveGameSettingData();
+
+                // Reset Element                
+                view.gameSettingPopupManager.SetupODEIsFullScreen(fontAsset, textContent.gameSettingPopup.oDEIsFullScreen, gameSettingData.isFullScreen, GameSettingPopupODEIsFullScreenToggleButtonPointerClickCallback);
+                view.gameSettingPopupManager.SetupODEMusicVolume(fontAsset, textContent.gameSettingPopup.oDEMusicVolume, gameSettingData.isEnableMusic, gameSettingData.musicVolume, GameSettingPopupODEMusicVolumeToggleButtonPointerClickCallback, GameSettingPopupODEMusicVolumeVolumeSliderValueChangeCallback);
+                view.gameSettingPopupManager.SetupODESFXVolume(fontAsset, textContent.gameSettingPopup.oDESFXVolume, gameSettingData.isEnableSFX, gameSettingData.sFXVolume, GameSettingPopupODESFXVolumeToggleButtonPointerClickCallback, GameSettingPopupODESFXVolumeVolumeSliderValueChangeCallback);
+                view.gameSettingPopupManager.SetupODEWindowSize(fontAsset, textContent.gameSettingPopup.oDEWindowSize, textContent.indexToWindowSizeDictionary, gameSettingData.windowSizeIndex, GameSettingPopupODEWindowSizeWindowSizeDropdownValueChangeCallback);
+
+                // Reset Setting
+                Screen.SetResolution(2560, 1440, gameSettingData.isFullScreen);
+                view.gameSettingPopupManager.SetSFXVolumeSlider(textContent.gameSettingPopup.oDESFXVolume, gameSettingData.sFXVolume);
+                view.gameSettingPopupManager.SetMusicVolumeSlider(textContent.gameSettingPopup.oDEMusicVolume, gameSettingData.musicVolume);
+            });
+        }
+
+        private void GameSettingPopupConfirmRestoreSettingSecondaryButtonPointerClickCallback()
+        {
+            Debug.Log("--- " + this.GetType().Name + ": " + System.Reflection.MethodBase.GetCurrentMethod().Name + " ---");
+
+            CloseMiddlePopup("RestoreSettingPopup", null);
+        }
+
+        #endregion
 
         public void OpenLoadingPopup(Action onAnimationFinishCallback)
         {

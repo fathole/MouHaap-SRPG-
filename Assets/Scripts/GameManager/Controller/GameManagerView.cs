@@ -19,6 +19,7 @@ namespace GameManager
         public UIPopupManager uIPopupManager;
 
         [Header("Popup Manager")]
+        public GameSettingPopupManager gameSettingPopupManager;
         public LoadingPopupManager loadingPopupManager;
         public LargePopupManager largePopupManager;
         public MiddlePopupManager middlePopupManager;
@@ -55,6 +56,7 @@ namespace GameManager
 
         private void InitPopupManager()
         {
+            gameSettingPopupManager.InitManager();
             loadingPopupManager.InitManager();
             largePopupManager.InitManager();
             middlePopupManager.InitManager();
@@ -99,6 +101,7 @@ namespace GameManager
 
         private void SetupPopupManager()
         {
+            gameSettingPopupManager.SetupManager(uIPopupManager.gameSettingPopup);
             loadingPopupManager.SetupManager(uIPopupManager.loadingPopup);
             largePopupManager.SetupManager(uIPopupManager.largePopupPrefab);
             middlePopupManager.SetupManager(uIPopupManager.middlePopupPrefab);

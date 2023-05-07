@@ -112,7 +112,53 @@ namespace GameManager
 
         #endregion
 
-		public LoadingPopup loadingPopup;
+        #region Game Setting Popup
+
+		public struct GameSettingPopup
+        {
+			public struct UDETitle
+            {
+				public string text001;
+            }
+			public struct ODEBasicSettingHeader
+            {
+				public string text001;
+            }
+			public struct ODEWindowSize
+            {
+				public string headerText001;
+            }
+			public struct ODEIsFullScreen
+            {
+				public string headerText001;
+            }
+			public struct ODEMusicVolume
+            {
+				public string headerText001;
+				public string sliderFillAreaFillText001;
+            }
+			public struct ODESFXVolume
+			{
+				public string headerText001;
+				public string sliderFillAreaFillText001;
+			}
+
+			public UDETitle uDETitle;
+			public ODEBasicSettingHeader oDEBasicSettingHeader;
+			public ODEWindowSize oDEWindowSize;
+			public ODEIsFullScreen oDEIsFullScreen;
+			public ODEMusicVolume oDEMusicVolume;
+			public ODESFXVolume oDESFXVolume;
+		}
+
+        #endregion
+
+        public LoadingPopup loadingPopup;
+		public GameSettingPopup gameSettingPopup;
+
+		public TextContentBase.MiddlePopup restoreSettingPopup;
+
+		public Dictionary<int, string> indexToWindowSizeDictionary;
 
 		#endregion
 	}

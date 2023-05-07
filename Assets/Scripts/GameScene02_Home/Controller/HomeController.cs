@@ -397,7 +397,7 @@ namespace HomeScene
 
             if (homePageValue.isUserInputProcessFinished != true)
             {
-                Debug.Log("Game Setting Popup");
+                gameManager.OpenGameSettingPopup();
             }
         }
 

@@ -17,6 +17,7 @@ namespace GameManager.UIPopup
         private static Action onTimelineFinishCallback;
 
         [Header("Popup")]
+        public GameSettingPopup.GameSettingPopup gameSettingPopup;
         public LoadingPopup.LoadingPopup loadingPopup;
 
         [Header("Popup Prefab")]

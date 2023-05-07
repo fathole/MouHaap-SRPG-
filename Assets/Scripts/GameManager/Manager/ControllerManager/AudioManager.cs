@@ -37,19 +37,40 @@ namespace GameManager
 
         #region Main Function
 
-        public void SetBGMVolume(float volume)
+        public void SetMusicVolume(bool isEnable, float volume)
         {
-            audioMixer.SetFloat("BGMVolume", Mathf.Log10(volume) * 20);
+            if(isEnable == true)
+            {
+                audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+            }
+            else
+            {
+                audioMixer.SetFloat("MusicVolume", Mathf.Log10(0.001f) * 20);
+            }
         }
 
-        public void SetSFXVolume(float volume)
+        public void SetSFXVolume(bool isEnable, float volume)
         {
-            audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+            if (isEnable == true)
+            {
+                audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+            }
+            else
+            {
+                audioMixer.SetFloat("SFXVolume", Mathf.Log10(0.001f) * 20);
+            }
         }
 
-        public void SetVoiceOverVolume(float volume)
+        public void SetVoiceOverVolume(bool isEnable, float volume)
         {
-            audioMixer.SetFloat("VoiceOverVolume", Mathf.Log10(volume) * 20);
+            if (isEnable == true)
+            {
+                audioMixer.SetFloat("VoiceOverVolume", Mathf.Log10(volume) * 20);
+            }
+            else
+            {
+                audioMixer.SetFloat("VoiceOverVolume", Mathf.Log10(0.001f) * 20);
+            }
         }
 
         #endregion

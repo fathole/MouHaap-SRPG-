@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\ODESaveFileScrollViewSaveButtonCrossButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PageManager\HomePageManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameManager\BaseClass\ItemBase.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEOutline.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\SmallPopup.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\LoadGamePopup.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldView.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller\GameManagerView.cs" />
+    <Compile Include="Assets\Scripts\GameManager\BaseClass\CharacterBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEIsFullScreen.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODESFXVolume.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEQuitGameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\UDEContent.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\GameSettingPopupManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ControllerManager\MidPointCameraManager.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\MidPointCameraManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\SettingManager.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\WorldController.cs" />
@@ -179,8 +182,6 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
-    <Compile Include="Assets\Scripts\GameManager\BaseClass\CharacterBase.cs" />
-    <Compile Include="Assets\Scripts\GameManager\BaseClass\ItemBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

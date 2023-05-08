@@ -33,6 +33,7 @@ namespace ChessScene
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
+        [SerializeField] private MidPointCameraManager midPointCameraManager;
 
         [Header("Font and Text")]
         private TMP_FontAsset fontAsset = null;
@@ -46,6 +47,15 @@ namespace ChessScene
         public Action gameManagerOnEnterSceneModeFinishedCallback = null;
         public Action gameManagerOnRunSceneModeFinishedCallback = null;
         public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
+
+        [Header("Camera Control Variable")]
+        // Movement
+        private float horizontalInput;
+        private float verticalInput;
+        // Drag        
+        [SerializeField] private float dragCameraThresholder = 200f;
+        private Vector3 dragCameraPreviousPosition;
+        private bool isCameraDrag;
 
         [Header("Scene Mode")]
         // Scene Mode
@@ -88,6 +98,7 @@ namespace ChessScene
         private void InitControllerManager()
         {
             textManager.InitManager();
+            midPointCameraManager.InitManager();
         }
 
         #endregion
@@ -126,6 +137,7 @@ namespace ChessScene
         private void SetupControllerManager()
         {
             textManager.SetupManager();
+            midPointCameraManager.SetupManager();
         }
 
         #endregion
@@ -214,6 +226,109 @@ namespace ChessScene
         private void ExitSceneModeFinishCallback()
         {
             gameManagerOnExitSceneModeFinishedCallback?.Invoke(nextScene);
+        }
+
+        #endregion
+
+        private void Update()
+        {
+            if (isEnableUserInput)
+            {
+                CameraHandle();
+            }
+        }
+
+        #region Update  - Camera Handling
+
+        private void CameraHandle()
+        {
+            CameraMoveHandle();
+
+            CameraRotateHandle();
+
+            CameraZoomHandle();
+        }
+
+        private void CameraMoveHandle()
+        {
+            // If Axis Clicked, Move The Camera
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // Update Input Axis
+                verticalInput = Input.GetAxis("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
+        }
+
+        private void CameraRotateHandle()
+        {
+            // Get Previous Position Of Drag
+            if (Input.GetMouseButtonDown(2))
+            {
+                dragCameraPreviousPosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
+            }
+
+            if (Input.GetMouseButton(2))
+            {
+                if (isCameraDrag != true)
+                {
+                    float differenceX = (Input.mousePosition - dragCameraPreviousPosition).x;
+
+                    if (Math.Abs(differenceX) > dragCameraThresholder)
+                    {
+                        isCameraDrag = true;
+                        dragCameraPreviousPosition = Input.mousePosition;
+                    }
+                }
+                else
+                {
+                    Vector3 currentPosition = Input.mousePosition;
+
+                    float differenceXPosition = (dragCameraPreviousPosition - currentPosition).x;
+
+                    midPointCameraManager.RotateMidPoint(differenceXPosition);
+
+                    dragCameraPreviousPosition = currentPosition;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(2))
+            {
+                isCameraDrag = false;
+            }
+
+        }
+
+        private void CameraZoomHandle()
+        {
+            if (isCameraDrag != true)
+            {
+                // Type A
+                //if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                //{
+                //    midPointCameraManager.ZoomInMidPoint();
+                //}
+                //else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                //{
+                //    midPointCameraManager.ZoomOutMidPoint();
+                //}
+
+                // Type B
+                Vector3 zoomDirection = midPointCameraManager.followOffset.normalized;
+
+                if (Input.mouseScrollDelta.y > 0)
+                {
+                    midPointCameraManager.followOffset -= zoomDirection;
+                }
+                if (Input.mouseScrollDelta.y < 0)
+                {
+                    midPointCameraManager.followOffset += zoomDirection;
+                }
+
+                midPointCameraManager.ZoomCamera(zoomDirection);
+            }
         }
 
         #endregion

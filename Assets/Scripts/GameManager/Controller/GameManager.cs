@@ -55,6 +55,15 @@ namespace GameManager
             public bool isExitSceneModeFinished = false;
         }
 
+        private class ChessSceneValue
+        {
+            public ChessScene.ChessController controller = null;
+
+            public bool isEnterSceneModeFinished = false;
+            public bool isSceneModeFinished = false;
+            public bool isExitSceneModeFinished = false;
+        }
+
         #endregion
 
         #region Declaration - Variable
@@ -84,6 +93,7 @@ namespace GameManager
         private StartSceneValue startSceneValue;
         private HomeSceneValue homeSceneValue;
         private WorldSceneValue worldSceneValue;
+        private ChessSceneValue chessSceneValue;
 
         private GameManagerModeOption gameManagerModeOption = GameManagerModeOption.None;
         private SceneOption currentScene = SceneOption.None;
@@ -285,6 +295,9 @@ namespace GameManager
                 case SceneOption.GameScene03_World:
                     yield return EnterWorldSceneProcess();
                     break;
+                case SceneOption.GameScene04_Chess:
+                    yield return EnterChessSceneProcess();
+                    break;
                 default:
                     Debug.LogError("<color=red>----- Scene: " + currentScene + ", Not Found -----</color>");
                     yield return null;
@@ -329,6 +342,7 @@ namespace GameManager
             {
                 return SceneOption.GameScene01_Start;
                 // return SceneOption.GameScene03_World;
+                // return SceneOption.GameScene04_Chess;
             }
             else
             {
@@ -483,6 +497,53 @@ namespace GameManager
             return operationValue;
         }
 
+        /* ----- Chess Scene ----- */
+
+        private IEnumerator EnterChessSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Enter Scene Mode: Enter Chess Scene -----");
+
+            // Init Scene Value
+            chessSceneValue = new ChessSceneValue();
+
+            // Load Scene
+            yield return LoadScene(currentScene);
+
+            // Get Scene Controller
+            chessSceneValue.controller = ChessScene.ChessController.instance;
+
+            // Generate Scene Operation Value
+            ChessSceneOperationValue chessSceneOperationValue = EnterChessSceneProcessGenerateChessSceneOperationValue();
+
+            // Setup Scene
+            chessSceneValue.controller.RunEnterSceneMode(chessSceneOperationValue);
+            yield return new WaitUntil(() => chessSceneValue.isEnterSceneModeFinished == true);
+
+            // Release Ram
+            GC.Collect();
+
+            // Close Loading
+            yield return EnterSceneProcessCloseLoading();
+        }
+
+        private ChessSceneOperationValue EnterChessSceneProcessGenerateChessSceneOperationValue()
+        {
+            // Init operation value
+            ChessSceneOperationValue operationValue = new ChessSceneOperationValue();
+
+            // Setup Operation Calue
+            operationValue.gameManager = this;
+            operationValue.mainCamera = mainCamera;
+            operationValue.screenPropertiesData = screenPropertiesData;
+            operationValue.fontAsset = fontAsset;
+            operationValue.onEnterSceneModeFinishedCallback = () => { chessSceneValue.isEnterSceneModeFinished = true; };
+            operationValue.onRunSceneModeFinishedCallback = () => { chessSceneValue.isSceneModeFinished = true; };
+            operationValue.onExitSceneModeFinishedCallback = (nextSceneOption) => { nextScene = nextSceneOption; chessSceneValue.isExitSceneModeFinished = true; };
+
+            // Return Operation Value
+            return operationValue;
+        }
+
         #endregion
 
         #region Main - Scene Mode
@@ -501,6 +562,9 @@ namespace GameManager
                     break;
                 case SceneOption.GameScene03_World:
                     yield return RunWorldSceneProcess();
+                    break;
+                case SceneOption.GameScene04_Chess:
+                    yield return RunChessSceneProcess();
                     break;
                 default:
                     Debug.LogError("<color=red>----- Scene: " + currentScene + ", Not Found -----</color>");
@@ -550,6 +614,16 @@ namespace GameManager
             yield return new WaitUntil(() => worldSceneValue.isSceneModeFinished == true);
         }
 
+        /* ----- World Scene ----- */
+
+        private IEnumerator RunChessSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Scene Mode: Run Chess Scene -----");
+
+            // Wait Scene Finished
+            chessSceneValue.controller.RunRunSceneMode();
+            yield return new WaitUntil(() => chessSceneValue.isSceneModeFinished == true);
+        }
         #endregion
 
         #region Main - ExitSceneMode
@@ -565,6 +639,12 @@ namespace GameManager
                     break;
                 case SceneOption.GameScene02_Home:
                     yield return ExitHomeSceneProcess();
+                    break;
+                case SceneOption.GameScene03_World:
+                    yield return ExitWorldSceneProcess();
+                    break;
+                case SceneOption.GameScene04_Chess:
+                    yield return ExitChessSceneProcess();
                     break;
                 default:
                     Debug.LogError("<color=red>----- Scene: " + currentScene + ", Not Found -----</color>");
@@ -654,6 +734,23 @@ namespace GameManager
             // Wait Scene Exit Finished
             worldSceneValue.controller.RunExitSceneMode();
             yield return new WaitUntil(() => worldSceneValue.isExitSceneModeFinished == true);
+
+            // Unload Scene
+            yield return UnloadScene(currentScene);
+        }
+
+        /* ----- Chess Scene ----- */
+
+        private IEnumerator ExitChessSceneProcess()
+        {
+            Debug.Log("----- Game Manager: Exit Scene Mode: Exit Chess Scene -----");
+
+            // Open Loading
+            yield return ExitSceneProcessOpenLoading();
+
+            // Wait Scene Exit Finished
+            chessSceneValue.controller.RunExitSceneMode();
+            yield return new WaitUntil(() => chessSceneValue.isExitSceneModeFinished == true);
 
             // Unload Scene
             yield return UnloadScene(currentScene);

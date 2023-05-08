@@ -655,6 +655,12 @@ namespace HomeScene
             isSceneFinished = true;
         }
 
+        public void DevChessSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene04_Chess;
+            isSceneFinished = true;
+        }
+
         #endregion
     }
 }

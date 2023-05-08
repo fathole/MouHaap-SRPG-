@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartController.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\DraggableObjectBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextContentBase.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\DataClass\HomePageButtonsOption.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODESoloGameButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Controller\ChessController.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEName.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\ThirdPersonController.cs" />
@@ -92,9 +94,11 @@
     <Compile Include="Assets\Scripts\GameManager\BaseClass\CameraScreenSafeAreaBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\GameSettingPopup.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SceneOptionData.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Controller\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\PageManager\LogoPageManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\LogoPage.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\UDETitle.cs" />
@@ -132,6 +136,7 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LargePopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\FontManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\LargePopupManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Controller\ChessView.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\DataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODELegendModeButton.cs" />
@@ -151,6 +156,7 @@
     <Compile Include="Assets\Scripts\GameScene02_Home\Controller\HomeView.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\DataClass\StartSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGameSettingButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\ScreenData.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
@@ -159,7 +165,10 @@
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\PopupManager\SmallPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODENormalModeButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessSceneOperationValue.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\LoadingPopup.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SettingData.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PopupManager\LoadGamePopupManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\USEBackground.cs" />
@@ -170,6 +179,8 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
+    <Compile Include="Assets\Scripts\GameManager\BaseClass\CharacterBase.cs" />
+    <Compile Include="Assets\Scripts\GameManager\BaseClass\ItemBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -340,9 +340,9 @@ namespace GameManager
             // Return Next Scene
             if (nextScene == SceneOption.None)
             {
-                return SceneOption.GameScene01_Start;
+                //  return SceneOption.GameScene01_Start;
                 // return SceneOption.GameScene03_World;
-                // return SceneOption.GameScene04_Chess;
+                 return SceneOption.GameScene04_Chess;
             }
             else
             {

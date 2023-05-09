@@ -23,7 +23,7 @@ public class ClickableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 	public Action onPointerDownCallback;
 	public Action onPointerUpCallback;
 	public Action onPointerClickCallback;
-	public Action onPointerExitCallback;
+	public Action onPointerExitCallback;	
 
 	#endregion
 
@@ -109,5 +109,5 @@ public class ClickableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 		onPointerExitCallback?.Invoke();
 	}
 
-    #endregion
+	#endregion
 }

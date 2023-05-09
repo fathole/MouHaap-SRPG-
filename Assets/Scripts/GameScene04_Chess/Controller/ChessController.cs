@@ -68,6 +68,9 @@ namespace ChessScene
         private bool isSceneFinished = false;
         private SceneOption nextScene = SceneOption.None;
 
+        [Header("Chess")]
+        public Vector2 cursorPosition;
+
         #endregion
 
         #endregion
@@ -230,36 +233,13 @@ namespace ChessScene
 
         #endregion
 
-        private void Update()
-        {
-            if (isEnableUserInput)
-            {
-                CameraHandle();
-            }
-        }
-
         #region Update  - Camera Handling
 
         private void CameraHandle()
         {
-            CameraMoveHandle();
-
             CameraRotateHandle();
 
             CameraZoomHandle();
-        }
-
-        private void CameraMoveHandle()
-        {
-            // If Axis Clicked, Move The Camera
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-            {
-                // Update Input Axis
-                verticalInput = Input.GetAxis("Vertical");
-                horizontalInput = Input.GetAxis("Horizontal");
-
-                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
-            }
         }
 
         private void CameraRotateHandle()
@@ -305,17 +285,6 @@ namespace ChessScene
         {
             if (isCameraDrag != true)
             {
-                // Type A
-                //if (Input.GetAxis("Mouse ScrollWheel") > 0)
-                //{
-                //    midPointCameraManager.ZoomInMidPoint();
-                //}
-                //else if (Input.GetAxis("Mouse ScrollWheel") < 0)
-                //{
-                //    midPointCameraManager.ZoomOutMidPoint();
-                //}
-
-                // Type B
                 Vector3 zoomDirection = midPointCameraManager.followOffset.normalized;
 
                 if (Input.mouseScrollDelta.y > 0)
@@ -329,6 +298,41 @@ namespace ChessScene
 
                 midPointCameraManager.ZoomCamera(zoomDirection);
             }
+        }
+
+        #endregion
+
+        #region Update - Cursor Handling
+
+        private void CursorHandle()
+        {
+            CursorMoveHandle();
+
+            CursorSelectHandle();
+        }
+
+        private void CursorMoveHandle() 
+        {
+            // If Press Axis, Set isCameraFollowPlayer To False
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                
+            }
+
+            // If Axis Clicked, Move The Camera
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // Update Input Axis
+                verticalInput = Input.GetAxis("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
+        }
+
+        private void CursorSelectHandle() 
+        {
+        
         }
 
         #endregion
@@ -363,7 +367,33 @@ namespace ChessScene
             currentMode = ControllerModeOption.RunSceneMode;
             Main();
         }
-        
+
+        #endregion
+
+        private void Update()
+        {
+            if (isEnableUserInput)
+            {
+                CameraHandle();
+
+                CursorHandle();
+            }
+        }
+
+        #region DEV Function
+
+        public void DEVHomeSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene02_Home;
+            isSceneFinished = true;
+        }
+
+        public void DevWorldSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene03_World;
+            isSceneFinished = true;
+        }
+
         #endregion
     }
 }

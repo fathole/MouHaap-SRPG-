@@ -377,7 +377,23 @@ namespace WorldScene
             currentMode = ControllerModeOption.RunSceneMode;
             Main();
         }
-        
+
+        #endregion
+
+        #region DEV Function
+
+        public void DEVHomeSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene02_Home;
+            isSceneFinished = true;
+        }
+
+        public void DevChessSceneButtonPointerClickCallback()
+        {
+            nextScene = SceneOption.GameScene04_Chess;
+            isSceneFinished = true;
+        }
+
         #endregion
     }
 }

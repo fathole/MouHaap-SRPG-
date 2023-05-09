@@ -64,10 +64,11 @@ public class CanvasBase : CameraScreenSafeAreaBase
     {
         CanvasProperties canvasSetting = new CanvasProperties();
 
+        //canvasSetting.renderMode = RenderMode.ScreenSpaceOverlay;
         canvasSetting.renderMode = RenderMode.ScreenSpaceCamera;
         canvasSetting.pixelPerfect = false;
         //canvasSetting.worldCamera
-        canvasSetting.planeDistance = 100;
+        canvasSetting.planeDistance = 1;
         //canvasSetting.sortingLayerName
         canvasSetting.sortingOrder = 0;
         canvasSetting.additionalShaderChannels = AdditionalCanvasShaderChannels.None;

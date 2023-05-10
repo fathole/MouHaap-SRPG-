@@ -122,7 +122,6 @@
 -define:CINEMACHINE_TIMELINE_1_5_0
 -define:CINEMACHINE_UNITY_ANIMATION
 -define:CINEMACHINE_UNITY_IMGUI
--define:CINEMACHINE_UNITY_INPUTSYSTEM
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Plugins/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll"
@@ -346,7 +345,6 @@
 -r:"E:/Unity/Git/MouHaap/Library/PackageCache/com.unity.collab-proxy@2.0.3/Lib/Editor/PlasticSCM/unityplastic.dll"
 -r:"E:/Unity/Git/MouHaap/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Editor.ref.dll"

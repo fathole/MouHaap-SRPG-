@@ -49,13 +49,11 @@ namespace ChessScene
         public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
 
         [Header("Camera Control Variable")]
-        // Movement
-        private float horizontalInput;
-        private float verticalInput;
         // Drag        
         [SerializeField] private float dragCameraThresholder = 200f;
         private Vector3 dragCameraPreviousPosition;
         private bool isCameraDrag;
+        private CameraFacingOption cameraFacingOption;
 
         [Header("Scene Mode")]
         // Scene Mode
@@ -70,6 +68,12 @@ namespace ChessScene
 
         [Header("Chess")]
         public Vector2 cursorPosition;
+
+        [Header("Cursor")]
+        public GameObject cursor;
+        // Movement
+        private int cursorHorizontalInput;
+        private int cursorVerticalInput;
 
         #endregion
 
@@ -189,6 +193,10 @@ namespace ChessScene
         {
             // Setup Text Content
             textContent = textManager.GetTextContent(gameManager.GetDisplayLanguageOption());
+
+            // Get Camera Facing
+            cameraFacingOption = midPointCameraManager.GetCameraFacing();
+            Debug.Log(cameraFacingOption);
         }
 
         #endregion
@@ -276,6 +284,8 @@ namespace ChessScene
 
             if (Input.GetMouseButtonUp(2))
             {
+                cameraFacingOption = midPointCameraManager.GetCameraFacing();
+                Debug.Log(cameraFacingOption);
                 isCameraDrag = false;
             }
 
@@ -313,20 +323,21 @@ namespace ChessScene
 
         private void CursorMoveHandle() 
         {
-            // If Press Axis, Set isCameraFollowPlayer To False
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                
+
             }
-
-            // If Axis Clicked, Move The Camera
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                // Update Input Axis
-                verticalInput = Input.GetAxis("Vertical");
-                horizontalInput = Input.GetAxis("Horizontal");
 
-                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+
             }
         }
 
@@ -395,5 +406,14 @@ namespace ChessScene
         }
 
         #endregion
+    }
+
+    public enum CameraFacingOption
+    {
+        None = 0,
+        North = 1,
+        East = 2,
+        South = 3,
+        West = 4,
     }
 }

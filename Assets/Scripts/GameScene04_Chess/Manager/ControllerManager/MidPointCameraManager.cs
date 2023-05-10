@@ -117,6 +117,26 @@ namespace ChessScene
             }
         }
 
+        public CameraFacingOption GetCameraFacing()
+        {
+            if (midPointTransform.rotation.eulerAngles.y >= 0 && midPointTransform.rotation.eulerAngles.y < 45 || midPointTransform.rotation.eulerAngles.y <= 360 && midPointTransform.rotation.eulerAngles.y >= 315)
+            {
+                return CameraFacingOption.North;
+            }
+            else if (midPointTransform.rotation.eulerAngles.y >= 270&& midPointTransform.rotation.eulerAngles.y < 315 || midPointTransform.rotation.eulerAngles.y <= 270 && midPointTransform.rotation.eulerAngles.y > 225)
+            {
+                return CameraFacingOption.East;
+            }
+            else if (midPointTransform.rotation.eulerAngles.y >= 90 && midPointTransform.rotation.eulerAngles.y < 135 || midPointTransform.rotation.eulerAngles.y <= 90 && midPointTransform.rotation.eulerAngles.y > 45)
+            {
+                return CameraFacingOption.West;
+            }
+            else
+            {
+                return CameraFacingOption.South;
+            }
+        }
+
         #endregion
     }
 }

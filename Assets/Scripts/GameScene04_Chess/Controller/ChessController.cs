@@ -285,7 +285,6 @@ namespace ChessScene
             if (Input.GetMouseButtonUp(2))
             {
                 cameraFacingOption = midPointCameraManager.GetCameraFacing();
-                Debug.Log(cameraFacingOption);
                 isCameraDrag = false;
             }
 

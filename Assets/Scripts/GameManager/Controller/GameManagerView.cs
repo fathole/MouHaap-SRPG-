@@ -45,7 +45,6 @@ namespace GameManager
             deviceScreen = new ScreenProperties();
             targetScreen = new ScreenProperties();
             cameraScreen = new ScreenProperties();
-
         }
 
         private void InitSortingLayerManager()

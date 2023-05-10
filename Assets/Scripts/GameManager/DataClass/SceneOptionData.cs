@@ -5,5 +5,4 @@
     GameScene02_Home = 2,
     GameScene03_World = 3,
     GameScene04_Chess = 4,
-    // ToDo: update Scene List
 }

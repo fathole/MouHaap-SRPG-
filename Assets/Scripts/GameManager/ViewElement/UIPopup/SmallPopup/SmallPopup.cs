@@ -6,9 +6,13 @@ namespace GameManager.UIPopup.SmallPopup
 {
     public class SmallPopup : MonoBehaviour
     {
+        #region Declaration
+
         public USEBackground uSEBackground;
         public UDETitle uDETitle;      
         public ODEPrimaryButton oDEPrimaryButton;
         public ODESecondaryButton oDESecondaryButton;
+
+        #endregion
     }
 }

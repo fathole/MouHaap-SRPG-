@@ -26,7 +26,7 @@ namespace HomeScene.UIPopup.LoadGamePopup
         [Header("Image")]
         [SerializeField] private Image previewImageImage001;
 
-        public SaveButtonData saveButtonData;
+        public SaveFileData saveButtonData;
 
         #endregion
 
@@ -57,7 +57,7 @@ namespace HomeScene.UIPopup.LoadGamePopup
 
         #region Setup Stage
 
-        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, SaveButtonData saveButtonData, Action onPointerClickCallback, Action onCrossButtonPointerClickCallback)
+        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, SaveFileData saveButtonData, Action onPointerClickCallback, Action onCrossButtonPointerClickCallback)
         {
             // Setup File Name
             this.saveButtonData = saveButtonData;

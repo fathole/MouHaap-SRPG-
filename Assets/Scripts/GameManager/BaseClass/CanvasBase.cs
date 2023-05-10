@@ -7,12 +7,7 @@ public class CanvasBase : CameraScreenSafeAreaBase
 {
     #region Declaration 
 
-    /* ----- Declaration - Variable ----- */
-
-    private Canvas canvas;
-    private CanvasScaler canvasScaler;
-
-    /* ----- Declaration - Struct ----- */
+    #region Declaration _ Struct    
 
     public struct CanvasProperties
     {
@@ -32,7 +27,18 @@ public class CanvasBase : CameraScreenSafeAreaBase
         public float matchWidthOrHeight;
         public int referencePixelsPerUnit;
     }
+
+    #endregion    
+
+    #region Declaration _ Variable
+
+    private Canvas canvas;
+    private CanvasScaler canvasScaler;
     private CanvasProperties canvasSetting;
+
+    #endregion
+
+    
 
     #endregion
 

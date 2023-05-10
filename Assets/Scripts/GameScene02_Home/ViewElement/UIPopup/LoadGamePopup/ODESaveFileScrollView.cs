@@ -34,11 +34,11 @@ namespace HomeScene.UIPopup.LoadGamePopup
 
         #region Setup Stage
 
-        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
+        public void SetupElement(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveFileData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
         {
             if (saveButtonDataList!=null && saveButtonDataList.Count > 0)
             {
-                foreach (SaveButtonData data in saveButtonDataList)
+                foreach (SaveFileData data in saveButtonDataList)
                 {
                     ODESaveFileScrollViewSaveButton saveButton = Instantiate(saveButtonPrefab, saveButtonParent);
                     saveButton.InitElement();

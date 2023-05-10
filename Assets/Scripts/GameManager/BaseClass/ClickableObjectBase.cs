@@ -8,8 +8,6 @@ public class ClickableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 {
 	#region Declaration
 
-	/* ----- Declaration - Variable ----- */
-
 	[Header("Audio")]
 	public AudioSource audioSource;
 	public AudioClip audioSFXPointerClick;
@@ -18,7 +16,7 @@ public class ClickableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 	public Animator animator;
 	private bool isPointerDowned;
 
-	// Action
+	[Header("Action")]
 	public Action onPointerEnterCallback;
 	public Action onPointerDownCallback;
 	public Action onPointerUpCallback;

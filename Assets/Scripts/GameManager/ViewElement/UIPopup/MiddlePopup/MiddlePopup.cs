@@ -6,10 +6,14 @@ namespace GameManager.UIPopup.MiddlePopup
 {
     public class MiddlePopup : MonoBehaviour
     {
+        #region Declaration
+
         public USEBackground uSEBackground;
         public UDETitle uDETitle;
         public UDEContent uDEContent;
         public ODEPrimaryButton oDEPrimaryButton;
         public ODESecondaryButton oDESecondaryButton;
+
+        #endregion
     }
 }

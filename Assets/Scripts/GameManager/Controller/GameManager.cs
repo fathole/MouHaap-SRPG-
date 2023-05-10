@@ -94,14 +94,14 @@ namespace GameManager
         private HomeSceneValue homeSceneValue;
         private WorldSceneValue worldSceneValue;
         private ChessSceneValue chessSceneValue;
-
-        private GameManagerModeOption gameManagerModeOption = GameManagerModeOption.None;
-        private SceneOption currentScene = SceneOption.None;
-        private SceneOption previousScene = SceneOption.None;
+        private SceneOption currentScene = SceneOption.None;        
         private SceneOption nextScene = SceneOption.None;
-
+        private GameManagerModeOption gameManagerModeOption = GameManagerModeOption.None;
+        
+        [Header("Player Data")]
         private GameSettingData gameSettingData;
 
+        [Header("Popup")]
         private bool isLoadingOpened;
         private bool isLoadingClosed;
 
@@ -269,11 +269,10 @@ namespace GameManager
 
             return canvasSetupData;
         }
-
-        // ToDo: Get Actual Save Data And Not Tje SaveButtonData
-        public List<SaveButtonData> GetSaveFileData()
+        
+        public List<SaveFileData> GetSaveFileData()
         {
-           return  localDataManager.LoadLocalDataList<SaveButtonData>(".SaveFile");
+           return  localDataManager.LoadLocalDataList<SaveFileData>(".SaveFile");
         }
 
         #endregion
@@ -334,9 +333,6 @@ namespace GameManager
 
         private SceneOption GetNextScene()
         {
-            // Update Previous Scene
-            previousScene = currentScene;
-
             // Return Next Scene
             if (nextScene == SceneOption.None)
             {
@@ -1021,21 +1017,6 @@ namespace GameManager
             localDataManager.DeleteLocalFile(fileName, fileExtension);
         }
 
-        #endregion
-
-        /// <summary>
-        /// Delete Later, Now Hardcode
-        /// </summary>
-
-        private void Update()
-        {
-            // HardCode Create Save File
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                PlayerPrefs.SetInt("SaveID", PlayerPrefs.GetInt("SaveID") + 1);
-                SaveButtonData fakeSaveFile = new SaveButtonData { fileName = "SaveFile_" + PlayerPrefs.GetInt("SaveID"), playTime = UnityEngine.Random.Range(1000, 5000), saveDate = DateTime.Now, saveFileName = "¶s¿…" + PlayerPrefs.GetInt("SaveID"), saveVersion = "1.0.0" };
-                localDataManager.SaveLocalData(fakeSaveFile, "SaveFile_" + PlayerPrefs.GetInt("SaveID"), ".SaveFile");
-            }
-        }
+        #endregion        
     }
 }

@@ -6,7 +6,11 @@ namespace GameManager.UIPopup.LoadingPopup
 {
     public class LoadingPopup : MonoBehaviour
     {
+        #region Declaration
+
         public USEBackground uSEBackground;
         public UDETitle uDETitle;
+
+        #endregion
     }
 }

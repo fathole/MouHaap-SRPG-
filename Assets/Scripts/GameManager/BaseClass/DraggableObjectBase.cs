@@ -8,8 +8,6 @@ public class DraggableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 {
 	#region Declaration
 
-	/* ----- Declaration - Variable ----- */
-
 	[Header("Audio")]
 	public AudioSource audioSource;
 	public AudioClip audioSFXPointerClick;
@@ -19,7 +17,7 @@ public class DraggableObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 	private bool isPointerDowned;
 	private bool isDragged;
 
-	// Action
+	[Header("Action")]
 	public Action onPointerEnterCallback;
 	public Action onPointerDownCallback;
 	public Action<Vector2> onBeginDragCallback;

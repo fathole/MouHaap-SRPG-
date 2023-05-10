@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,9 +48,12 @@ namespace HomeScene
         #region Declaration - Variable
 
         [Header("MVC")]
-        public static HomeController instance;
-        private GameManager.GameManager gameManager = null;
         [SerializeField] private HomeView view;
+        public static HomeController instance;
+
+        [Header("Controller")]
+        private ControllerModeOption currentMode = ControllerModeOption.None;
+        private bool isSceneFinished = false;
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
@@ -63,23 +67,16 @@ namespace HomeScene
         private ScreenPropertiesData screenPropertiesData = null;
 
         [Header("Page Value")]
+        private PageOption currentPage = PageOption.None;
         private HomePageValue homePageValue = null;
 
-        [Header("Game Manager Callback Function")]
-        public Action gameManagerOnEnterSceneModeFinishedCallback = null;
-        public Action gameManagerOnRunSceneModeFinishedCallback = null;
-        public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
-
+        [Header("Game Manager")]
+        private GameManager.GameManager gameManager = null;
+        private Action gameManagerOnEnterSceneModeFinishedCallback = null;
+        private Action gameManagerOnRunSceneModeFinishedCallback = null;
+        private Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
         private SceneOption nextScene = SceneOption.None;
-
-        private ControllerModeOption currentMode = ControllerModeOption.None;
-        private PageOption currentPage = PageOption.None;
-        private PageOption previousPage = PageOption.None;
-
-        private bool isSceneFinished = false;
-
-        // Won't Use, Get From GameManager.cs Update Variable
-        private HomeSceneOperationValue operationValue = null;
+        private HomeSceneOperationValue operationValue = null;// Update Scene Value By Operation Value
 
         #endregion
 
@@ -230,7 +227,6 @@ namespace HomeScene
 
         private void GoToPage(PageOption nextPage)
         {
-            previousPage = currentPage;
             currentPage = nextPage;
 
             switch (currentPage)
@@ -262,7 +258,7 @@ namespace HomeScene
             gameManagerOnExitSceneModeFinishedCallback?.Invoke(nextScene);
         }
 
-        #endregion
+        #endregion¡A
 
         #region Page Function - Home Page
 

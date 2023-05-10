@@ -40,12 +40,15 @@ namespace StartScene
 
         #region Declaration - Variable
 
-        [Header("MVC")]       
-        public static StartController instance;
-        private GameManager.GameManager gameManager = null;
+        [Header("MVC")]
         [SerializeField] private StartView view;
+        public static StartController instance;
 
-        [Header("Controller Manager")]
+        [Header("Controller")]
+        private ControllerModeOption currentMode = ControllerModeOption.None;
+        private bool isSceneFinished = false;
+
+        [Header("Controller Manager")]        
         [SerializeField] private TextManager textManager;
 
         [Header("Font and Text")]
@@ -57,24 +60,16 @@ namespace StartScene
         private ScreenPropertiesData screenPropertiesData = null;
 
         [Header("Page Value")]
+        private PageOption currentPage = PageOption.None; 
         private LogoPageValue logoPageValue = null;
 
-        [Header("Game Manager Callback Function")]
-        public Action gameManagerOnEnterSceneModeFinishedCallback = null;
-        public Action gameManagerOnRunSceneModeFinishedCallback = null;
-        public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
-
-        private SceneOption nextScene = SceneOption.None;
-
-        private ControllerModeOption currentMode = ControllerModeOption.None;
-        private PageOption currentPage = PageOption.None;
-        private PageOption previousPage = PageOption.None;
-
-        private bool isSceneFinished = false;
-
-        // Won't Use, Get From GameManager.cs Update Variable
-        private StartSceneOperationValue operationValue = null;
-
+        [Header("Game Manager")]
+        private GameManager.GameManager gameManager = null;
+        private  Action gameManagerOnEnterSceneModeFinishedCallback = null;
+        private Action gameManagerOnRunSceneModeFinishedCallback = null;
+        private Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
+        private SceneOption nextScene = SceneOption.None;                
+        private StartSceneOperationValue operationValue = null;// Update Scene Value By Operation Value
 
         #endregion
 
@@ -224,8 +219,7 @@ namespace StartScene
         }
 
         private void GoToPage(PageOption nextPage)
-        {
-            previousPage = currentPage;
+        {            
             currentPage = nextPage;
 
             switch (currentPage)
@@ -263,7 +257,7 @@ namespace StartScene
 
         private IEnumerator LogoPage()
         {
-            Debug.Log("----- Home Page -----");
+            Debug.Log("----- Logo Page -----");
 
             // Enter process
             yield return StartCoroutine(LogoPageEnterProcess());
@@ -281,11 +275,11 @@ namespace StartScene
             yield return StartCoroutine(LogoPageExitProcess());
         }
 
-        /* ----- Home Page: Enter Process ----- */
+        /* ----- Logo Page: Enter Process ----- */
 
         private IEnumerator LogoPageEnterProcess()
         {
-            Debug.Log("----- Home Page: Enter Process -----");
+            Debug.Log("----- Logo Page: Enter Process -----");
 
             // Init Page Value
             LogoPageEnterProcessInitPageValue();
@@ -314,11 +308,11 @@ namespace StartScene
 
         }
 
-        /* ----- Home Page: Move In Process ----- */
+        /* ----- Logo Page: Move In Process ----- */
 
         private IEnumerator LogoPageMoveInProcess()
         {
-            Debug.Log("----- Home Page: Move In Process -----");
+            Debug.Log("----- Logo Page: Move In Process -----");
 
             bool isLogoPageMoveInFinished = false;
 
@@ -327,11 +321,11 @@ namespace StartScene
             yield return new WaitUntil(() => isLogoPageMoveInFinished);
         }
 
-        /* ----- Home Page: Move Out Process ----- */
+        /* ----- Logo Page: Move Out Process ----- */
 
         private IEnumerator LogoPageMoveOutProcess()
         {
-            Debug.Log("----- Home Page: Move Out Process -----");
+            Debug.Log("----- Logo Page: Move Out Process -----");
 
             bool isLogoPageMoveOutFinished = false;
 
@@ -340,11 +334,11 @@ namespace StartScene
             yield return new WaitUntil(() => isLogoPageMoveOutFinished);
         }
 
-        /* ----- Home Page: Exit Process ----- */
+        /* ----- Logo Page: Exit Process ----- */
 
         private IEnumerator LogoPageExitProcess()
         {
-            Debug.Log("----- Home Page: Exit Process -----");
+            Debug.Log("----- Logo Page: Exit Process -----");
 
             isSceneFinished = true;
             nextScene = SceneOption.GameScene02_Home;
@@ -354,7 +348,7 @@ namespace StartScene
 
         private IEnumerator LogoPageLogoAnimationProcess()
         {
-            Debug.Log("----- Home Page: Logo Animation Process -----");
+            Debug.Log("----- Logo Page: Logo Animation Process -----");
 
             bool isLogoPageLogoAnimationFinished = false;
 

@@ -10,8 +10,7 @@ namespace GameManager.UIPopup
     {
         #region Declaration
 
-        [SerializeField]
-        private RectTransform cameraScreenSafeArea;
+        [SerializeField] private RectTransform cameraScreenSafeArea;
 
         private static PlayableDirector playableDirector;
         private static Action onTimelineFinishCallback;

@@ -29,7 +29,12 @@ namespace ChessScene
         [Header("MVC")]
         [SerializeField] private ChessView view;
         public static ChessController instance;
-        private GameManager.GameManager gameManager = null;        
+
+        [Header("Controller")]
+        private ControllerModeOption currentMode = ControllerModeOption.None;
+        private bool isSceneFinished = false;
+        private bool isEnableUserInput = false;
+        private ChessSceneOperationValue operationValue = null;// Update Scene Value By Operation Value
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
@@ -43,37 +48,18 @@ namespace ChessScene
         private Camera mainCamera = null;
         private ScreenPropertiesData screenPropertiesData = null;
 
-        [Header("Game Manager Callback Function, Variable")]
-        public Action gameManagerOnEnterSceneModeFinishedCallback = null;
-        public Action gameManagerOnRunSceneModeFinishedCallback = null;
-        public Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
+        [Header("Game Manager")]
+        private GameManager.GameManager gameManager = null;
+        private Action gameManagerOnEnterSceneModeFinishedCallback = null;
+        private Action gameManagerOnRunSceneModeFinishedCallback = null;
+        private Action<SceneOption> gameManagerOnExitSceneModeFinishedCallback = null;
+        private SceneOption nextScene = SceneOption.None;
 
         [Header("Camera Control Variable")]
-        // Drag        
         [SerializeField] private float dragCameraThresholder = 200f;
         private Vector3 dragCameraPreviousPosition;
         private bool isCameraDrag;
         private CameraFacingOption cameraFacingOption;
-
-        [Header("Scene Mode")]
-        // Scene Mode
-        private ControllerModeOption currentMode = ControllerModeOption.None;
-        // Enter Scene Mode
-        private ChessSceneOperationValue operationValue = null;// Won't Use, Get From GameManager.cs Update Variable
-        // Run Scene Mode
-        private bool isEnableUserInput = false;
-        // Exit Scene Mode
-        private bool isSceneFinished = false;
-        private SceneOption nextScene = SceneOption.None;
-
-        [Header("Chess")]
-        public Vector2 cursorPosition;
-
-        [Header("Cursor")]
-        public GameObject cursor;
-        // Movement
-        private int cursorHorizontalInput;
-        private int cursorVerticalInput;
 
         #endregion
 
@@ -405,14 +391,5 @@ namespace ChessScene
         }
 
         #endregion
-    }
-
-    public enum CameraFacingOption
-    {
-        None = 0,
-        North = 1,
-        East = 2,
-        South = 3,
-        West = 4,
     }
 }

@@ -66,7 +66,7 @@ namespace HomeScene
             loadGamePopup.uSEBackground.SetupElement();
         }
 
-        public void SetupODESaveFileScrollView(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveButtonData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
+        public void SetupODESaveFileScrollView(TMP_FontAsset fontAsset, TextContentBase.LoadGamePopup.ODESaveFileScrollViewSaveButton textContent, List<SaveFileData> saveButtonDataList, Action<string> onSaveButtonPointerClickCallback, Action<string> onSaveButtonCrossButtonPointerClickCallback)
         {
             loadGamePopup.oDESaveFileScrollView.SetupElement(fontAsset, textContent, saveButtonDataList, onSaveButtonPointerClickCallback, onSaveButtonCrossButtonPointerClickCallback);
         }

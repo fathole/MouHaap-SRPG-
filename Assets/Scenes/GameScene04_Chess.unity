@@ -279,7 +279,7 @@ RectTransform:
   m_Children:
   - {fileID: 1797118291}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -657,7 +657,7 @@ Transform:
   m_Children:
   - {fileID: 786672955}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647324975
 GameObject:
@@ -1116,52 +1116,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207066694}
   m_CullTransparentMesh: 1
---- !u!1 &1240350223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1240350225}
-  - component: {fileID: 1240350226}
-  m_Layer: 0
-  m_Name: View_Chess
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1240350225
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240350223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1240350226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240350223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660414c29713899449817d5d1a12c55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uIMainManager: {fileID: 1745135679}
-  uIPopupManager: {fileID: 298846566}
 --- !u!1 &1269859670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,12 +1206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affbbc0b7a1c4cd4094408898188de4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1240350226}
+  view: {fileID: 0}
   textManager: {fileID: 1269859673}
   midPointCameraManager: {fileID: 1182733934}
   dragCameraThresholder: 200
-  cursorPosition: {x: 0, y: 0}
-  cursor: {fileID: 567874097}
 --- !u!1 &1336373967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1240,7 @@ Transform:
   m_Children:
   - {fileID: 451118955}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483032228
 GameObject:
@@ -1560,7 +1512,7 @@ RectTransform:
   m_Children:
   - {fileID: 1483032229}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

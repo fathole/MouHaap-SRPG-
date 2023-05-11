@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\LocalDataManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEName.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Controller\ThirdPersonController.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessCameraData.cs" />
     <Compile Include="Assets\Scripts\GameManager\DataClass\SaveButtonData.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEMultiplayerGameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\LoadingPopup\UDETitle.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\SmallPopup\UDETitle.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEHardModeButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\UDETitle.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Tile.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\OSECrossButton.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
@@ -179,7 +181,12 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
-    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessCameraData.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\PathFinder.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Path.cs" />
+    <Compile Include="Assets\Scripts\Extensions\Vector3Extensions.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessData.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\PathIllustrator.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\TileGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

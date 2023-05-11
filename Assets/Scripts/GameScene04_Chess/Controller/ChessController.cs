@@ -375,7 +375,7 @@ namespace ChessScene
         {
             if (currentTile.occupied)
             {
-                InspectCharacter();
+                InspectChess();
             }
             else
             {
@@ -383,7 +383,7 @@ namespace ChessScene
             }
         }
 
-        private void InspectCharacter()
+        private void InspectChess()
         {
             if (currentTile.occupyingChess.chessData.isMoving)
             {

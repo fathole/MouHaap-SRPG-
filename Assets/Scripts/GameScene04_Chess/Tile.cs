@@ -32,14 +32,14 @@ namespace ChessScene
             switch (tileColorOption)
             {
                 case TileColorOption.Green:
-                    greenChild.SetActive(true);
+                    //greenChild.SetActive(true);
                     break;
                 case TileColorOption.Highlighted:
-                    highlightedChild.SetActive(true);
+                    //highlightedChild.SetActive(true);
                     break;
                 default:
-                    greenChild.SetActive(false);
-                    highlightedChild.SetActive(false);
+                    //greenChild.SetActive(false);
+                    //highlightedChild.SetActive(false);
                     break;
             }
         }
@@ -47,8 +47,8 @@ namespace ChessScene
 
         private void ClearColor()
         {
-            greenChild.SetActive(false);
-            highlightedChild.SetActive(false);
+            //greenChild.SetActive(false);
+            //highlightedChild.SetActive(false);
         }
 
         #endregion

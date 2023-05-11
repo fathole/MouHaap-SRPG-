@@ -90,6 +90,8 @@ namespace ChessScene
                 currentStep++;
                 animationTime = 0f;
             }
+
+            FinalizePosition(path.tiles[pathLength]);
         }
 
         private void MoveAndRotate(Vector3 origin, Vector3 destination, float duration)

@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace ChessScene
 {
-    public class ChessData : MonoBehaviour
+    [System.Serializable]
+    public struct ChessData
     {
         // Basic Info
         public string characterName;// ¨¤¦â¦WºÙ

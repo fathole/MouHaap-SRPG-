@@ -21,7 +21,7 @@ namespace ChessScene
             line = GetComponent<LineRenderer>();
         }
 
-        public void IlliStratePath(Path path)
+        public void IllistratePath(Path path)
         {
             line.positionCount = path.tiles.Length;
 

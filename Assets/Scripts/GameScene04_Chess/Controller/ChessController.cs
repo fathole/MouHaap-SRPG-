@@ -61,6 +61,13 @@ namespace ChessScene
         private bool isCameraDrag;
         private CameraFacingOption cameraFacingOption;
 
+        [Header("Chess")]
+        [SerializeField] private LayerMask interactMask;
+        [SerializeField] private PathFinder pathFinder; 
+        private Path lastPath;
+        private Tile currentTile;
+        private Chess selectedChess;        
+
         #endregion
 
         #endregion
@@ -297,42 +304,6 @@ namespace ChessScene
 
         #endregion
 
-        #region Update - Cursor Handling
-
-        private void CursorHandle()
-        {
-            CursorMoveHandle();
-
-            CursorSelectHandle();
-        }
-
-        private void CursorMoveHandle() 
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-
-            }
-        }
-
-        private void CursorSelectHandle() 
-        {
-        
-        }
-
-        #endregion
-
         #endregion
 
         #region Game Manager Helper Function
@@ -372,9 +343,88 @@ namespace ChessScene
             {
                 CameraHandle();
 
-                CursorHandle();
+                ClearTile();
+
+                MouseUpdate();
             }
         }
+
+        private void ClearTile()
+        {
+            if (currentTile == null || currentTile.occupied == false)
+            {
+                return;
+            }
+            
+            currentTile.SetColor(TileColorOption.None);
+            currentTile = null;
+        }
+
+        private void MouseUpdate()
+        {
+            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 200f, interactMask))
+            {
+                return;
+            }
+
+            currentTile = hit.transform.GetComponent<Tile>();
+            InspectTile();
+        }
+
+        private void InspectTile()
+        {
+            if (currentTile.occupied)
+            {
+                InspectCharacter();
+            }
+            else
+            {
+                NavigateToTile();
+            }
+        }
+
+        private void InspectCharacter()
+        {
+            if (currentTile.occupyingChess.chessData.isMoving)
+            {
+                return;
+            }
+            currentTile.SetColor(TileColorOption.Highlighted);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                selectedChess = currentTile.occupyingChess;
+            }
+        }
+
+        private void NavigateToTile()
+        {
+            if (selectedChess == null || selectedChess.chessData.isMoving == true)
+            {
+                return;
+            }
+
+            if (RetrievePath(out Path newPath))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    selectedChess.StartMove(newPath);
+                    selectedChess = null;
+                }
+            }
+        }
+
+        private bool RetrievePath(out Path path)
+        {
+            path = pathFinder.FindPath(selectedChess.chessData.chessTile, currentTile);
+
+            if (path == null || path == lastPath)
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         #region DEV Function
 

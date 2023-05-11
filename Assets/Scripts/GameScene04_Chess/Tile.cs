@@ -38,9 +38,12 @@ namespace ChessScene
                     highlightedChild.SetActive(true);
                     break;
                 default:
+                    greenChild.SetActive(false);
+                    highlightedChild.SetActive(false);
                     break;
             }
         }
+
 
         private void ClearColor()
         {

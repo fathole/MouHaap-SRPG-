@@ -19,6 +19,11 @@ namespace ChessScene
 
         #region Setup Stage
 
+        private void Start()
+        {            
+            SetupChess();
+        }
+
         public void SetupChess()
         {
             // Setup Tile
@@ -40,6 +45,13 @@ namespace ChessScene
         #endregion
 
         #region Main Function
+
+        public void StartMove(Path path)
+        {
+            chessData.isMoving = true;
+            chessData.chessTile.occupied = false;
+            StartCoroutine(MoveAlongPath(path));
+        }
 
         private void FinalizePosition(Tile tile)
         {

@@ -128,10 +128,14 @@ namespace ChessScene
         {
             GameObject character = Selection.activeTransform.gameObject;
 
-            if (Physics.Raycast(character.transform.position, Vector3.down, out RaycastHit hit, 5f))
+            if (Physics.Raycast(character.transform.position, Vector3.down, out RaycastHit hit, 200))
             {
                 character.GetComponent<Chess>().chessData.chessTile = hit.transform.GetComponent<Tile>();
                 Debug.Log("Successfully coupled character with a tile");
+            }
+            else
+            {
+                Debug.LogError("<color=red>Error</color>");
             }
         }
 

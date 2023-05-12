@@ -356,7 +356,7 @@ namespace ChessScene
                 return;
             }
             
-            currentTile.SetColor(TileColorOption.None);
+            currentTile.SetNotice(TileNoticeOption.None);
             currentTile = null;
         }
 
@@ -389,7 +389,7 @@ namespace ChessScene
             {
                 return;
             }
-            currentTile.SetColor(TileColorOption.Highlighted);
+            currentTile.SetNotice(TileNoticeOption.Current);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -409,6 +409,7 @@ namespace ChessScene
                 if (Input.GetMouseButtonDown(0))
                 {
                     selectedChess.StartMove(newPath);
+                    pathFinder.ResetPathFinder();
                     selectedChess = null;
                 }
             }

@@ -18,46 +18,46 @@ namespace ChessScene
         public float totalCost { get { return costFromOrigin + costToDestination + terrainCost; } }
         public bool occupied;               
 
-        [SerializeField] private GameObject greenChild;
-        [SerializeField] private GameObject highlightedChild;
+        [SerializeField] private GameObject frontierNotice;
+        [SerializeField] private GameObject currentNotice;
 
         #endregion
 
         #region Main Function
 
-        public void SetColor(TileColorOption tileColorOption)
+        public void SetNotice(TileNoticeOption tileNoticeOption)
         {
-            ClearColor();
+            ClearNotice();
 
-            switch (tileColorOption)
+            switch (tileNoticeOption)
             {
-                case TileColorOption.Green:
-                    //greenChild.SetActive(true);
+                case TileNoticeOption.Frontier:
+                    frontierNotice.SetActive(true);
                     break;
-                case TileColorOption.Highlighted:
-                    //highlightedChild.SetActive(true);
+                case TileNoticeOption.Current:
+                    currentNotice.SetActive(true);
                     break;
                 default:
-                    //greenChild.SetActive(false);
-                    //highlightedChild.SetActive(false);
+                    frontierNotice.SetActive(false);
+                    currentNotice.SetActive(false);
                     break;
             }
         }
 
 
-        private void ClearColor()
-        {
-            //greenChild.SetActive(false);
-            //highlightedChild.SetActive(false);
+        private void ClearNotice()
+        {            
+            frontierNotice.SetActive(false);
+            currentNotice.SetActive(false);
         }
 
         #endregion
     }
 
-    public enum TileColorOption
+    public enum TileNoticeOption
     {
         None = 0,
-        Green = 1,
-        Highlighted = 2,
+        Frontier = 1,
+        Current = 2,
     }
 }

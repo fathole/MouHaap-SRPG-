@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +11,13 @@ namespace ChessScene
     {
         [SerializeField] private PathIllustrator pathIllustrator;
         [SerializeField] private LayerMask tileMask;
+        private List<Tile> frontierList = new List<Tile>();
+
 
         public Path FindPath(Tile originTile, Tile destination)
         {
+            ResetPathFinder();
+
             List<Tile> openSet = new List<Tile>();
             List<Tile> closedSet = new List<Tile>();
 
@@ -31,6 +37,8 @@ namespace ChessScene
                 //Destination reached
                 if (currentTile == destination)
                 {
+                    frontierList = PathBetween(destination, originTile).tiles.ToList();
+                    pathIllustrator.IllustrateFrontier(frontierList);
                     return PathBetween(destination, originTile);
                 }
 
@@ -49,7 +57,9 @@ namespace ChessScene
                         neighbour.parentTile = currentTile;
 
                         if (!openSet.Contains(neighbour))
+                        {
                             openSet.Add(neighbour);
+                        }
                     }
                 }
             }
@@ -96,7 +106,7 @@ namespace ChessScene
         public Path PathBetween(Tile dest, Tile source)
         {
             Path path = MakePath(dest, source);
-            pathIllustrator.IllistratePath(path);
+            //pathIllustrator.IllistratePath(path);
             return path;
         }
 
@@ -125,6 +135,16 @@ namespace ChessScene
             path.tiles = tiles.ToArray();
 
             return path;
+        }
+
+        public void ResetPathFinder()
+        {
+            foreach (Tile item in frontierList)
+            {
+                item.SetNotice(TileNoticeOption.None);                
+            }
+
+            frontierList.Clear();
         }
     }
 }

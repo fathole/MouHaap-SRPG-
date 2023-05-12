@@ -21,6 +21,14 @@ namespace ChessScene
             line = GetComponent<LineRenderer>();
         }
 
+        public void IllustrateFrontier(List<Tile> tiles)
+        {
+            foreach (Tile item in tiles)
+            {
+                item.SetNotice(TileNoticeOption.Frontier);
+            }
+        }
+
         public void IllistratePath(Path path)
         {
             line.positionCount = path.tiles.Length;
@@ -33,5 +41,11 @@ namespace ChessScene
         }
 
         #endregion
+    }
+
+    [System.Serializable]
+    public class Frontier
+    {
+        public List<Tile> tiles = new List<Tile>();
     }
 }

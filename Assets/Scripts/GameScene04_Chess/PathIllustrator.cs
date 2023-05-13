@@ -22,7 +22,7 @@ namespace ChessScene
         }
 
         public void IllustrateFrontier(List<Tile> tiles)
-        {
+        {           
             foreach (Tile item in tiles)
             {
                 item.SetNotice(TileNoticeOption.Frontier);
@@ -41,11 +41,5 @@ namespace ChessScene
         }
 
         #endregion
-    }
-
-    [System.Serializable]
-    public class Frontier
-    {
-        public List<Tile> tiles = new List<Tile>();
     }
 }

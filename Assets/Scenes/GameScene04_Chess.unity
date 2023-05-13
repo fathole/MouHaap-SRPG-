@@ -260,7 +260,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 2024590132}
   currentNotice: {fileID: 2020004433}
@@ -465,7 +465,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 504916587}
   currentNotice: {fileID: 1352851060}
@@ -836,7 +836,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 844280057}
   currentNotice: {fileID: 136684874}
@@ -958,7 +958,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 215412359}
   currentNotice: {fileID: 2080245894}
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 986368301}
   currentNotice: {fileID: 1279017582}
@@ -1700,7 +1700,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1293595182}
   currentNotice: {fileID: 143737121}
@@ -2154,7 +2154,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 455103264}
   currentNotice: {fileID: 2010194923}
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1715652495}
   currentNotice: {fileID: 1027109523}
@@ -2730,7 +2730,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 892877770}
   currentNotice: {fileID: 214231993}
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1377543841}
   currentNotice: {fileID: 1395023903}
@@ -3555,7 +3555,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1241721835}
   currentNotice: {fileID: 1540798296}
@@ -3926,7 +3926,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 659423294}
   currentNotice: {fileID: 252732134}
@@ -4215,6 +4215,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1993286026863454480, guid: 888620ff0d450194eb17dd15446d9f41, type: 3}
+      propertyPath: chessData.move
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888620ff0d450194eb17dd15446d9f41, type: 3}
 --- !u!1 &277950609
@@ -4271,7 +4275,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 479099099}
   currentNotice: {fileID: 1385440317}
@@ -4652,7 +4656,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 186070058}
   currentNotice: {fileID: 1973915406}
@@ -4774,7 +4778,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1518203037}
   currentNotice: {fileID: 121919975}
@@ -4979,7 +4983,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1945295430}
   currentNotice: {fileID: 1025635488}
@@ -5267,7 +5271,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 842097170}
   currentNotice: {fileID: 396069470}
@@ -5555,7 +5559,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1765676675}
   currentNotice: {fileID: 838213297}
@@ -5677,7 +5681,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 431588}
   currentNotice: {fileID: 35407055}
@@ -6018,7 +6022,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1805143145}
   currentNotice: {fileID: 1279597563}
@@ -6223,7 +6227,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 179440124}
   currentNotice: {fileID: 638491626}
@@ -6511,7 +6515,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1123434432}
   currentNotice: {fileID: 2103133230}
@@ -7489,7 +7493,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1899898821}
   currentNotice: {fileID: 1606365550}
@@ -7611,7 +7615,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 74714970}
   currentNotice: {fileID: 100043459}
@@ -7816,7 +7820,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 457844532}
   currentNotice: {fileID: 1013920801}
@@ -8353,7 +8357,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 2004406353}
   currentNotice: {fileID: 1992841443}
@@ -8558,7 +8562,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 626317870}
   currentNotice: {fileID: 434484488}
@@ -8878,7 +8882,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 422375106}
   currentNotice: {fileID: 303918655}
@@ -9000,7 +9004,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 941164377}
   currentNotice: {fileID: 1780088891}
@@ -9122,7 +9126,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1808788133}
   currentNotice: {fileID: 1521912654}
@@ -9244,7 +9248,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1404375774}
   currentNotice: {fileID: 1771359247}
@@ -9366,7 +9370,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 937858362}
   currentNotice: {fileID: 1508153779}
@@ -9571,7 +9575,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1093469064}
   currentNotice: {fileID: 1931181503}
@@ -10192,7 +10196,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1432563454}
   currentNotice: {fileID: 1601204211}
@@ -10397,7 +10401,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 2121918837}
   currentNotice: {fileID: 797096446}
@@ -10685,7 +10689,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 412864430}
   currentNotice: {fileID: 740332937}
@@ -10807,7 +10811,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1340688824}
   currentNotice: {fileID: 245388937}
@@ -11261,7 +11265,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1135833578}
   currentNotice: {fileID: 6815395}
@@ -11466,7 +11470,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1530433822}
   currentNotice: {fileID: 1829171245}
@@ -11704,7 +11708,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1603796702}
   currentNotice: {fileID: 566607007}
@@ -11826,7 +11830,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 92692010}
   currentNotice: {fileID: 547926201}
@@ -12447,7 +12451,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 211271693}
   currentNotice: {fileID: 1941479985}
@@ -12652,7 +12656,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 161716615}
   currentNotice: {fileID: 2058797450}
@@ -12774,7 +12778,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 635654516}
   currentNotice: {fileID: 1670558278}
@@ -13311,7 +13315,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1893324941}
   currentNotice: {fileID: 1668514935}
@@ -13516,7 +13520,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 713601394}
   currentNotice: {fileID: 1217491165}
@@ -13721,7 +13725,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1625265712}
   currentNotice: {fileID: 1825889822}
@@ -14009,7 +14013,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 483593730}
   currentNotice: {fileID: 759314939}
@@ -14131,7 +14135,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 188598951}
   currentNotice: {fileID: 1025662488}
@@ -14419,7 +14423,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1894699571}
   currentNotice: {fileID: 339109518}
@@ -14624,7 +14628,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1005101973}
   currentNotice: {fileID: 2028211858}
@@ -15244,7 +15248,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1438768428}
   currentNotice: {fileID: 838237776}
@@ -15449,7 +15453,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1665554195}
   currentNotice: {fileID: 1638912834}
@@ -16152,7 +16156,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 928294871}
   currentNotice: {fileID: 476454593}
@@ -16584,7 +16588,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 532560433}
   currentNotice: {fileID: 498651944}
@@ -16789,7 +16793,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1719941768}
   currentNotice: {fileID: 1364726666}
@@ -16911,7 +16915,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1045663479}
   currentNotice: {fileID: 1911083121}
@@ -17033,7 +17037,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 345182839}
   currentNotice: {fileID: 873514961}
@@ -17787,7 +17791,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 252756444}
   currentNotice: {fileID: 1565727903}
@@ -18212,7 +18216,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1139845916}
   currentNotice: {fileID: 599134701}
@@ -18417,7 +18421,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 370364435}
   currentNotice: {fileID: 1195451046}
@@ -18539,7 +18543,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1372255519}
   currentNotice: {fileID: 194509784}
@@ -18859,7 +18863,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1287502896}
   currentNotice: {fileID: 828998319}
@@ -19313,7 +19317,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1703423186}
   currentNotice: {fileID: 89270923}
@@ -19435,7 +19439,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 494120390}
   currentNotice: {fileID: 1101028854}
@@ -19557,7 +19561,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 697484564}
   currentNotice: {fileID: 245824623}
@@ -19845,7 +19849,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1832615575}
   currentNotice: {fileID: 898604577}
@@ -20050,7 +20054,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 63374438}
   currentNotice: {fileID: 485355898}
@@ -20255,7 +20259,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 649840157}
   currentNotice: {fileID: 505073266}
@@ -20460,7 +20464,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 860979241}
   currentNotice: {fileID: 1065153053}
@@ -20831,7 +20835,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1410207366}
   currentNotice: {fileID: 1922856442}
@@ -21119,7 +21123,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1147242218}
   currentNotice: {fileID: 676242767}
@@ -21324,7 +21328,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 516172875}
   currentNotice: {fileID: 1343851945}
@@ -21529,7 +21533,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1942271895}
   currentNotice: {fileID: 1733746564}
@@ -21855,7 +21859,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1915701075}
   currentNotice: {fileID: 476935752}
@@ -22558,7 +22562,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1089652980}
   currentNotice: {fileID: 178049943}
@@ -22846,7 +22850,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 2002156643}
   currentNotice: {fileID: 321398590}
@@ -23383,7 +23387,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1675982993}
   currentNotice: {fileID: 1469897375}
@@ -23505,7 +23509,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1827627736}
   currentNotice: {fileID: 1592989848}
@@ -23710,7 +23714,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 119904021}
   currentNotice: {fileID: 676908696}
@@ -24164,7 +24168,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 920994749}
   currentNotice: {fileID: 1491551118}
@@ -24664,7 +24668,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 890553016}
   currentNotice: {fileID: 1938023362}
@@ -25038,7 +25042,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1040885524}
   currentNotice: {fileID: 1382467236}
@@ -25409,7 +25413,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 227392771}
   currentNotice: {fileID: 1052644454}
@@ -25531,7 +25535,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1873994254}
   currentNotice: {fileID: 1540332436}
@@ -25736,7 +25740,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1404173093}
   currentNotice: {fileID: 406018823}
@@ -25977,7 +25981,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1423022289}
   currentNotice: {fileID: 1220092074}
@@ -26099,7 +26103,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1555520541}
   currentNotice: {fileID: 973020899}
@@ -26936,7 +26940,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 737019913}
   currentNotice: {fileID: 63592740}
@@ -27556,7 +27560,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1997563864}
   currentNotice: {fileID: 2072535614}
@@ -27927,7 +27931,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1100374721}
   currentNotice: {fileID: 134239024}
@@ -28298,7 +28302,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1353940532}
   currentNotice: {fileID: 1091690569}
@@ -28503,7 +28507,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 455977099}
   currentNotice: {fileID: 1760283751}
@@ -28791,7 +28795,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1461764933}
   currentNotice: {fileID: 715210820}
@@ -29245,7 +29249,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 110764676}
   currentNotice: {fileID: 2131740620}
@@ -29450,7 +29454,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1834979943}
   currentNotice: {fileID: 564768073}
@@ -29738,7 +29742,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1328276493}
   currentNotice: {fileID: 110894185}
@@ -29860,7 +29864,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1781807257}
   currentNotice: {fileID: 204280353}
@@ -30694,7 +30698,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1954679625}
   currentNotice: {fileID: 829443612}
@@ -30816,7 +30820,7 @@ MonoBehaviour:
   occupyingChess: {fileID: 0}
   costFromOrigin: 0
   costToDestination: 0
-  terrainCost: 0
+  terrainCost: 1
   occupied: 0
   frontierNotice: {fileID: 1529117124}
   currentNotice: {fileID: 2070901941}

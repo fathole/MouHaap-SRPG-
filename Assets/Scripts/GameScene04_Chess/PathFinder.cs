@@ -13,7 +13,9 @@ namespace ChessScene
         [SerializeField] private LayerMask tileMask;
         private List<Tile> frontierList = new List<Tile>();
 
-
+        // ToDo: Show Current Chess Attack Tail
+        // ToDo: Show Current Chess Reach Tail
+        
         public Path FindPath(Tile originTile, Tile destination)
         {
             ResetPathFinder();

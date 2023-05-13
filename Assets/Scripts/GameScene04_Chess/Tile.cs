@@ -12,11 +12,12 @@ namespace ChessScene
         public Tile connectedTile;
         public Chess occupyingChess;
 
-        public float costFromOrigin;
-        public float costToDestination;
-        public int terrainCost;
-        public float totalCost { get { return costFromOrigin + costToDestination + terrainCost; } }
-        public bool occupied;               
+        [HideInInspector] public float costFromOrigin;
+        [HideInInspector] public float costToDestination;
+        [HideInInspector] public float totalCost { get { return costFromOrigin + costToDestination + terrainCost; } }
+
+        public int terrainCost;        
+        public bool occupied;
 
         [SerializeField] private GameObject frontierNotice;
         [SerializeField] private GameObject currentNotice;

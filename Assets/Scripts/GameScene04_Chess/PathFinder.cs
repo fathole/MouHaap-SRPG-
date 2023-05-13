@@ -9,13 +9,19 @@ namespace ChessScene
     [RequireComponent(typeof(PathIllustrator))]
     public class PathFinder : MonoBehaviour
     {
+        #region Declaration
+
         [SerializeField] private PathIllustrator pathIllustrator;
         [SerializeField] private LayerMask tileMask;
         private List<Tile> frontierList = new List<Tile>();
 
+        #endregion
+
+        #region Main Function
+
         // ToDo: Show Current Chess Attack Tail
         // ToDo: Show Current Chess Reach Tail
-        
+
         public Path FindPath(Tile originTile, Tile destination)
         {
             ResetPathFinder();
@@ -148,5 +154,7 @@ namespace ChessScene
 
             frontierList.Clear();
         }
+
+        #endregion
     }
 }

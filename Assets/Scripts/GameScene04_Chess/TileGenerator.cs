@@ -6,6 +6,14 @@ namespace ChessScene
 {
     public class TileGenerator : MonoBehaviour
     {
+        #region Declaration
+
+        // Comment: Nothing Declaration
+
+        #endregion        
+
+        #region Main Function
+
         private void ClearGrid()
         {
             for (int i = transform.childCount; i >= transform.childCount; i--)
@@ -15,8 +23,8 @@ namespace ChessScene
                     break;
                 }
 
-                int c = Mathf.Clamp(i - 1, 0, transform.childCount);
-                DestroyImmediate(transform.GetChild(c).gameObject);
+                int childIndex   = Mathf.Clamp(i - 1, 0, transform.childCount);
+                DestroyImmediate(transform.GetChild(childIndex).gameObject);
             }
         }
 
@@ -49,6 +57,8 @@ namespace ChessScene
                     CreateTile(tile, position, new Vector2Int(x, y));
                 }
             }
-        }        
+        }
+
+        #endregion
     }
 }

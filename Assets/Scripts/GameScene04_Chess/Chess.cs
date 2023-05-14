@@ -6,7 +6,11 @@ namespace ChessScene
 {
     public class Chess : MonoBehaviour
     {
+        #region Declaration
+
         public ChessData chessData;
+
+        #endregion
 
         #region Init Stage
 
@@ -19,6 +23,7 @@ namespace ChessScene
 
         #region Setup Stage
 
+        // ToDo: Setup By Controller
         private void Start()
         {            
             SetupChess();
@@ -64,7 +69,7 @@ namespace ChessScene
 
         private IEnumerator MoveAlongPath(Path path)
         {
-            const float minDistance = 0.05f;
+            const float minimumDistance = 0.05f;
 
             int currentStep = 0;
             int pathLength = path.tiles.Length - 1;
@@ -82,7 +87,7 @@ namespace ChessScene
                 MoveAndRotate(currentTile.transform.position, nextTilePosition, movementTime);
                 animationTime += Time.deltaTime;
 
-                if (Vector3.Distance(transform.position, nextTilePosition) > minDistance)
+                if (Vector3.Distance(transform.position, nextTilePosition) > minimumDistance)
                     continue;
 
                 //Min dist has been reached, look to next step in path

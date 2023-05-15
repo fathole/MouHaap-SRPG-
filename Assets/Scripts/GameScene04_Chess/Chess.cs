@@ -72,8 +72,8 @@ namespace ChessScene
             const float minimumDistance = 0.05f;
 
             int currentStep = 0;
-            int pathLength = path.tiles.Length - 1;
-            Tile currentTile = path.tiles[0];
+            int pathLength = path.tileArray.Length - 1;
+            Tile currentTile = path.tileArray[0];
             float animationTime = 0f;
 
             while (currentStep <= pathLength)
@@ -81,7 +81,7 @@ namespace ChessScene
                 yield return null;
 
                 //Move towards the next step in the path until we are closer than MIN_DIST
-                Vector3 nextTilePosition = path.tiles[currentStep].transform.position;
+                Vector3 nextTilePosition = path.tileArray[currentStep].transform.position;
 
                 float movementTime = animationTime / 0.5f;
                 MoveAndRotate(currentTile.transform.position, nextTilePosition, movementTime);
@@ -91,12 +91,12 @@ namespace ChessScene
                     continue;
 
                 //Min dist has been reached, look to next step in path
-                currentTile = path.tiles[currentStep];
+                currentTile = path.tileArray[currentStep];
                 currentStep++;
                 animationTime = 0f;
             }
 
-            FinalizePosition(path.tiles[pathLength]);
+            FinalizePosition(path.tileArray[pathLength]);
         }
 
         private void MoveAndRotate(Vector3 origin, Vector3 destination, float duration)

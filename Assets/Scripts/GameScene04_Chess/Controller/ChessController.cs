@@ -39,6 +39,8 @@ namespace ChessScene
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
         [SerializeField] private MidPointCameraManager midPointCameraManager;
+        [SerializeField] private PathFinderManager pathFinderManager;
+        [SerializeField] private PathIllustratorManager pathIllustratorManager;
 
         [Header("Font and Text")]
         private TMP_FontAsset fontAsset = null;
@@ -63,7 +65,6 @@ namespace ChessScene
 
         [Header("Chess")]
         [SerializeField] private LayerMask interactMask;
-        [SerializeField] private PathFinder pathFinder; 
         private Path lastPath;
         private Tile currentTile;
         private Chess selectedChess;        
@@ -99,6 +100,8 @@ namespace ChessScene
         {
             textManager.InitManager();
             midPointCameraManager.InitManager();
+            pathFinderManager.InitManager();
+            pathIllustratorManager.InitManager();
         }
 
         #endregion
@@ -138,6 +141,8 @@ namespace ChessScene
         {
             textManager.SetupManager();
             midPointCameraManager.SetupManager();
+            pathFinderManager.SetupManager(interactMask);
+            pathIllustratorManager.SetupManager();
         }
 
         #endregion
@@ -304,6 +309,83 @@ namespace ChessScene
 
         #endregion
 
+        #region Update Chess Handling
+
+        private void InspectTile()
+        {
+            if (currentTile.occupied)
+            {
+                InspectChess();
+            }
+            else
+            {
+                NavigateToTile();
+            }
+        }
+
+        private void InspectChess()
+        {
+            if (currentTile.occupyingChess.chessData.isMoving)
+            {
+                return;
+            }
+
+            currentTile.SetNotice(TileNoticeOption.Current);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                selectedChess = currentTile.occupyingChess;
+            }
+        }
+
+        private void NavigateToTile()
+        {
+            if (selectedChess == null || selectedChess.chessData.isMoving == true)
+            {
+                return;
+            }
+
+            if (RetrievePath(out Path path))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    selectedChess.StartMove(path);
+                    pathFinderManager.ResetPathFinder(path);
+                    selectedChess = null;
+
+                    // ToDo: Wait Movement Finish, Attack Or Something After Movement
+                }
+            }
+        }
+
+        private bool RetrievePath(out Path path)
+        {
+            path = pathFinderManager.FindPath(selectedChess.chessData.chessTile, currentTile);
+
+            if (path == null || path == lastPath)
+            {
+                return false;
+            }
+            else
+            {
+                // If Last Path != Null, Reset Path Tail
+                if (lastPath != null)
+                {
+                    pathFinderManager.ResetPathFinder(lastPath);
+                }
+
+                // Show New Path Tail
+                pathIllustratorManager.IllustratePath(path);
+
+                // Update Last Path
+                lastPath = path;
+
+                return true;
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #region Game Manager Helper Function
@@ -343,24 +425,11 @@ namespace ChessScene
             {
                 CameraHandle();
 
-                ClearTile();
-
-                MouseUpdate();
+                ChessMouseUpdate();
             }
         }
 
-        private void ClearTile()
-        {
-            if (currentTile == null || currentTile.occupied == false)
-            {
-                return;
-            }
-            
-            currentTile.SetNotice(TileNoticeOption.None);
-            currentTile = null;
-        }
-
-        private void MouseUpdate()
+        private void ChessMouseUpdate()
         {
             if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 200f, interactMask))
             {
@@ -370,62 +439,6 @@ namespace ChessScene
             currentTile = hit.transform.GetComponent<Tile>();
             InspectTile();
         }
-
-        private void InspectTile()
-        {
-            if (currentTile.occupied)
-            {
-                InspectChess();
-            }
-            else
-            {
-                NavigateToTile();
-            }
-        }
-
-        private void InspectChess()
-        {
-            if (currentTile.occupyingChess.chessData.isMoving)
-            {
-                return;
-            }
-            currentTile.SetNotice(TileNoticeOption.Current);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                selectedChess = currentTile.occupyingChess;
-            }
-        }
-
-        private void NavigateToTile()
-        {
-            if (selectedChess == null || selectedChess.chessData.isMoving == true)
-            {
-                return;
-            }
-
-            if (RetrievePath(out Path newPath))
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    selectedChess.StartMove(newPath);
-                    pathFinder.ResetPathFinder();
-                    selectedChess = null;
-                }
-            }
-        }
-
-        private bool RetrievePath(out Path path)
-        {
-            path = pathFinder.FindPath(selectedChess.chessData.chessTile, currentTile);
-
-            if (path == null || path == lastPath)
-            {
-                return false;
-            }
-            return true;
-        }
-
 
         #region DEV Function
 

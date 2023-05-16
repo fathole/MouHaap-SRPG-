@@ -65,6 +65,7 @@ namespace ChessScene
 
         [Header("Chess")]
         [SerializeField] private LayerMask interactMask;
+        [SerializeField] private List<Chess> chessList;
         private Path lastPath;
         private Tile currentTile;
         private Chess selectedChess;        
@@ -124,6 +125,8 @@ namespace ChessScene
             SetupByOperationValue();
 
             SetupControllerManager();
+
+            SetupChess();
         }
 
         private void SetupByOperationValue()
@@ -143,6 +146,15 @@ namespace ChessScene
             midPointCameraManager.SetupManager();
             pathFinderManager.SetupManager(interactMask);
             pathIllustratorManager.SetupManager();
+        }
+
+        private void SetupChess()
+        {
+            foreach(Chess chess in chessList)
+            {
+                chess.InitChess();
+                chess.SetupChess();
+            }
         }
 
         #endregion

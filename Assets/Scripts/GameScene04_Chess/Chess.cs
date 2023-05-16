@@ -23,12 +23,7 @@ namespace ChessScene
 
         #region Setup Stage
 
-        // ToDo: Setup By Controller
-        private void Start()
-        {            
-            SetupChess();
-        }
-
+        // ToDo: Setup Chess By Chess Data
         public void SetupChess()
         {
             // Setup Tile

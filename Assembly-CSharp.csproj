@@ -187,6 +187,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\TileData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

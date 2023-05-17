@@ -150,7 +150,10 @@ namespace ChessScene
 
         private void SetupChess()
         {
-            foreach(Chess chess in chessList)
+            // Hardcode Chess Data
+            ChessData chessData = new ChessData();
+
+            foreach (Chess chess in chessList)
             {
                 chess.InitChess();
                 chess.SetupChess();
@@ -337,7 +340,7 @@ namespace ChessScene
 
         private void InspectChess()
         {
-            if (currentTile.occupyingChess.chessData.isMoving)
+            if (currentTile.occupyingChess.chessData.chessInfo.isMoving)
             {
                 return;
             }
@@ -352,7 +355,7 @@ namespace ChessScene
 
         private void NavigateToTile()
         {
-            if (selectedChess == null || selectedChess.chessData.isMoving == true)
+            if (selectedChess == null || selectedChess.chessData.chessInfo.isMoving == true)
             {
                 return;
             }
@@ -372,7 +375,7 @@ namespace ChessScene
 
         private bool RetrievePath(out Path path)
         {
-            path = pathFinderManager.FindPath(selectedChess.chessData.chessTile, currentTile);
+            path = pathFinderManager.FindPath(selectedChess.chessData.chessInfo.chessTile, currentTile);
 
             if (path == null || path == lastPath)
             {

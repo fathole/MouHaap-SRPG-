@@ -4219,6 +4219,10 @@ PrefabInstance:
       propertyPath: chessData.move
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1993286026863454480, guid: 888620ff0d450194eb17dd15446d9f41, type: 3}
+      propertyPath: chessData.groundLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888620ff0d450194eb17dd15446d9f41, type: 3}
 --- !u!114 &274799379 stripped
@@ -18056,6 +18060,9 @@ MonoBehaviour:
     m_Bits: 8
   chessList:
   - {fileID: 274799379}
+  chessTailMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1279597563
 GameObject:
   m_ObjectHideFlags: 0

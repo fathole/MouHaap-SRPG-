@@ -26,14 +26,20 @@ namespace ChessScene
         // ToDo: Setup Chess By Chess Data
         public void SetupChess()
         {
-            // Setup Tile
-            if (chessData.chessTile != null)
-            {
-                FinalizePosition(chessData.chessTile);
-                return;
-            }
+            // Setup Chess Data
+            //this.chessData = chessData;
 
-            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 50f, chessData.groundLayerMask))
+            // Setup Tile
+            //FinalizePosition(chessData.chessTile);
+
+            //// Setup Tile
+            //if (chessData.chessTile != null)
+            //{
+            //    FinalizePosition(chessData.chessTile);
+            //    return;
+            //}
+
+            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 50f, LayerMask.GetMask("Tile")))
             {
                 FinalizePosition(hit.transform.GetComponent<Tile>());
                 return;
@@ -48,16 +54,16 @@ namespace ChessScene
 
         public void StartMove(Path path)
         {
-            chessData.isMoving = true;
-            chessData.chessTile.occupied = false;
+            chessData.chessInfo.isMoving = true;
+            chessData.chessInfo.chessTile.occupied = false;
             StartCoroutine(MoveAlongPath(path));
         }
 
         private void FinalizePosition(Tile tile)
         {
             transform.position = tile.transform.position;
-            chessData.chessTile = tile;
-            chessData.isMoving = false;
+            chessData.chessInfo.chessTile = tile;
+            chessData.chessInfo.isMoving = false;
             tile.occupied = true;
             tile.occupyingChess = this;
         }

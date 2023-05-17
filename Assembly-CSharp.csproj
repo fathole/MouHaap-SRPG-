@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ControllerManager\TextManager\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\DataClass\WorldSceneOperationValue.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolumeToggleButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\TileData.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\ODESaveFileScrollViewSaveButtonCrossButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\Manager\ViewManager\PageManager\HomePageManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\UDETitle.cs" />
@@ -187,7 +188,6 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
-    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\TileData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

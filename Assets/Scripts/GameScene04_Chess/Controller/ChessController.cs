@@ -148,15 +148,19 @@ namespace ChessScene
             pathIllustratorManager.SetupManager();
         }
 
+        public Tile hardcodeSpawnTile;
+
         private void SetupChess()
         {
             // Hardcode Chess Data
-            ChessData chessData = new ChessData();
+            ChessData hardcodeChessData = new ChessData();
+            hardcodeChessData.characterInfo.move = 3; 
+            hardcodeChessData.chessInfo.chessTile = hardcodeSpawnTile;
 
             foreach (Chess chess in chessList)
             {
                 chess.InitChess();
-                chess.SetupChess();
+                chess.SetupChess(hardcodeChessData);
             }
         }
 
@@ -443,7 +447,7 @@ namespace ChessScene
                 ChessMouseUpdate();
             }
         }
-
+            
         private void ChessMouseUpdate()
         {
             if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 200f, interactMask))

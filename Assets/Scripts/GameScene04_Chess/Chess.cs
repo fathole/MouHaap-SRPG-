@@ -24,28 +24,13 @@ namespace ChessScene
         #region Setup Stage
 
         // ToDo: Setup Chess By Chess Data
-        public void SetupChess()
+        public void SetupChess(ChessData chessData)
         {
             // Setup Chess Data
-            //this.chessData = chessData;
+            this.chessData = chessData;
 
             // Setup Tile
-            //FinalizePosition(chessData.chessTile);
-
-            //// Setup Tile
-            //if (chessData.chessTile != null)
-            //{
-            //    FinalizePosition(chessData.chessTile);
-            //    return;
-            //}
-
-            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 50f, LayerMask.GetMask("Tile")))
-            {
-                FinalizePosition(hit.transform.GetComponent<Tile>());
-                return;
-            }
-
-            Debug.LogError("<color=red>----- Unable To Find Chess Tile -----</color>");
+            FinalizePosition(chessData.chessInfo.chessTile);
         }
 
         #endregion

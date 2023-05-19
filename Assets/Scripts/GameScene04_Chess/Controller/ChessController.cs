@@ -403,11 +403,11 @@ namespace ChessScene
             }
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Game Manager Helper Function
+#region Game Manager Helper Function
 
         public void RunEnterSceneMode(ChessSceneOperationValue operationValue)
         {
@@ -436,7 +436,7 @@ namespace ChessScene
             Main();
         }
 
-        #endregion
+#endregion
 
         private void Update()
         {
@@ -459,7 +459,7 @@ namespace ChessScene
             InspectTile();
         }
 
-        #region DEV Function
+#region DEV Function
 
         public void DEVHomeSceneButtonPointerClickCallback()
         {
@@ -473,6 +473,6 @@ namespace ChessScene
             isSceneFinished = true;
         }
 
-        #endregion
+#endregion
     }
 }

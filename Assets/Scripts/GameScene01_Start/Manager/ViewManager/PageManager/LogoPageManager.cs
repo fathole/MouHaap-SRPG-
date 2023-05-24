@@ -52,6 +52,7 @@ namespace StartScene
             logoPage.uSEBackground.InitElement();
             logoPage.uSEName.InitElement();
             logoPage.uSEOutline.InitElement();
+            logoPage.uSELogoAnimationSound.InitElement();
         }
 
         /* ----- Setup Element ----- */
@@ -69,6 +70,11 @@ namespace StartScene
         public void SetupUSEOutline()
         {
             logoPage.uSEOutline.SetupElement();
+        }
+
+        public void SetupUSELogoAnimationSound()
+        {
+            logoPage.uSELogoAnimationSound.SetupElement();
         }
 
         /* ----- Timeline ----- */

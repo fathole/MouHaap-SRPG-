@@ -188,6 +188,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
+    <Compile Include="Assets\Scripts\GameScene01_Start\ViewElement\UIMain\LogoPage\USELogoAnimationSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -11,6 +11,7 @@ namespace StartScene.UIMain.LogoPage
         public USEBackground uSEBackground;
         public USEName uSEName;
         public USEOutline uSEOutline;
+        public USELogoAnimationSound uSELogoAnimationSound;
 
         #endregion
     }

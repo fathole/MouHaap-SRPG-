@@ -68,7 +68,7 @@ namespace ChessScene
         [SerializeField] private List<Chess> chessList;
         private Path lastPath;
         private Tile currentTile;
-        private Chess selectedChess;        
+        private Chess selectedChess;
 
         #endregion
 
@@ -125,8 +125,6 @@ namespace ChessScene
             SetupByOperationValue();
 
             SetupControllerManager();
-
-            SetupChess();
         }
 
         private void SetupByOperationValue()
@@ -146,22 +144,6 @@ namespace ChessScene
             midPointCameraManager.SetupManager();
             pathFinderManager.SetupManager(interactMask);
             pathIllustratorManager.SetupManager();
-        }
-
-        public Tile hardcodeSpawnTile;
-
-        private void SetupChess()
-        {
-            // Hardcode Chess Data
-            ChessData hardcodeChessData = new ChessData();
-            hardcodeChessData.characterInfo.move = 3; 
-            hardcodeChessData.chessInfo.chessTile = hardcodeSpawnTile;
-
-            foreach (Chess chess in chessList)
-            {
-                chess.InitChess();
-                chess.SetupChess(hardcodeChessData);
-            }
         }
 
         #endregion
@@ -371,8 +353,6 @@ namespace ChessScene
                     selectedChess.StartMove(path);
                     pathFinderManager.ResetPathFinder(path);
                     selectedChess = null;
-
-                    // ToDo: Wait Movement Finish, Attack Or Something After Movement
                 }
             }
         }
@@ -403,11 +383,11 @@ namespace ChessScene
             }
         }
 
-#endregion
+        #endregion
 
-#endregion
+        #endregion
 
-#region Game Manager Helper Function
+        #region Game Manager Helper Function
 
         public void RunEnterSceneMode(ChessSceneOperationValue operationValue)
         {
@@ -436,7 +416,7 @@ namespace ChessScene
             Main();
         }
 
-#endregion
+        #endregion
 
         private void Update()
         {
@@ -447,7 +427,7 @@ namespace ChessScene
                 ChessMouseUpdate();
             }
         }
-            
+
         private void ChessMouseUpdate()
         {
             if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 200f, interactMask))
@@ -459,7 +439,7 @@ namespace ChessScene
             InspectTile();
         }
 
-#region DEV Function
+        #region DEV Function
 
         public void DEVHomeSceneButtonPointerClickCallback()
         {
@@ -473,6 +453,6 @@ namespace ChessScene
             isSceneFinished = true;
         }
 
-#endregion
+        #endregion
     }
 }

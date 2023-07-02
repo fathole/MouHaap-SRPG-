@@ -39,8 +39,6 @@ namespace ChessScene
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
         [SerializeField] private MidPointCameraManager midPointCameraManager;
-        [SerializeField] private PathFinderManager pathFinderManager;
-        [SerializeField] private PathIllustratorManager pathIllustratorManager;
 
         [Header("Font and Text")]
         private TMP_FontAsset fontAsset = null;
@@ -60,15 +58,7 @@ namespace ChessScene
         [Header("Camera Control Variable")]
         [SerializeField] private float dragCameraThresholder = 200f;
         private Vector3 dragCameraPreviousPosition;
-        private bool isCameraDrag;
-        private CameraFacingOption cameraFacingOption;
-
-        [Header("Chess")]
-        [SerializeField] private LayerMask interactMask;
-        [SerializeField] private List<Chess> chessList;
-        private Path lastPath;
-        private Tile currentTile;
-        private Chess selectedChess;
+        private bool isCameraDrag;        
 
         #endregion
 
@@ -101,8 +91,6 @@ namespace ChessScene
         {
             textManager.InitManager();
             midPointCameraManager.InitManager();
-            pathFinderManager.InitManager();
-            pathIllustratorManager.InitManager();
         }
 
         #endregion
@@ -142,8 +130,6 @@ namespace ChessScene
         {
             textManager.SetupManager();
             midPointCameraManager.SetupManager();
-            pathFinderManager.SetupManager(interactMask);
-            pathIllustratorManager.SetupManager();
         }
 
         #endregion
@@ -192,10 +178,6 @@ namespace ChessScene
         {
             // Setup Text Content
             textContent = textManager.GetTextContent(gameManager.GetDisplayLanguageOption());
-
-            // Get Camera Facing
-            cameraFacingOption = midPointCameraManager.GetCameraFacing();
-            Debug.Log(cameraFacingOption);
         }
 
         #endregion
@@ -280,13 +262,6 @@ namespace ChessScene
                     dragCameraPreviousPosition = currentPosition;
                 }
             }
-
-            if (Input.GetMouseButtonUp(2))
-            {
-                cameraFacingOption = midPointCameraManager.GetCameraFacing();
-                isCameraDrag = false;
-            }
-
         }
 
         private void CameraZoomHandle()
@@ -305,81 +280,6 @@ namespace ChessScene
                 }
 
                 midPointCameraManager.ZoomCamera(zoomDirection);
-            }
-        }
-
-        #endregion
-
-        #region Update Chess Handling
-
-        private void InspectTile()
-        {
-            if (currentTile.occupied)
-            {
-                InspectChess();
-            }
-            else
-            {
-                NavigateToTile();
-            }
-        }
-
-        private void InspectChess()
-        {
-            if (currentTile.occupyingChess.chessData.chessInfo.isMoving)
-            {
-                return;
-            }
-
-            currentTile.SetNotice(TileNoticeOption.Current);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                selectedChess = currentTile.occupyingChess;
-            }
-        }
-
-        private void NavigateToTile()
-        {
-            if (selectedChess == null || selectedChess.chessData.chessInfo.isMoving == true)
-            {
-                return;
-            }
-
-            if (RetrievePath(out Path path))
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    selectedChess.StartMove(path);
-                    pathFinderManager.ResetPathFinder(path);
-                    selectedChess = null;
-                }
-            }
-        }
-
-        private bool RetrievePath(out Path path)
-        {
-            path = pathFinderManager.FindPath(selectedChess.chessData.chessInfo.chessTile, currentTile);
-
-            if (path == null || path == lastPath)
-            {
-                return false;
-            }
-            else
-            {
-                // If Last Path != Null, Reset Path Tail
-                if (lastPath != null)
-                {
-                    pathFinderManager.ResetPathFinder(lastPath);
-                }
-
-                // Show New Path Tail
-                pathIllustratorManager.IllustratePath(path);
-
-                // Update Last Path
-                lastPath = path;
-
-                return true;
             }
         }
 
@@ -423,20 +323,7 @@ namespace ChessScene
             if (isEnableUserInput)
             {
                 CameraHandle();
-
-                ChessMouseUpdate();
             }
-        }
-
-        private void ChessMouseUpdate()
-        {
-            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 200f, interactMask))
-            {
-                return;
-            }
-
-            currentTile = hit.transform.GetComponent<Tile>();
-            InspectTile();
         }
 
         #region DEV Function

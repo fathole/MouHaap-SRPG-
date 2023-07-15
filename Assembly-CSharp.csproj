@@ -159,6 +159,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGameSettingButton.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessData.cs" />
     <Compile Include="Assets\Scripts\GameScene03_World\Manager\ViewManager\SortingLayerManager\UIMainManager.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIMain\HomePage\ODEGameModeBackButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ViewManager\SortingLayerManager\UIPopupManager.cs" />
@@ -180,7 +181,7 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
-    <Compile Include="Assets\Scripts\GameScene04_Chess\DataClass\ChessData.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Chess.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

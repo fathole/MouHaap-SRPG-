@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\MiddlePopup\ODEPrimaryButton.cs" />
     <Compile Include="Assets\Scripts\GameScene02_Home\ViewElement\UIPopup\LoadGamePopup\USEBackground.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Controller\StartController.cs" />
+    <Compile Include="Assets\Scripts\GameScene04_Chess\Chess.cs" />
     <Compile Include="Assets\Scripts\GameScene04_Chess\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\TextManager\TextContentZHHK.cs" />
     <Compile Include="Assets\Scripts\GameManager\BaseClass\DraggableObjectBase.cs" />
@@ -181,7 +182,6 @@
     <Compile Include="Assets\Scripts\GameManager\Manager\ControllerManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameScene01_Start\Manager\ControllerManager\TextManager\TextManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ViewElement\UIPopup\GameSettingPopup\ODEMusicVolume.cs" />
-    <Compile Include="Assets\Scripts\GameScene04_Chess\Chess.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

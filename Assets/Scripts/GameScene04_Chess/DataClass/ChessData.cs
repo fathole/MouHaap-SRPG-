@@ -23,6 +23,9 @@ public class ChessData : MonoBehaviour
     public static ChessData defaultChessData = new ChessData()
     {
         chessJobOption = ChessJobOption.None,
+        level = 0,
+        movement = 0,
+        health = 0,
     };
 }
 

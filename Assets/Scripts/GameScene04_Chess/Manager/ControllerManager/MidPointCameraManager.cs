@@ -88,7 +88,6 @@ namespace ChessScene
 
         public void ZoomCamera(Vector3 zoomDirection)
         {
-
             if (followOffset.magnitude < followOffsetMin)
             {
                 followOffset = zoomDirection * followOffsetMin;

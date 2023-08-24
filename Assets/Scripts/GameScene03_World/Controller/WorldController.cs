@@ -31,12 +31,14 @@ namespace WorldScene
         public static WorldController instance;
 
         [Header("Controller")]
-        private ControllerModeOption currentMode = ControllerModeOption.None;
+        private ControllerModeOption currentMode = ControllerModeOption.None;        
         private bool isSceneFinished = false;
+        private bool isEnableUserInput = false;
         private WorldSceneOperationValue operationValue = null;// Update Scene Value By Operation Value
 
         [Header("Controller Manager")]
         [SerializeField] private TextManager textManager;
+        [SerializeField] private MidPointCameraManager midPointCameraManager;
 
         [Header("Font and Text")]
         private TMP_FontAsset fontAsset = null;
@@ -91,6 +93,7 @@ namespace WorldScene
         private void InitControllerManager()
         {
             textManager.InitManager();
+            midPointCameraManager.InitManager();
         }
 
         #endregion
@@ -129,7 +132,7 @@ namespace WorldScene
         private void SetupControllerManager()
         {
             textManager.SetupManager();
-
+            midPointCameraManager.SetupManager();
         }
 
         #endregion
@@ -188,7 +191,11 @@ namespace WorldScene
         {
             Debug.Log("----- Home Controller: Run Scene Mode -----");
 
+            isEnableUserInput = true;
+
             yield return new WaitUntil(() => isSceneFinished == true);
+
+            isEnableUserInput = false;
 
             finishCallback?.Invoke();
         }
@@ -218,120 +225,117 @@ namespace WorldScene
 
         #endregion
 
-        //private void Update()
-        //{
-        //    if (isEnableUserInput)
-        //    {
-        //        CameraHandle();
-        //    }
-        //}
+        private void Update()
+        {
+            CameraHandle();
+        }
 
-        //#region Update  - Camera Handling
+        #region Update  - Camera Handling
 
-        //private void CameraHandle()
-        //{
-        //    CameraMoveHandle();
+        private void CameraHandle()
+        {
+            CameraMoveHandle();
 
-        //    CameraRotateHandle();
+            CameraRotateHandle();
 
-        //    CameraZoomHandle();
-        //}
+            CameraZoomHandle();
+        }
 
-        //private void CameraMoveHandle()
-        //{            
-        //    // If Press Axis, Set isCameraFollowPlayer To False
-        //    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-        //    {
-        //        isCameraFollowPlayer = false;
-        //    }
+        private void CameraMoveHandle()
+        {
+            // If Press Axis, Set isCameraFollowPlayer To False
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                isCameraFollowPlayer = false;
+            }
 
-        //    // If Axis Clicked, Move The Camera
-        //    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        //    {
-        //        // Update Input Axis
-        //        verticalInput = Input.GetAxis("Vertical");
-        //        horizontalInput = Input.GetAxis("Horizontal");
+            // If Axis Clicked, Move The Camera
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // Update Input Axis
+                verticalInput = Input.GetAxis("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
 
-        //        midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
-        //    }
+                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
 
-        //    // If Camre Follow Player, Move Camera According To Player Position
-        //    if (isCameraFollowPlayer == true)
-        //    {
-        //        midPointCameraManager.MoveMidPoint(view.playerTransform.position);
-        //    }
-        //}
+            // If Camre Follow Player, Move Camera According To Player Position
+            if (isCameraFollowPlayer == true)
+            {
+                midPointCameraManager.MoveMidPoint(view.playerTransform.position);
+            }
+        }
 
-        //private void CameraRotateHandle()
-        //{
-        //    // Get Previous Position Of Drag
-        //    if (Input.GetMouseButtonDown(2))
-        //    {
-        //        dragCameraPreviousPosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
-        //    }
+        private void CameraRotateHandle()
+        {
+            // Get Previous Position Of Drag
+            if (Input.GetMouseButtonDown(2))
+            {
+                dragCameraPreviousPosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
+            }
 
-        //    if (Input.GetMouseButton(2))
-        //    {
-        //        if (isCameraDrag != true)
-        //        {
-        //            float differenceX = (Input.mousePosition - dragCameraPreviousPosition).x;
+            if (Input.GetMouseButton(2))
+            {
+                if (isCameraDrag != true)
+                {
+                    float differenceX = (Input.mousePosition - dragCameraPreviousPosition).x;
 
-        //            if (Math.Abs(differenceX) > dragCameraThresholder)
-        //            {
-        //                isCameraDrag = true;
-        //                dragCameraPreviousPosition = Input.mousePosition;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            Vector3 currentPosition = Input.mousePosition;
+                    if (Math.Abs(differenceX) > dragCameraThresholder)
+                    {
+                        isCameraDrag = true;
+                        dragCameraPreviousPosition = Input.mousePosition;
+                    }
+                }
+                else
+                {
+                    Vector3 currentPosition = Input.mousePosition;
 
-        //            float differenceXPosition = (dragCameraPreviousPosition - currentPosition).x;
+                    float differenceXPosition = (dragCameraPreviousPosition - currentPosition).x;
 
-        //            midPointCameraManager.RotateMidPoint(differenceXPosition);
+                    midPointCameraManager.RotateMidPoint(differenceXPosition);
 
-        //            dragCameraPreviousPosition = currentPosition;
-        //        }
-        //    }
+                    dragCameraPreviousPosition = currentPosition;
+                }
+            }
 
-        //    if (Input.GetMouseButtonUp(2))
-        //    {
-        //        isCameraDrag = false;
-        //    }
+            if (Input.GetMouseButtonUp(2))
+            {
+                isCameraDrag = false;
+            }
 
-        //}
+        }
 
-        //private void CameraZoomHandle()
-        //{
-        //    if (isCameraDrag != true)
-        //    {
-        //        // Type A
-        //        //if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        //        //{
-        //        //    midPointCameraManager.ZoomInMidPoint();
-        //        //}
-        //        //else if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        //        //{
-        //        //    midPointCameraManager.ZoomOutMidPoint();
-        //        //}
+        private void CameraZoomHandle()
+        {
+            if (isCameraDrag != true)
+            {
+                // Type A
+                //if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                //{
+                //    midPointCameraManager.ZoomInMidPoint();
+                //}
+                //else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                //{
+                //    midPointCameraManager.ZoomOutMidPoint();
+                //}
 
-        //        // Type B
-        //        Vector3 zoomDirection = midPointCameraManager.followOffset.normalized;
+                // Type B
+                Vector3 zoomDirection = midPointCameraManager.followOffset.normalized;
 
-        //        if (Input.mouseScrollDelta.y > 0)
-        //        {
-        //            midPointCameraManager.followOffset -= zoomDirection;
-        //        }
-        //        if(Input.mouseScrollDelta.y < 0)
-        //        {
-        //            midPointCameraManager.followOffset += zoomDirection;
-        //        }
+                if (Input.mouseScrollDelta.y > 0)
+                {
+                    midPointCameraManager.followOffset -= zoomDirection;
+                }
+                if (Input.mouseScrollDelta.y < 0)
+                {
+                    midPointCameraManager.followOffset += zoomDirection;
+                }
 
-        //        midPointCameraManager.ZoomCamera(zoomDirection);
-        //    }
-        //}
+                midPointCameraManager.ZoomCamera(zoomDirection);
+            }
+        }
 
-        //#endregion
+        #endregion
 
         #endregion
 

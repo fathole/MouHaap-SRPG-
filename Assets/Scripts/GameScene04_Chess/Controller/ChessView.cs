@@ -15,6 +15,9 @@ namespace ChessScene
         public UIMainManager uIMainManager;
         public UIPopupManager uIPopupManager;
 
+        [Header("Player")]
+        public Transform playerTransform;
+
         #endregion
 
         #region Init Stage

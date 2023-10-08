@@ -24,7 +24,7 @@ namespace ChessScene
 
         #endregion
 
-        #region Declaration - Variable
+        #region Declaration - Variable        
 
         [Header("MVC")]
         [SerializeField] private ChessView view;
@@ -56,9 +56,12 @@ namespace ChessScene
         private SceneOption nextScene = SceneOption.None;
 
         [Header("Camera Control Variable")]
+        [SerializeField] private bool isCameraFollowPlayer;
+        private float horizontalInput;
+        private float verticalInput;
         [SerializeField] private float dragCameraThresholder = 200f;
         private Vector3 dragCameraPreviousPosition;
-        private bool isCameraDrag;        
+        private bool isCameraDrag;
 
         #endregion
 
@@ -226,9 +229,36 @@ namespace ChessScene
 
         private void CameraHandle()
         {
+            CameraMoveHandle();
+
             CameraRotateHandle();
 
             CameraZoomHandle();
+        }
+
+        private void CameraMoveHandle()
+        {
+            // If Press Axis, Set isCameraFollowPlayer To False
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                isCameraFollowPlayer = false;
+            }
+
+            // If Axis Clicked, Move The Camera
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // Update Input Axis
+                verticalInput = Input.GetAxis("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                midPointCameraManager.MoveMidPoint(horizontalInput, verticalInput);
+            }
+
+            // If Camre Follow Player, Move Camera According To Player Position
+            if (isCameraFollowPlayer == true)
+            {
+                midPointCameraManager.MoveMidPoint(view.playerTransform.position);
+            }
         }
 
         private void CameraRotateHandle()
@@ -262,6 +292,15 @@ namespace ChessScene
                     dragCameraPreviousPosition = currentPosition;
                 }
             }
+
+            if (Input.GetMouseButtonUp(2))
+            {
+                if(isCameraDrag == true)
+                {
+                    Debug.Log("Called");
+                    isCameraDrag = false;
+                }
+            }
         }
 
         private void CameraZoomHandle()
@@ -272,10 +311,12 @@ namespace ChessScene
 
                 if (Input.mouseScrollDelta.y > 0)
                 {
+                    Debug.Log("Called");
                     midPointCameraManager.followOffset -= zoomDirection;
                 }
                 if (Input.mouseScrollDelta.y < 0)
                 {
+                    Debug.Log("Called");
                     midPointCameraManager.followOffset += zoomDirection;
                 }
 

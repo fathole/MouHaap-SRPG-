@@ -62,7 +62,7 @@ namespace ChessScene
 
             // Update Virtual Camera Z Offset Accordint To Terrain Height;
             Vector3 pos = midPointTransform.position;
-            pos.y = Terrain.activeTerrain.SampleHeight(midPointTransform.position);
+            //pos.y = Terrain.activeTerrain.SampleHeight(midPointTransform.position);
 
             if (midPointTransform.position.y < pos.y)
             {

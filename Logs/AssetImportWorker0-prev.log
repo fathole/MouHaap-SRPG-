@@ -15,7 +15,7 @@ E:/Unity/Git/MouHaap
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-8165
+8419
 Successfully changed project path to: E:/Unity/Git/MouHaap
 E:/Unity/Git/MouHaap
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ E:/Unity/Git/MouHaap
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [22072] Host "[IP] 192.168.1.15 [Port] 0 [Flags] 2 [Guid] 3953398518 [EditorId] 3953398518 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R3L3E01) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [26296] Host "[IP] 192.168.1.15 [Port] 0 [Flags] 2 [Guid] 4220754710 [EditorId] 4220754710 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R3L3E01) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [22072] Host "[IP] 192.168.1.15 [Port] 0 [Flags] 2 [Guid] 3953398518 [EditorId] 3953398518 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R3L3E01) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [26296] Host "[IP] 192.168.1.15 [Port] 0 [Flags] 2 [Guid] 4220754710 [EditorId] 4220754710 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R3L3E01) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 9.05 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -69,47 +69,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56476
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004117 seconds.
-- Loaded All Assemblies, in  0.221 seconds
+Registered in 0.003793 seconds.
+- Loaded All Assemblies, in  0.230 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 173 ms
+Android Extension - Scanning For ADB Devices 172 ms
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.383 seconds
-Domain Reload Profiling: 603ms
-	BeginReloadAssembly (59ms)
+Domain Reload Profiling: 611ms
+	BeginReloadAssembly (52ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (23ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (37ms)
-	LoadAllAssembliesAndSetupDomain (94ms)
-		LoadAssemblies (57ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (104ms)
+		LoadAssemblies (52ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (90ms)
-			TypeCache.Refresh (90ms)
-				TypeCache.ScanAssembly (82ms)
+		AnalyzeDomain (99ms)
+			TypeCache.Refresh (98ms)
+				TypeCache.ScanAssembly (90ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (384ms)
+	FinalizeReload (383ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (345ms)
+		SetupLoadedEditorAssemblies (344ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (249ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (61ms)
-			ProcessInitializeOnLoadMethodAttributes (30ms)
+			ProcessInitializeOnLoadAttributes (60ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,70 +117,161 @@ Domain Reload Profiling: 603ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.481 seconds
-Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.488 seconds
+Refreshing native plugins compatible for Editor in 1.47 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.497 seconds
-Domain Reload Profiling: 977ms
-	BeginReloadAssembly (80ms)
+- Finished resetting the current domain, in  0.494 seconds
+Domain Reload Profiling: 981ms
+	BeginReloadAssembly (90ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (15ms)
-	RebuildCommonClasses (20ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (19ms)
-	LoadAllAssembliesAndSetupDomain (354ms)
-		LoadAssemblies (186ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (344ms)
+		LoadAssemblies (185ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (206ms)
-			TypeCache.Refresh (181ms)
-				TypeCache.ScanAssembly (173ms)
+		AnalyzeDomain (203ms)
+			TypeCache.Refresh (182ms)
+				TypeCache.ScanAssembly (172ms)
 			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (497ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (494ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (369ms)
+		SetupLoadedEditorAssemblies (379ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (47ms)
-			ProcessInitializeOnLoadAttributes (243ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
+			BeforeProcessingInitializeOnLoad (51ms)
+			ProcessInitializeOnLoadAttributes (255ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
 			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 3.54 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4720 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 125 unused Assets / (3.2 MB). Loaded Objects now: 5200.
-Memory consumption went from 312.1 MB to 309.0 MB.
-Total: 5.971800 ms (FindLiveObjects: 0.371000 ms CreateObjectMapping: 0.315500 ms MarkObjects: 4.324100 ms  DeleteObjects: 0.959800 ms)
+Unloading 4532 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 125 unused Assets / (3.5 MB). Loaded Objects now: 5012.
+Memory consumption went from 292.7 MB to 289.2 MB.
+Total: 2.926000 ms (FindLiveObjects: 0.189200 ms CreateObjectMapping: 0.101100 ms MarkObjects: 2.092100 ms  DeleteObjects: 0.543000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/USEOutline.cs: 2060e4a93ef91bfb89ac498c3a19962f -> 
+  custom:scripting/monoscript/fileName/LoadingPopup.cs: 726ad1f514c246528588195fa56d34b3 -> 
+  custom:scripting/monoscript/fileName/UDEContent.cs: 240541e6ba0a775e01b257c4a3c820a3 -> 
+  custom:scripting/monoscript/fileName/LogoPage.cs: 2aea4dd4c2bb4ac1a7c26fc7d415e18c -> 
+  custom:scripting/monoscript/fileName/ODEWindowSize.cs: 87b9b3543a9d087518945c422ded6236 -> 
+  custom:scripting/monoscript/fileName/TextContentZHHK.cs: bfbee13d7d1123b7880e9ed37a5d7d94 -> 
+  custom:scripting/monoscript/fileName/ChessData.cs: a19738938d1387b34829283ba5f767c0 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/StartView.cs: 9b9058300833249a7ab4fa7cf53596c6 -> 
+  custom:scripting/monoscript/fileName/ODEMusicVolume.cs: 32b12e9aff9fa8e769f66dc668113361 -> 
+  custom:scripting/monoscript/fileName/GameManager.cs: ac4aeda43064759ddfce0040b44fae14 -> 
+  custom:scripting/monoscript/fileName/Vector3Extensions.cs: 78d5f15f6dca8915721037bb3245acd1 -> 
+  custom:scripting/monoscript/fileName/MiddlePopup.cs: 037c3ad4a00d91f3c8e5ec61f8823042 -> 
+  custom:scripting/monoscript/fileName/LargePopupManager.cs: 408201d697abfe8abb9e5b4e10c66e9a -> 
+  custom:scripting/monoscript/fileName/ODELegendModeButton.cs: f9d9df7c91fb6380bed51f17d36fbc2b -> 
+  custom:scripting/monoscript/fileName/ChessController.cs: 65bca19b1c8753803a5b72d95b80e88e -> 
+  custom:scripting/monoscript/fileName/AudioManager.cs: 179cff14d0c0c1b6f6563db6ac0e59c5 -> 
+  custom:scripting/monoscript/fileName/LoadGamePopupManager.cs: 4a0df08669c0a3bf06c7186747679cb6 -> 
+  custom:scripting/monoscript/fileName/ODEIsFullScreen.cs: 511875fd620d0bc37f26540fc4ed31a9 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/LoadGamePopup.cs: d3a241db57961f19f2880f078c8fcf4e -> 
+  custom:scripting/monoscript/fileName/ODEContinueGameButton.cs: 184849de15358c29e086e5d65864aecf -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/HomePage.cs: bb2eb6cf6b7dea868f7aab1a7b511392 -> 
+  custom:scripting/monoscript/fileName/GameSettingPopup.cs: bdb47292139364ae4c0a01090ed54310 -> 
   custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
+  custom:scripting/monoscript/fileName/USEBackground.cs: e55eae9c7e69309a99900d452d4a9a91 -> 
+  custom:scripting/monoscript/fileName/CameraScreenSafeAreaBase.cs: dbd90469fba3da3a446c0c1b4259c4f8 -> 
+  custom:scripting/monoscript/fileName/CanvasBase.cs: 9bc09bf4a149de6f4e924e9ec078ff59 -> 
+  custom:scripting/monoscript/fileName/ODEIsFullScreenToggleButton.cs: 4e24806ae2ce584dbefeec1697a687c2 -> 
+  custom:scripting/monoscript/fileName/SettingData.cs: 04c66afc7852026b44b75f16964427c8 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/ODEHardModeButton.cs: 5c92bab70fc99ca59895a59b1944779e -> 
+  custom:scripting/monoscript/fileName/SaveButtonData.cs: 4729848747d0f361c01f0affe1dd45b2 -> 
+  custom:scripting/monoscript/fileName/ODEGameSettingButton.cs: 298594f1c030b08d299c512d965902f5 -> 
+  custom:scripting/monoscript/fileName/UDETitle.cs: 4603a384efa8eb14fd493a0ce11c4438 -> 
+  custom:scripting/monoscript/fileName/UIMainManager.cs: 3eb3c5cc4ac4c8f558fc0b4b3461581b -> 
+  custom:scripting/monoscript/fileName/ClickableObjectBase.cs: f69547048f263dff4df203b32fcc04de -> 
+  custom:scripting/monoscript/fileName/ODEStartGameButton.cs: df547ddf1233afc7310bc28717bfd0e8 -> 
+  custom:scripting/monoscript/fileName/MiddlePopupManager.cs: 317b62667c6354e5be42da96b1050403 -> 
+  custom:scripting/monoscript/fileName/ChessSceneOperationValue.cs: ac6093ca2dc4b88e95b9bb188459e280 -> 
+  custom:scripting/monoscript/fileName/TextContentBase.cs: 7176ce52fa53625db81f080a97154aae -> 
+  custom:scripting/monoscript/fileName/LocalDataManager.cs: 6a3f72d509d61933d9e383f5e05d719d -> 
+  custom:scripting/monoscript/fileName/WorldView.cs: c9e090830a3f337d7cc31b4ba0dad8ac -> 
+  custom:scripting/monoscript/fileName/LargePopup.cs: 85b3ab800b240fc3609c6a8b67d5d5d6 -> 
+  custom:scripting/monoscript/fileName/OSECrossButton.cs: 5ff62f0d5eb1afcb46deeb48ef33b938 -> 
+  custom:scripting/monoscript/fileName/ODEBasicSettingHeader.cs: a80fd68159b9145f9dcb57f4d088c124 -> 
+  custom:scripting/monoscript/fileName/ODEBasicSettingHeaderRestoreButton.cs: 018be77dc183129d4b8f05aaae93330f -> 
+  custom:scripting/monoscript/fileName/USELogoAnimationSound.cs: 858633e4afc7d254e13613e4066d6e51 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/SettingManager.cs: 3d6b63bec8577e44cbbef416043e4166 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/UIPopupManager.cs: 0d9ed11ca46d860aef41b4fb13fb3d5d -> 
+  custom:scripting/monoscript/fileName/ODEGameModeBackButton.cs: a10264fd79df5fae82d9ea11caa49ac5 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ODESFXVolumeToggleButton.cs: 94590aa424d8a89046204024dbe990c1 -> 
+  custom:scripting/monoscript/fileName/ODENormalModeButton.cs: e14e5c9791112e97b0f9ce01b6fc2867 -> 
+  custom:scripting/monoscript/fileName/CameraManager.cs: 7f3808f29c790532e4a27306efeb41f0 -> 
+  custom:scripting/monoscript/fileName/ODESoloGameButton.cs: b95ed703c2ea96b70ac0753e6f53f673 -> 
+  custom:scripting/monoscript/fileName/ODESFXVolume.cs: cda2468c6301f97e233738fd987f18f4 -> 
+  custom:scripting/monoscript/fileName/WorldSceneOperationValue.cs: dbb04fc210b404f0261950113f7411f8 -> 
+  custom:scripting/monoscript/fileName/LoadingPopupManager.cs: fdfd8276d1906ac6ac7429999ac380c3 -> 
+  custom:scripting/monoscript/fileName/HomeController.cs: 6a81c8bc443b49ed895fb3f35a4a87dc -> 
+  custom:scripting/monoscript/fileName/TextManager.cs: cba9f3cc980bae5bbcd884a1525486cd -> 
+  custom:scripting/monoscript/fileName/ODEMultiplayerGameButton.cs: 3ccd35b8af0a59928f9f5e7a1b84d1bc -> 
+  custom:scripting/monoscript/fileName/GameSettingPopupManager.cs: bb3471721c455fc21de67d22bb5d7a72 -> 
+  custom:scripting/monoscript/fileName/WorldController.cs: 0fd15a4b42bdc351a7c08ffeabb22160 -> 
+  custom:scripting/monoscript/fileName/ODESecondaryButton.cs: da73f06250eac4a8f514376c199edcf5 -> 
+  custom:scripting/monoscript/fileName/USEName.cs: 20e6895ff395975d364b0bf459c563c5 -> 
+  custom:scripting/monoscript/fileName/SmallPopupManager.cs: 4ad1b95ce5d0f1bbd005ccabb12edabe -> 
+  custom:scripting/monoscript/fileName/StartController.cs: 8bdbdd5357af8a9bcf194aa6ec9c8958 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/DraggableObjectBase.cs: 68371a42c748f257146c8627c9d173b1 -> 
+  custom:scripting/monoscript/fileName/CanvasSetupData.cs: 59ec101c46439f72479c7a59d677b4f0 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/ODESaveFileScrollViewSaveButtonCrossButton.cs: 122843f6bde8adc76ba3d2d885b5687b -> 
+  custom:scripting/monoscript/fileName/ODESaveFileScrollView.cs: 875b7596b4bcc1e6f6da755e37727571 -> 
+  custom:scripting/monoscript/fileName/SmallPopup.cs: 275ca66809e3206cd158d5603eb4b422 -> 
+  custom:scripting/monoscript/fileName/FontManager.cs: 0a53558912056746f2e92155e0985b08 -> 
+  custom:scripting/monoscript/fileName/ODEPrimaryButton.cs: 7b5405acbd49f4e1b21db14d2913913c -> 
+  custom:scripting/monoscript/fileName/StartSceneOperationValue.cs: bd452afea97cbc9509a907735a6acaf9 -> 
+  custom:scripting/monoscript/fileName/ChessView.cs: a366144ca7be444e595bcc4f7306ba89 -> 
+  custom:scripting/monoscript/fileName/MidPointCameraManager.cs: 631f065ad97ba223911d3eda920f0f67 -> 
+  custom:scripting/monoscript/fileName/LogoPageManager.cs: eeb7a2fbe9d108de9918841471b002f7 -> 
+  custom:scripting/monoscript/fileName/GameManagerView.cs: 0352180e9c279b4c18d2b49f53a1a4ba -> 
+  custom:scripting/monoscript/fileName/Chess.cs: 762ae5471960022f7c612d8ae0bf9e62 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/HomePageManager.cs: d2fb37f93723ed2ac32568eb08047bdf -> 
+  custom:scripting/monoscript/fileName/ThirdPersonController.cs: 58baf92eb87a17a10bc3cb7aba872142 -> 
+  custom:scripting/monoscript/fileName/ODESaveFileScrollViewSaveButton.cs: 8ff1e1f8bb064889e6e52e325dc360d8 -> 
+  custom:scripting/monoscript/fileName/ODEDifficultyModeBackButton.cs: d0b0e9596fbf088f25ff102dcbdef624 -> 
+  custom:scripting/monoscript/fileName/ODEQuitGameButton.cs: 05be6731915a8d62dac827696b58ba04 -> 
+  custom:scripting/monoscript/fileName/HomeView.cs: b6290109fd2b3b2d03c3ae4d12d79895 -> 
+  custom:scripting/monoscript/fileName/ODEMusicVolumeToggleButton.cs: e569d5f7d06482aa92f1633b2016e8f9 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 2662.940808 seconds.
-  path: Assets/Sources/Timelines
-  artifactKey: Guid(32044312140672a4d80c03dfe48b565f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sources/Timelines using Guid(32044312140672a4d80c03dfe48b565f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05ed5961030f73ce34f6addf0503757b') in 0.001926 seconds
+  Time since last request: 3860.560654 seconds.
+  path: Assets/Scene
+  artifactKey: Guid(cc2202a87a196de459d224e1fbe92280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene using Guid(cc2202a87a196de459d224e1fbe92280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd814ac5d46af319ea2cf6670b3cb8fa0') in 0.001898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.474844 seconds.
+  path: Assets/Scene/Init.unity
+  artifactKey: Guid(ed87df8e5b9e85044903c7926e356c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Init.unity using Guid(ed87df8e5b9e85044903c7926e356c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '277e81b7ecaf50a3036c8c33d18e9778') in 0.000333 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0

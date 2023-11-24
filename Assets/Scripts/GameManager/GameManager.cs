@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GameManager
+namespace MainGameManager
 {
-    public class GameManager : MonoBehaviour
+    public class MainGameManager : MonoBehaviour
     {
         #region Declaration
 
-        public static GameManager instance;       
+        public static MainGameManager instance;
+
+        private SceneManagerBase currentSceneManager;
+        private SceneOptions currentScene;
+
 
         #endregion
 
@@ -17,44 +21,104 @@ namespace GameManager
 
         private void Awake()
         {
+            Debug.Log("--- MainGameManager: Awake ---");
+
             instance = this;
         }
 
         private void Start()
         {
-            // Init Object
-            // Load First Scene
+            Debug.Log("--- Main Game Manager: Start ---");
+            StartCoroutine(LoadSceneCoroutine(SceneOptions.MainUI));
         }
 
-        #endregion        
-        
-        // Scene Management
-        private IEnumerator LoadSceneCoroutine(string sceneName)
+        private void Update()
         {
-            Debug.Log("--- GameManager: LoadSceneCoroutine: " + sceneName + " ---");
+            // ToDo: 
+        }
 
-            // Create Async Operation To Load Scene
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        #endregion
 
-            // Wait The Async Operation Finished
+        #region Load Scene Handle
+
+        private IEnumerator LoadSceneCoroutine(SceneOptions sceneOption)
+        {
+            Debug.Log("--- MainGameManager: LoadSceneCoroutine: " + sceneOption.ToString() + " ---");
+
+            // Update Current Scene
+            currentScene = sceneOption;
+
+            // Wait Fade In Animation Finished
+            yield return FadeInCoroutine();
+
+            // Load Scene By Scene Name
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneOption.ToString(), LoadSceneMode.Additive);
+            
+            // Wait Load Scene Finished
+            while (asyncOperation.isDone != true)
+            {
+                yield return null;
+            }
+
+            // Get Current Scene Manager And Init
+            currentSceneManager = GetSceneManager(currentScene);
+            currentSceneManager.InitScene();            
+
+            // Wait Fade Out Animation Finished
+            yield return FadeOutCoroutine();
+        }
+
+        private IEnumerator UnloadSceneCoroutine(SceneOptions sceneOption)
+        {
+            Debug.Log("--- MainGameManager: UnloadSceneCoroutine: " + sceneOption.ToString() + " ---");
+
+            // Reset currentSceneManager
+            currentSceneManager = null;
+
+            // Unload Scene By Scene Name
+            AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(sceneOption.ToString());
+
+            // Wait Unload Scene Finished
             while (asyncOperation.isDone != true)
             {
                 yield return null;
             }
         }
 
-        private IEnumerator UnloadSceneCoroutine(string sceneName)
+        private SceneManagerBase GetSceneManager(SceneOptions sceneOption)
         {
-            Debug.Log("--- GameManager: UnloadSceneCoroutine: " + sceneName + " ---");
-
-            // Create Async Operation To Unload Scene
-            AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(sceneName);
-
-            // Wait The Async Operation Finished
-            while(asyncOperation.isDone != true)
-            {
-                yield return null;
+            switch (sceneOption)
+            {                
+                case SceneOptions.MainUI:
+                    return MainUIManager.instance;
+                default:
+                    Debug.LogError("Unexpected Case");
+                    return null;
             }
-        }        
-    }    
+        }
+
+        #endregion
+
+        #region Fade Animation Handle
+
+        private IEnumerator FadeInCoroutine()
+        {
+            Debug.Log("ToDo: Fade In Animation");
+            yield return null;
+        }
+
+        private IEnumerator FadeOutCoroutine()
+        {
+            Debug.Log("ToDo: Fade Out Animation");
+            yield return null;
+        }
+
+        #endregion
+    }
+
+    public enum SceneOptions
+    {
+        Init,
+        MainUI,
+    }
 }

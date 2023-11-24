@@ -390,6 +390,7 @@
 "Assets/Scripts/Base/ObjectBase.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/MainUIManager.cs"
+"Assets/Scripts/GameManager/SceneManagerBase.cs"
 -langversion:9.0
 
 /deterministic

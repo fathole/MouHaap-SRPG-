@@ -6,19 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameManager.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/GameScene01_Start.unity
-    guid: 1c20479d1fa28ee46806ea819f9a3a5e
-  - enabled: 1
-    path: Assets/Scenes/GameScene02_Home.unity
-    guid: 0b0b90e49d3fc0645ae67c41efcdc343
-  - enabled: 1
-    path: Assets/Scenes/GameScene03_World.unity
-    guid: 207e70f4b4c56fa44af52929fe686dac
-  - enabled: 1
-    path: Assets/Scenes/GameScene04_Chess.unity
-    guid: ea8ed879a0f270d4081590c406ce3adc
+    path: Assets/Scene/Init.unity
+    guid: ed87df8e5b9e85044903c7926e356c32
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

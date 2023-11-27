@@ -6,6 +6,6 @@ public class SceneManagerBase : MonoBehaviour
 {
     public virtual void InitScene()
     {
-
+        
     }
 }

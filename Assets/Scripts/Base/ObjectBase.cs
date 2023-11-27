@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IBeginDragHandler, IDragHandler, IPointerUpHandler, IPointerClickHandler, IEndDragHandler, IPointerExitHandler
 {
 	#region Declaration
@@ -32,12 +33,10 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 
 	public virtual void InitObject()
 	{
-		// Init Audio Sourece
-		if (audioSource == null && GetComponent<AudioSource>())
+		// Init Component
+		if(audioSource == null)
 			audioSource = GetComponent<AudioSource>();
-
-		// Init Animator
-		if (animator == null && GetComponent<Animator>())
+		if(animator == null)
 			animator = GetComponent<Animator>();
 	}
 

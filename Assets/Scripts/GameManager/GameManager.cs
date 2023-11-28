@@ -124,6 +124,7 @@ namespace MainGameManager
     public enum SceneOptions
     {
         Init,
+        Splash,
         MainUI,
     }
 

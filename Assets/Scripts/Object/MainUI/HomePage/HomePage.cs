@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MainUI_HomePage;
 
 namespace MainUI
 {
     public class HomePage : PageBase
     {
+        #region Declaration
+
+        public O_NewGameButton o_NewGameButton;
+
+        #endregion
+
         #region Function - Init
 
         public override void InitPage()

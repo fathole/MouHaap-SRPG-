@@ -393,6 +393,7 @@
 "Assets/Scripts/GameManager/MainUIManager.cs"
 "Assets/Scripts/GameManager/SceneManagerBase.cs"
 "Assets/Scripts/Object/MainUI/HomePage/HomePage.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_NewGameButton.cs"
 -langversion:9.0
 
 /deterministic

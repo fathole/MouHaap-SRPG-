@@ -18,20 +18,20 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 	private bool isPointerDowned;
 
 	[Header("Action")]
-	private Action onPointerEnterCallback;
-	private Action onPointerDownCallback;
-	private Action onBeginDragCallback;
-	private Action onDragCallback;
-	private Action onPointerUpCallback;
-	private Action onPointerClickCallback;
-	private Action onEndDragCallback;
-	private Action onPointerExitCallback;
+	public Action onPointerEnterCallback;
+	public Action onPointerDownCallback;
+	public Action onBeginDragCallback;
+	public Action onDragCallback;
+	public Action onPointerUpCallback;
+	public Action onPointerClickCallback;
+	public Action onEndDragCallback;
+	public Action onPointerExitCallback;
 
 	#endregion
 
 	#region Function - Init
 
-	public virtual void InitObject()
+	public void InitObject()
 	{
 		// Init Component
 		if(audioSource == null)

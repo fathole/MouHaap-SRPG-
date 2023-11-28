@@ -14,7 +14,7 @@ public class PageBase : MonoBehaviour
 
     #region Function - Init
 
-    public void InitPage()
+    public virtual void InitPage()
     {
         // Init Component
         if(animator == null)

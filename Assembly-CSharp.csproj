@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Base\PageBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\HomePage.cs" />
     <Compile Include="Assets\Scripts\GameManager\SceneManagerBase.cs" />
     <Compile Include="Assets\Scripts\Base\ObjectBase.cs" />
   </ItemGroup>

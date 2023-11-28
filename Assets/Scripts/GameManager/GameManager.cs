@@ -66,6 +66,9 @@ namespace MainGameManager
 
             // Wait Fade Out Animation Finished
             yield return FadeOutCoroutine();
+
+            // Init Current Scene
+            currentSceneManager.InitScene();
         }
 
         private IEnumerator UnloadSceneCoroutine(SceneOptions sceneOption)
@@ -116,9 +119,13 @@ namespace MainGameManager
         #endregion
     }
 
+    #region ToDO: Later
+
     public enum SceneOptions
     {
         Init,
         MainUI,
     }
+
+    #endregion
 }

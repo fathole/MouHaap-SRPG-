@@ -47,6 +47,12 @@ public class MainUIManager : SceneManagerBase
 
         // Init Page Element
         homePage.o_NewGameButton.InitObject(HomePage_O_NewGameButtonPointerClickCallback);
+        homePage.o_LoadGameButton.InitObject(HomePage_O_LoadGameButtonPointerClickCallback);
+        homePage.o_ExitGameButton.InitObject(HomePage_O_QuitGameButtonPointerClickCallback);
+        homePage.o_StoryModeButton.InitObject(HomePage_O_StoryModeButtonPointerClickCallback);
+        homePage.o_ChallengeModeButton.InitObject(HomePage_O_ChallengeModeButtonPointerClickCallback);
+        homePage.o_RealisticModeButton.InitObject(HomePage_O_RealisticModeButtonPointerClickCallback);
+        homePage.o_GameModeBackButton.InitObject(HomePage_O_GameModeBackButtonPointerClickCallback);        
 
         // Wait Home Page Fade In Finished
         yield return homePage.FadeInCoroutine();
@@ -56,7 +62,7 @@ public class MainUIManager : SceneManagerBase
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name);
 
-        // ToDo:
+        homePage.ShowGameModeButtonList();
     }
 
     private void HomePage_O_LoadGameButtonPointerClickCallback()
@@ -75,6 +81,28 @@ public class MainUIManager : SceneManagerBase
 #else
         Application.Quit();
 #endif
+    }
+
+    private void HomePage_O_StoryModeButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+    }
+
+    private void HomePage_O_ChallengeModeButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+    }
+
+    private void HomePage_O_RealisticModeButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+    }
+
+    private void HomePage_O_GameModeBackButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+
+        homePage.ShowMainButtonList();
     }
 
     #endregion

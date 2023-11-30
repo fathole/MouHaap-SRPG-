@@ -9,7 +9,19 @@ namespace MainUI
     {
         #region Declaration
 
+        [Header("Object")]
         public O_NewGameButton o_NewGameButton;
+        public O_LoadGameButton o_LoadGameButton;
+        public O_ExitGameButton o_ExitGameButton;
+
+        public O_StoryModeButton o_StoryModeButton;
+        public O_ChallengeModeButton o_ChallengeModeButton;
+        public O_RealisticModeButton o_RealisticModeButton;
+        public O_GameModeBackButton o_GameModeBackButton;
+
+        [Header("Unit")]
+        public GameObject mainButtonList;
+        public GameObject gameModeButtonList;
 
         #endregion
 
@@ -34,6 +46,22 @@ namespace MainUI
         public override IEnumerator FadeOutCoroutine()
         {
             return base.FadeOutCoroutine();
+        }
+
+        #endregion
+
+        #region Function 
+
+        public void ShowMainButtonList()
+        {
+            mainButtonList.SetActive(true);
+            gameModeButtonList.SetActive(false);
+        }
+
+        public void ShowGameModeButtonList()
+        {
+            mainButtonList.SetActive(false);
+            gameModeButtonList.SetActive(true);
         }
 
         #endregion

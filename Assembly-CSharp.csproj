@@ -60,10 +60,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Base\PageBase.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_GameModeBackButton.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_ExitGameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_RealisticModeButton.cs" />
     <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_NewGameButton.cs" />
     <Compile Include="Assets\Scripts\Object\MainUI\HomePage\HomePage.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_StoryModeButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\SceneManagerBase.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_LoadGameButton.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\HomePage\O_ChallengeModeButton.cs" />
     <Compile Include="Assets\Scripts\Base\ObjectBase.cs" />
   </ItemGroup>
   <ItemGroup>

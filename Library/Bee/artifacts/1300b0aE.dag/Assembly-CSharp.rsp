@@ -393,7 +393,13 @@
 "Assets/Scripts/GameManager/MainUIManager.cs"
 "Assets/Scripts/GameManager/SceneManagerBase.cs"
 "Assets/Scripts/Object/MainUI/HomePage/HomePage.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_ChallengeModeButton.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_ExitGameButton.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_GameModeBackButton.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_LoadGameButton.cs"
 "Assets/Scripts/Object/MainUI/HomePage/O_NewGameButton.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_RealisticModeButton.cs"
+"Assets/Scripts/Object/MainUI/HomePage/O_StoryModeButton.cs"
 -langversion:9.0
 
 /deterministic

@@ -34,9 +34,9 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 	public void InitObject()
 	{
 		// Init Component
-		if(audioSource == null)
+		if (audioSource == null)
 			audioSource = GetComponent<AudioSource>();
-		if(animator == null)
+		if (animator == null)
 			animator = GetComponent<Animator>();
 	}
 
@@ -47,7 +47,7 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 	void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
 	{
 		// Play Animation
-		if (animator != null && isPointerDowned == true)
+		if (isPointerDowned == true)
 			animator.CrossFade("PointerEnter", 0f, 1);
 
 		// Invoke Action
@@ -58,9 +58,8 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 	{
 		isPointerDowned = true;
 
-		// Play Animation
-		if (animator != null)
-			animator.CrossFade("PointerEnter", 0f, 1);
+		// Play Animation	
+		animator.CrossFade("PointerEnter", 0f, 1);
 
 		// Invoke Action
 		onPointerDownCallback?.Invoke();
@@ -83,8 +82,7 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 		isPointerDowned = false;
 
 		// Play Animation
-		if (animator != null)
-			animator.CrossFade("PointerExit", 0f, 1);
+		animator.CrossFade("PointerExit", 0f, 1);
 
 		// Invoke Action
 		onPointerUpCallback?.Invoke();
@@ -92,12 +90,11 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 
 	void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
 	{
-		// Play Animation
-		if (animator != null)
-			animator.CrossFade("PointerClick", 0f, 2);
+		// Play Animation		
+		animator.CrossFade("PointerClick", 0f, 2);
 
 		// Play Audio
-		if (audioSource != null && onPointerClickSFX != null)
+		if (onPointerClickSFX != null)
 			audioSource.PlayOneShot(onPointerClickSFX);
 
 		// Invoke Action
@@ -113,12 +110,12 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 	void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
 	{
 		// Play Animation
-		if (isPointerDowned = true && animator != null)
+		if (isPointerDowned == true)
 			animator.CrossFade("PointerExit", 0f, 1);
 
 		// Invoke Action
 		onPointerExitCallback?.Invoke();
 	}
 
-	#endregion
+    #endregion
 }

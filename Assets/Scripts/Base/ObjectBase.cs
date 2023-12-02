@@ -90,16 +90,39 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 
 	void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
 	{
-		// Play Animation		
-		animator.CrossFade("PointerClick", 0f, 2);
-
-		// Play Audio
-		if (onPointerClickSFX != null)
-			audioSource.PlayOneShot(onPointerClickSFX);
-
-		// Invoke Action
-		onPointerClickCallback?.Invoke();
+		StartCoroutine(OnPointerClickCoroutine());
 	}
+
+	private IEnumerator OnPointerClickCoroutine()
+    {
+		// Play Animation
+		animator.Play("PointerClick");
+
+        // Play Audio
+        if (onPointerClickSFX != null)
+            audioSource.PlayOneShot(onPointerClickSFX);
+
+		// Wait Current State Changed 
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(2).IsName("PointerClick"));
+
+		// If The Clip Is Empty, Skip It (Unity Empty Animation Clip Lengh Is 1 Second, So Need To Hardcode Skip The Length If Empty)
+		if (animator.GetCurrentAnimatorClipInfo(2)[0].clip.empty == true)
+        {
+			yield return null;
+        }
+		//Else,  Wait The Animation Finished
+		else
+        {
+			yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorStateInfo(2).length);
+		}
+
+        // Reset Animator
+        animator.Rebind();
+        animator.Update(0f);
+
+        // Invoke Pointer Click Event
+        onPointerClickCallback?.Invoke();
+    }
 
 	void IEndDragHandler.OnEndDrag(PointerEventData eventData)
 	{
@@ -117,5 +140,5 @@ public class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointerDownHandl
 		onPointerExitCallback?.Invoke();
 	}
 
-    #endregion
+	#endregion
 }

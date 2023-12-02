@@ -42,7 +42,7 @@ public class MainUIManager : SceneManagerBase
 
     private IEnumerator MoveInHomePage()
     {
-        // Init Page
+        // Init Page        
         homePage.InitPage();
 
         // Init Page Element

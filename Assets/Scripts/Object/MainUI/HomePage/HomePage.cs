@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MainUI_HomePage;
+//using MainUI_HomePage;
 
 namespace MainUI
 {
@@ -10,14 +10,14 @@ namespace MainUI
         #region Declaration
 
         [Header("Object")]
-        public O_NewGameButton o_NewGameButton;
-        public O_LoadGameButton o_LoadGameButton;
-        public O_ExitGameButton o_ExitGameButton;
+        public Common_Button o_NewGameButton;
+        public Common_Button o_LoadGameButton;
+        public Common_Button o_ExitGameButton;
 
-        public O_StoryModeButton o_StoryModeButton;
-        public O_ChallengeModeButton o_ChallengeModeButton;
-        public O_RealisticModeButton o_RealisticModeButton;
-        public O_GameModeBackButton o_GameModeBackButton;
+        public Common_Button o_StoryModeButton;
+        public Common_Button o_ChallengeModeButton;
+        public Common_Button o_RealisticModeButton;
+        public Common_Button o_GameModeBackButton;
 
         [Header("Unit")]
         public GameObject mainButtonList;

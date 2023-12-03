@@ -10,7 +10,11 @@ public class MainUIManager : SceneManagerBase
 
     public static MainUIManager instance;
 
+    [Header("Main Page")]
     public HomePage homePage;
+
+    [Header("Panel")]
+    public ExitPanel exitPanel;
 
     #endregion
 
@@ -32,15 +36,18 @@ public class MainUIManager : SceneManagerBase
         // Init Page
         homePage.InitPage();
 
+        // Init Panel
+        exitPanel.InitPanel();
+
         // Move In First Page
-        StartCoroutine(MoveInHomePage());
+        StartCoroutine(MoveInHomePageCoroutine());
     }
 
     #endregion
 
     #region Function - HomePage
 
-    private IEnumerator MoveInHomePage()
+    private IEnumerator MoveInHomePageCoroutine()
     {
         // Init Page        
         homePage.InitPage();
@@ -76,11 +83,7 @@ public class MainUIManager : SceneManagerBase
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name);
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.ExitPlaymode();
-#else
-        Application.Quit();
-#endif
+        StartCoroutine(MoveInExitPanelCoroutine());
     }
 
     private void HomePage_O_StoryModeButtonPointerClickCallback()
@@ -103,6 +106,40 @@ public class MainUIManager : SceneManagerBase
         Debug.Log(MethodBase.GetCurrentMethod().Name);
 
         homePage.ShowMainButtonList();
+    }
+
+    #endregion
+
+    #region Function - ExitPanel
+
+    private IEnumerator MoveInExitPanelCoroutine()
+    {
+        // Init Panel
+        exitPanel.InitPanel();
+
+        // Init Panel Object
+        exitPanel.o_CrossButton.InitObject(ExitPanel_O_CrossButtonPointerClickCallback);
+        exitPanel.o_TickButton.InitObject(ExitPanel_O_TickButtonPointerClickCallback);
+
+        yield return exitPanel.FadeInCoroutine();
+    }
+
+    private void ExitPanel_O_TickButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
+    }
+
+    private void ExitPanel_O_CrossButtonPointerClickCallback()
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+
+        StartCoroutine(exitPanel.FadeOutCoroutine());
     }
 
     #endregion

@@ -59,13 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Base\PageBase.cs" />
-    <Compile Include="Assets\Scripts\Object\MainUI\ExitPanel\ExitPanelView.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\ExitPanel\ChallengeModePanel.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\Object\Common_Button.cs" />
     <Compile Include="Assets\Scripts\Object\MainUI\HomePage\HomePage.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\ExitPanel\RealisticModePanel.cs" />
     <Compile Include="Assets\Scripts\GameManager\SceneManagerBase.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\ExitPanel\ExitPanel.cs" />
     <Compile Include="Assets\Scripts\Base\PanelBase.cs" />
+    <Compile Include="Assets\Scripts\Object\MainUI\ExitPanel\StoryModePanel.cs" />
     <Compile Include="Assets\Scripts\Base\ObjectBase.cs" />
   </ItemGroup>
   <ItemGroup>

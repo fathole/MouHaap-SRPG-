@@ -394,7 +394,10 @@
 "Assets/Scripts/GameManager/MainUIManager.cs"
 "Assets/Scripts/GameManager/SceneManagerBase.cs"
 "Assets/Scripts/Object/Common_Button.cs"
-"Assets/Scripts/Object/MainUI/ExitPanel/ExitPanelView.cs"
+"Assets/Scripts/Object/MainUI/ExitPanel/ChallengeModePanel.cs"
+"Assets/Scripts/Object/MainUI/ExitPanel/ExitPanel.cs"
+"Assets/Scripts/Object/MainUI/ExitPanel/RealisticModePanel.cs"
+"Assets/Scripts/Object/MainUI/ExitPanel/StoryModePanel.cs"
 "Assets/Scripts/Object/MainUI/HomePage/HomePage.cs"
 -langversion:9.0
 

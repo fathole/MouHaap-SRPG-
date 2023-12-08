@@ -393,12 +393,13 @@
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/MainUIManager.cs"
 "Assets/Scripts/GameManager/SceneManagerBase.cs"
-"Assets/Scripts/Object/Common_Button.cs"
-"Assets/Scripts/Object/MainUI/ExitPanel/ChallengeModePanel.cs"
+"Assets/Scripts/LayoutGroupPositionFix.cs"
+"Assets/Scripts/Object/MainUI/ChallengeModePanel/ChallengeModePanel.cs"
 "Assets/Scripts/Object/MainUI/ExitPanel/ExitPanel.cs"
-"Assets/Scripts/Object/MainUI/ExitPanel/RealisticModePanel.cs"
-"Assets/Scripts/Object/MainUI/ExitPanel/StoryModePanel.cs"
 "Assets/Scripts/Object/MainUI/HomePage/HomePage.cs"
+"Assets/Scripts/Object/MainUI/RealisticModePanel/RealisticModePanel.cs"
+"Assets/Scripts/Object/MainUI/StoryModePanel/StoryModePanel.cs"
+"Assets/Scripts/Object/_Common/Common_Button.cs"
 -langversion:9.0
 
 /deterministic

@@ -13,8 +13,33 @@ namespace MainGameManager
 
         private SceneManagerBase currentSceneManager;
         private SceneOptions currentScene;
+        
+        [SerializeField] private FontManager fontManager;
+        [SerializeField] private TextManager textManager;
+        private TextContentBase textContent;
 
+        #endregion
 
+        #region Function - Init
+
+        private IEnumerator InitManager()
+        {
+            // Init Manager
+            fontManager.InitManager();
+            textManager.InitManager();            
+
+            // Get TextContent
+            textContent = textManager.GetTextContent(DisplayLanguageOption.ZH_HK);
+
+            // Get All Scene Text And Generate A Font Asset
+            string allSceneTextContent = textManager.GetAllSceneTextContent(DisplayLanguageOption.ZH_HK);
+            fontManager.GenerateFontAsset(FontOption.NotoSansCJK);            
+            yield return StartCoroutine(fontManager.UpdateFontAssetTextContentCoroutine(Newtonsoft.Json.JsonConvert.SerializeObject(allSceneTextContent)));
+
+            // Load First Scene
+            yield return LoadSceneCoroutine(SceneOptions.MainUI);            
+        }
+        
         #endregion
 
         #region Function - Unity Event
@@ -29,7 +54,7 @@ namespace MainGameManager
         private void Start()
         {
             Debug.Log("--- Main Game Manager: Start ---");
-            StartCoroutine(LoadSceneCoroutine(SceneOptions.MainUI));
+            StartCoroutine(InitManager());
         }
 
         private void Update()
@@ -39,7 +64,7 @@ namespace MainGameManager
 
         #endregion
 
-        #region Load Scene Handle
+        #region Function - Load Scene Handle
 
         private IEnumerator LoadSceneCoroutine(SceneOptions sceneOption)
         {
@@ -102,7 +127,7 @@ namespace MainGameManager
 
         #endregion
 
-        #region Fade Animation Handle
+        #region Function - Fade Animation Handle
 
         private IEnumerator FadeInCoroutine()
         {

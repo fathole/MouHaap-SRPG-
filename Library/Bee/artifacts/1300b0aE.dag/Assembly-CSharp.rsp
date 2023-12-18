@@ -122,6 +122,7 @@
 -define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll"
 -r:"C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/UnityEditor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -390,9 +391,13 @@
 "Assets/Scripts/Base/ObjectBase.cs"
 "Assets/Scripts/Base/PageBase.cs"
 "Assets/Scripts/Base/PanelBase.cs"
+"Assets/Scripts/GameManager/FontManager.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/MainUIManager.cs"
 "Assets/Scripts/GameManager/SceneManagerBase.cs"
+"Assets/Scripts/GameManager/TextManager/TextContentBase.cs"
+"Assets/Scripts/GameManager/TextManager/TextContentZHHK.cs"
+"Assets/Scripts/GameManager/TextManager/TextManager.cs"
 "Assets/Scripts/LayoutGroupPositionFix.cs"
 "Assets/Scripts/Object/MainUI/ChallengeModePanel/ChallengeModePanel.cs"
 "Assets/Scripts/Object/MainUI/ExitPanel/ExitPanel.cs"

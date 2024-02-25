@@ -67,13 +67,16 @@
     <Compile Include="Assets\Scripts\MainGame\Manager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\TextContentBase.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\Example\NestedDB.cs" />
+    <Compile Include="Assets\Scripts\MainUI\U_GameTitle.cs" />
     <Compile Include="Assets\Scripts\MainGame\TextContent\TextContent.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\DrawKeyAsPropertyAttribute.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\LocalDataManager.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\TextManager.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\MainGameManager.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\SerializableDictionaryBase.cs" />
+    <Compile Include="Assets\Scripts\MainUI\O_NewGameButton.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\Example\DataBaseExample.cs" />
+    <Compile Include="Assets\Scripts\MainUI\U_Background.cs" />
     <Compile Include="Assets\Scripts\MainGame\GameSettingData.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ObjectBase.cs" />
     <Compile Include="Assets\Scripts\MainUI\MainUIManager.cs" />

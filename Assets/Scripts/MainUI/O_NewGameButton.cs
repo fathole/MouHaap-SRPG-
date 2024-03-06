@@ -6,7 +6,7 @@ using TMPro;
 
 namespace MainUI
 {
-    public class O_NewGameButton : MonoBehaviour
+    public class O_NewGameButton : ObjectBase
     {
         #region Declaration
 
@@ -23,6 +23,9 @@ namespace MainUI
 
             // Init Text Content
             text001.text = MainUIManager.textContent.o_NewGameButton.text001;
+
+            // Init Action
+            this.onPointerClickCallback = onPointerClickCallback;
         }
 
         #endregion

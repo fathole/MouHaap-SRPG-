@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\IDAttribute.cs" />
+    <Compile Include="Assets\Scripts\MainUI\O_CreditsButton.cs" />
     <Compile Include="Assets\Scripts\MainGame\TextContent\TextContent_ZHHK.cs" />
+    <Compile Include="Assets\Scripts\MainUI\O_QuitGameButton.cs" />
     <Compile Include="Assets\Scripts\MainUI\TextContent\TextContent_ZHHK.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\ReorderableList\ReorderableList.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\AudioManager.cs" />
@@ -80,10 +82,12 @@
     <Compile Include="Assets\Scripts\MainGame\GameSettingData.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ObjectBase.cs" />
     <Compile Include="Assets\Scripts\MainUI\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\MainUI\O_SettingButton.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\References\RequiredReferences.cs" />
     <Compile Include="Assets\Scripts\MainGame\ModuleDatas.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ModuleManagerBase.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\TextMeshProManager.cs" />
+    <Compile Include="Assets\Scripts\MainUI\O_LoadGameButton.cs" />
     <Compile Include="Assets\Scripts\MainUI\TextContent\TextContent.cs" />
   </ItemGroup>
   <ItemGroup>

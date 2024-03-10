@@ -68,6 +68,7 @@
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\ReorderableList\ReorderableList.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\TextContentBase.cs" />
+    <Compile Include="Assets\Scripts\MainGame\BaseClass\Common_Button.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\Example\NestedDB.cs" />
     <Compile Include="Assets\Scripts\MainUI\U_GameTitle.cs" />
     <Compile Include="Assets\Scripts\MainGame\TextContent\TextContent.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Scripts\MainGame\GameSettingData.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ObjectBase.cs" />
     <Compile Include="Assets\Scripts\MainUI\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\MainUI\Popup_QuitGame.cs" />
     <Compile Include="Assets\Scripts\MainUI\O_SettingButton.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\References\RequiredReferences.cs" />
     <Compile Include="Assets\Scripts\MainGame\ModuleDatas.cs" />

@@ -6,7 +6,7 @@ using TMPro;
 
 namespace MainUI
 {
-    public class O_NewGameButton : ObjectBase
+    public class O_NewGameButton : Common_Button
     {
         #region Declaration
 

@@ -6,7 +6,7 @@ using TMPro;
 
 namespace MainUI
 {
-    public class O_SettingButton : ObjectBase
+    public class O_SettingButton : Common_Button
     {
         #region Declaration
 

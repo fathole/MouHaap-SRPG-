@@ -6,7 +6,7 @@ using TMPro;
 
 namespace MainUI
 {
-    public class O_QuitGameButton : ObjectBase
+    public class O_QuitGameButton : Common_Button
     {
         #region Declaration
 

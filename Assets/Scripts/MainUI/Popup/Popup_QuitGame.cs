@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,13 @@ namespace MainUI
     {
         #region Declaration
 
+        [Header("Text")]
+        [SerializeField] private List<LocalizationText> localizationTextList;
+
         [Header("Object")]
         public Common_Button o_CrossButton;
+        public Common_Button o_ConfirmButton;
+        public Common_Button o_CancelButton;
 
         [Header("Animator")]
         public Animator animator;
@@ -30,6 +36,13 @@ namespace MainUI
         public IEnumerator ShowPopupCoroutine()
         {                        
             gameObject.SetActive(true);
+
+            // Init Text
+            localizationTextList = GetComponentsInChildren<LocalizationText>().ToList();
+            foreach (LocalizationText localiztionText in localizationTextList)
+            {
+                localiztionText.Localization();
+            }
 
             // Wait Animation Finish (Animation Auto Play When Active)
             yield return new WaitForEndOfFrame();

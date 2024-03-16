@@ -36,13 +36,44 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
-    - Game Name
-    - New Game
+    - ///Common///
+    - ///MainUI///
+    - "MainUI_\u904A\u6232\u540D\u7A31(\u5F85\u5B9A)"
+    - "MainUI_\u65B0\u904A\u6232"
+    - "MainUI_\u8F09\u5165\u904A\u6232"
+    - "MainUI_\u8A2D\u5B9A"
+    - "MainUI_\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
+    - "MainUI_\u9000\u51FA\u904A\u6232"
+    - ///PopupQuitGame///
+    - PopupQuitGame_Title
+    - PopupQuitGame_Content
+    - PopupQuitGame_RedButton
+    - PopupQuitGame_GreyButton
     _keys:
-    - Game Name
-    - New Game
+    - ///Common///
+    - ///MainUI///
+    - "MainUI_\u904A\u6232\u540D\u7A31(\u5F85\u5B9A)"
+    - "MainUI_\u65B0\u904A\u6232"
+    - "MainUI_\u8F09\u5165\u904A\u6232"
+    - "MainUI_\u8A2D\u5B9A"
+    - "MainUI_\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
+    - "MainUI_\u9000\u51FA\u904A\u6232"
+    - ///PopupQuitGame///
+    - PopupQuitGame_Title
+    - PopupQuitGame_Content
+    - PopupQuitGame_RedButton
+    - PopupQuitGame_GreyButton
     _values:
-    - ZH_HK: "\u904A\u6232\u540D\u7A31"
-      ZH_TW: 
+    - ZH_HK: "\u53D6\u6D88"
+    - ZH_HK: "\u53D6\u6D88"
+    - ZH_HK: "\u904A\u6232\u540D\u7A31(\u5F85\u5B9A)"
     - ZH_HK: "\u65B0\u904A\u6232"
-      ZH_TW: 
+    - ZH_HK: "\u8F09\u5165\u904A\u6232"
+    - ZH_HK: "\u8A2D\u5B9A"
+    - ZH_HK: "\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
+    - ZH_HK: "\u9000\u51FA\u904A\u6232"
+    - ZH_HK: "\u53D6\u6D88"
+    - ZH_HK: "\u9000\u51FA\u904A\u6232"
+    - ZH_HK: "\u78BA\u8A8D\u9000\u51FA\u904A\u6232\uFF1F"
+    - ZH_HK: "\u78BA\u8A8D"
+    - ZH_HK: "\u53D6\u6D88"

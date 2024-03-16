@@ -40,10 +40,7 @@ namespace MainUI
 
         public override void InitModule()
         {
-            Debug.Log("--- MainUIManager: InitModule ---");
-
-            // Init The Font Asset And Text Content
-            //MainUIManager.textContent = (TextContent)textContent;
+            Debug.Log("--- MainUIManager: InitModule ---");            
 
             // Init Element
             InitElement();
@@ -61,6 +58,8 @@ namespace MainUI
 
             popup_QuitGame.InitView();
             popup_QuitGame.o_CrossButton.InitObject(QuitGamePopup_CloseButtonOnPointerClickCallback);
+            popup_QuitGame.o_CancelButton.InitObject(QuitGamePopup_CancelButtonOnPointerClickCallback);
+            popup_QuitGame.o_ConfirmButton.InitObject(QuitGamePopup_ConfirmButtonOnPointerClickCallback);
 
             #endregion
         }

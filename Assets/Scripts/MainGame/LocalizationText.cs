@@ -8,11 +8,6 @@ public class LocalizationText : MonoBehaviour
 {
     public string key;// The Key Of Text Content
 
-    private void Start()
-    {
-        Localization();
-    }
-
     public void Localization()
     {
         // Get TMP Text

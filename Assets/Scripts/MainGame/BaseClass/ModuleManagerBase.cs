@@ -11,7 +11,7 @@ public class ModuleManagerBase : MonoBehaviour
 
     #region Function - Init
 
-    public virtual void InitModule(TMP_FontAsset fontAsset, TextContentBase textContent)
+    public virtual void InitModule()
     {
         Debug.Log("--- ModuleMangaerBase: InitModule");
     }

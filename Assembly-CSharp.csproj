@@ -60,37 +60,26 @@
     <Analyzer Include="C:\Program Files\UnityEditor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MainUI\Popup\Popup_QuitGame.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\IDAttribute.cs" />
-    <Compile Include="Assets\Scripts\MainUI\O_CreditsButton.cs" />
-    <Compile Include="Assets\Scripts\MainGame\TextContent\TextContent_ZHHK.cs" />
-    <Compile Include="Assets\Scripts\MainUI\O_QuitGameButton.cs" />
-    <Compile Include="Assets\Scripts\MainUI\TextContent\TextContent_ZHHK.cs" />
+    <Compile Include="Assets\Scripts\MainGame\DataClass\GameSettingData.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\ReorderableList\ReorderableList.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\MainGame\BaseClass\TextContentBase.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\Common_Button.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\Example\NestedDB.cs" />
-    <Compile Include="Assets\Scripts\MainUI\U_GameTitle.cs" />
-    <Compile Include="Assets\Scripts\MainGame\TextContent\TextContent.cs" />
+    <Compile Include="Assets\Scripts\MainUI\Manager\MainUIManager.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\DrawKeyAsPropertyAttribute.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\LocalDataManager.cs" />
-    <Compile Include="Assets\Scripts\MainGame\Manager\TextManager.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\MainGameManager.cs" />
+    <Compile Include="Assets\Scripts\MainGame\DataClass\TextDatas.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\SerializableDictionaryBase.cs" />
-    <Compile Include="Assets\Scripts\MainUI\O_NewGameButton.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\Example\DataBaseExample.cs" />
-    <Compile Include="Assets\Scripts\MainUI\U_Background.cs" />
-    <Compile Include="Assets\Scripts\MainGame\GameSettingData.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ObjectBase.cs" />
-    <Compile Include="Assets\Scripts\MainUI\MainUIManager.cs" />
-    <Compile Include="Assets\Scripts\MainUI\Popup_QuitGame.cs" />
-    <Compile Include="Assets\Scripts\MainUI\O_SettingButton.cs" />
+    <Compile Include="Assets\Scripts\MainGame\LocalizationText.cs" />
     <Compile Include="Assets\_Plugins\Rotary Heart\SerializableDictionaryLite\References\RequiredReferences.cs" />
-    <Compile Include="Assets\Scripts\MainGame\ModuleDatas.cs" />
     <Compile Include="Assets\Scripts\MainGame\BaseClass\ModuleManagerBase.cs" />
     <Compile Include="Assets\Scripts\MainGame\Manager\TextMeshProManager.cs" />
-    <Compile Include="Assets\Scripts\MainUI\O_LoadGameButton.cs" />
-    <Compile Include="Assets\Scripts\MainUI\TextContent\TextContent.cs" />
+    <Compile Include="Assets\Scripts\MainGame\DataClass\ModuleDatas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Plugins\TextMesh Pro\Shaders\TMPro.cginc" />

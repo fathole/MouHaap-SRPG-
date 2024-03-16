@@ -21,12 +21,9 @@ namespace MainGame
         [SerializeField] private LocalDataManager localDataManager;
         private GameSettingData gameSettingData;
 
-        [Header("Text")]
-        [SerializeField] private TextManager textManager;
-        [SerializeField] private TextMeshProManager textMeshProManager;
-        private TextContentBase textContent;
-        private TMP_FontAsset fontAsset;
-
+        [Header("Text")]        
+        [SerializeField] private TextMeshProManager textMeshProManager;            
+       
         [Header("Audio")]
         [SerializeField] private AudioManager audioManager;
         [SerializeField] private UnityEngine.Audio.AudioMixer audioMixer;
@@ -62,7 +59,7 @@ namespace MainGame
         {
             #region Init Manager
             
-            textManager.InitManager();
+            //textManager.InitManager();
             textMeshProManager.InitManager();
             audioManager.InitManager(audioMixer);
             localDataManager.InitManager();
@@ -89,15 +86,11 @@ namespace MainGame
 
             #region Init Text And Font
 
-            // Get Text Content
-            textContent = textManager.GetTextContent(DisplayLanguageOption.ZH_HK);
-            string allModuleTextContent = textManager.GetAllModuleContent(DisplayLanguageOption.ZH_HK);
+            // Get Text Content            
+            string allModuleTextContent = textMeshProManager.GetTextDatas(DisplayLanguageOption.ZH_HK);            
 
             // Generate Font Asset
             yield return textMeshProManager.GenerateFontAssetCoroutine(FontOption.SourceHanSansHK, allModuleTextContent);
-
-            // Get Font Asset           
-            fontAsset = textMeshProManager.GetFontAsset();
 
             // Load First Module
             yield return LoadModuleCoroutine("MainUI");
@@ -147,7 +140,7 @@ namespace MainGame
             currentModuleManager = GetModuleManager(currentModule.managerName);
 
             // Init Module
-            currentModuleManager.InitModule(fontAsset, GetModuleTextContent(currentModule));
+            currentModuleManager.InitModule();
         }
 
         private IEnumerator LoadSceneCoroutine(string sceneName)
@@ -189,31 +182,15 @@ namespace MainGame
                     return null;
             }
         }
-        
-        private TextContentBase GetModuleTextContent(ModuleData moduleData)
-        {
-            switch (moduleData.moduleName)
-            {
-                case "MainUI":
-                    switch (gameSettingData.displayLanguage)
-                    {
-                        case DisplayLanguageOption.ZH_HK:
-                            return new MainUI.TextContent_ZHHK();
-                        default:
-                            Debug.LogError("Case Not Found");
-                            return null;
-                    }
-                default:
-                    Debug.LogError("Case Not Found");
-                    return null;
-            }
-        }
 
         #endregion
 
         #region Function - Public
 
-        // ToDo:
+        public DisplayLanguageOption GetCurrentDispplayOption()
+        {
+            return gameSettingData.displayLanguage;
+        }
 
         #endregion
     }

@@ -44,6 +44,11 @@ MonoBehaviour:
     - "MainUI_\u8A2D\u5B9A"
     - "MainUI_\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
     - "MainUI_\u9000\u51FA\u904A\u6232"
+    - "MainUI_\u63A2\u7D22\u6A21\u5F0F"
+    - "MainUI_\u6B63\u5E38\u6A21\u5F0F"
+    - "MainUI_\u56F0\u96E3\u6A21\u5F0F"
+    - "MainUI_\u5730\u7344\u6A21\u5F0F"
+    - "MainUI_\u8FD4\u56DE"
     - ///PopupQuitGame///
     - PopupQuitGame_Title
     - PopupQuitGame_Content
@@ -58,6 +63,11 @@ MonoBehaviour:
     - "MainUI_\u8A2D\u5B9A"
     - "MainUI_\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
     - "MainUI_\u9000\u51FA\u904A\u6232"
+    - "MainUI_\u63A2\u7D22\u6A21\u5F0F"
+    - "MainUI_\u6B63\u5E38\u6A21\u5F0F"
+    - "MainUI_\u56F0\u96E3\u6A21\u5F0F"
+    - "MainUI_\u5730\u7344\u6A21\u5F0F"
+    - "MainUI_\u8FD4\u56DE"
     - ///PopupQuitGame///
     - PopupQuitGame_Title
     - PopupQuitGame_Content
@@ -72,6 +82,11 @@ MonoBehaviour:
     - ZH_HK: "\u8A2D\u5B9A"
     - ZH_HK: "\u5236\u4F5C\u4EBA\u54E1\u540D\u55AE"
     - ZH_HK: "\u9000\u51FA\u904A\u6232"
+    - ZH_HK: "\u63A2\u7D22\u6A21\u5F0F"
+    - ZH_HK: "\u6B63\u5E38\u6A21\u5F0F"
+    - ZH_HK: "\u56F0\u96E3\u6A21\u5F0F"
+    - ZH_HK: "\u5730\u7344\u6A21\u5F0F"
+    - ZH_HK: "\u8FD4\u56DE"
     - ZH_HK: "\u53D6\u6D88"
     - ZH_HK: "\u9000\u51FA\u904A\u6232"
     - ZH_HK: "\u78BA\u8A8D\u9000\u51FA\u904A\u6232\uFF1F"
